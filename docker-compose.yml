@@ -1,0 +1,52 @@
+version: '2'
+services:
+  datastore:
+    image: busybox
+    volumes:
+      - bundle_install:/usr/local/bundle
+      - node_modules:/shuho/node_modules
+      - postgres:/var/lib/postgresql/data
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes_from:
+      - datastore
+  rails: &rails
+    build: .
+    command: /bin/sh -c "rm -f /shuho/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password
+    volumes_from:
+      - datastore
+    volumes:
+      - .:/shuho
+    tty: true
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+  webpacker:
+    <<: *rails
+    command: ['bin/webpack-dev-server']
+    ports:
+      - "3035:3035"
+    environment:
+      - NODE_ENV=development
+      - RAILS_ENV=development
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+
+volumes:
+  bundle_install:
+    driver: local
+  node_modules:
+    driver: local
+  postgres:
+    driver: local
