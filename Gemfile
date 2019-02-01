@@ -9,7 +9,7 @@ gem 'pg'
 
 gem 'puma'
 
-gem 'webpacker'
+gem 'webpacker', "4.0.0.rc.7"
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
