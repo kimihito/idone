@@ -1,4 +1,4 @@
-FROM ruby:rc
+FROM ruby:2.6.0
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev unzip
 
 # Node.js
@@ -14,9 +14,9 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     && apt-get update && apt-get install -y google-chrome-stable
 
 WORKDIR /shuho
-# ADD package.json /shuho/package.json
-# ADD yarn.lock /shuho/yarn.lock
-# RUN yarn install
+ADD package.json /shuho/package.json
+ADD yarn.lock /shuho/yarn.lock
+RUN yarn install
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
 RUN bundle install --jobs 4
