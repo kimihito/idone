@@ -17,3 +17,5 @@ const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
 
 import "controllers"
+
+import '../styles/application.css';
