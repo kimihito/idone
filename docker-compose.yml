@@ -23,6 +23,8 @@ services:
       - DATABASE_PORT=5432
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=password
+      - WEBPACKER_DEV_SERVER_HOST=webpacker
+      - WEBPACKER_DEV_SERVER_HOT=true
     volumes_from:
       - datastore
     volumes:
@@ -42,7 +44,7 @@ services:
       - NODE_ENV=development
       - RAILS_ENV=development
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
-
+      - WEBPACKER_DEV_SERVER_HOT=true
 volumes:
   bundle_install:
     driver: local

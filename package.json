@@ -2,12 +2,14 @@
   "name": "shuho",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "https://github.com/rails/webpacker.git",
-    "vue": "^2.5.16",
-    "vue-loader": "^15.2.6",
-    "vue-template-compiler": "^2.5.16"
+    "@rails/ujs": "^6.0.0-alpha",
+    "@rails/webpacker": "^4.0.0-rc.7",
+    "quicklink": "^1.0.0",
+    "stimulus": "^1.1.1",
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.1.5"
+    "tailwindcss": "^0.7.4",
+    "webpack-dev-server": "^3.1.14"
   }
 }

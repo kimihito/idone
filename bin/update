@@ -21,11 +21,11 @@ chdir APP_ROOT do
   # system('bin/yarn')
 
   puts "\n== Updating database =="
-  system! 'rails db:migrate'
+  system! 'bin/rails db:migrate'
 
   puts "\n== Removing old logs and tempfiles =="
-  system! 'rails log:clear tmp:clear'
+  system! 'bin/rails log:clear tmp:clear'
 
   puts "\n== Restarting application server =="
-  system! 'rails restart'
+  system! 'bin/rails restart'
 end
