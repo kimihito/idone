@@ -9,8 +9,14 @@
 
 console.log('Hello World from Webpacker')
 
+import Turbolinks from 'turbolinks'
+import quicklink from 'quicklink/dist/quicklink.umd.js'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
+
+import '../styles/application.css'
+
+require("@rails/ujs").start()
 
 const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
@@ -18,4 +24,7 @@ application.load(definitionsFromContext(context))
 
 import "controllers"
 
-import '../styles/application.css';
+Turbolinks.start()
+document.addEventListener('turbolinks:load', () => {
+  quicklink()
+})

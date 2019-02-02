@@ -11,9 +11,6 @@ gem 'puma'
 
 gem 'webpacker', "4.0.0.rc.7"
 
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks'
-
 gem 'bootsnap', require: false
 
 group :development, :test do
