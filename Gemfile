@@ -23,6 +23,7 @@ group :development do
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'lol_dba'
 end
 
 group :test do
