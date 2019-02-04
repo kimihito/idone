@@ -83,3 +83,5 @@ production:
   database: shuho_production
   username: shuho
   password: <%= ENV['SHUHO_DATABASE_PASSWORD'] %>
+  variables:
+    statement_timeout: 5000

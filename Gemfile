@@ -5,7 +5,49 @@ ruby '2.6.0'
 
 gem 'rails'
 
+gem 'attr_encrypted'
+
+gem 'groupdate'
+
+gem 'action_args'
+
+gem 'devise'
+
+gem 'authtrail'
+
+gem 'audited'
+
+gem 'pagy'
+
 gem 'pg'
+
+gem 'pghero'
+
+gem 'memoist'
+
+gem 'pundit'
+
+gem 'pretender'
+
+gem 'secure_headers'
+
+gem 'strong_migrations'
+
+gem 'rails-patterns'
+
+gem 'rack-attack'
+
+gem 'oj'
+
+gem 'logstop'
+
+gem 'lograge'
+
+gem 'ougai'
+
+gem 'sidekiq'
+
+gem 'sinatra', require: false
 
 gem 'puma'
 
@@ -24,6 +66,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'lol_dba'
+  gem 'bullet'
+  gem 'marginalia'
+  gem 'cacheflow'
 end
 
 group :test do
