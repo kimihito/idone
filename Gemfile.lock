@@ -208,7 +208,6 @@ GEM
       railties (>= 4.2.0, < 6.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
-    secure_headers (6.0.0)
     selenium-webdriver (3.13.1)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -297,7 +296,6 @@ DEPENDENCIES
   rack-attack
   rails
   rails-patterns
-  secure_headers
   selenium-webdriver
   sidekiq
   sinatra

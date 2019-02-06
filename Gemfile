@@ -29,8 +29,6 @@ gem 'pundit'
 
 gem 'pretender'
 
-gem 'secure_headers'
-
 gem 'strong_migrations'
 
 gem 'rails-patterns'
