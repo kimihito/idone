@@ -6,6 +6,20 @@ services:
       - bundle_install:/usr/local/bundle
       - node_modules:/shuho/node_modules
       - postgres:/var/lib/postgresql/data
+      - maildir:/tmp
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    environment:
+      MH_STORAGE: maildir
+      MH_MAILDIR_PATH: /tmp
+    ports:
+      - '8025:8025'
+    volumes_from:
+      - datastore
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
   postgres:
     image: postgres
     environment:
@@ -25,6 +39,7 @@ services:
       - DATABASE_PASSWORD=password
       - WEBPACKER_DEV_SERVER_HOST=webpacker
       - WEBPACKER_DEV_SERVER_HOT=true
+      - REDIS_URL=redis://redis:6379
     volumes_from:
       - datastore
     volumes:
@@ -35,6 +50,19 @@ services:
       - "3000:3000"
     depends_on:
       - postgres
+      - mailhog
+      - redis
+  sidekiq:
+    build: .
+    command: 'bundle exec sidekiq'
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - RAILS_ENV=development
+    volumes:
+      - .:/shuho
+    depends_on:
+      - postgres
+      - redis
   webpacker:
     <<: *rails
     command: ['bin/webpack-dev-server']
@@ -51,4 +79,8 @@ volumes:
   node_modules:
     driver: local
   postgres:
+    driver: local
+  maildir:
+    driver: local
+  redis:
     driver: local
