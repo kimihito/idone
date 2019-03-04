@@ -32,14 +32,7 @@ services:
   rails: &rails
     build: .
     command: /bin/sh -c "rm -f /idone/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
-    environment:
-      - DATABASE_HOST=postgres
-      - DATABASE_PORT=5432
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=password
-      - WEBPACKER_DEV_SERVER_HOST=webpacker
-      - WEBPACKER_DEV_SERVER_HOT=true
-      - REDIS_URL=redis://redis:6379
+    env_file: .env
     volumes_from:
       - datastore
     volumes:
@@ -55,9 +48,7 @@ services:
   sidekiq:
     build: .
     command: 'bundle exec sidekiq'
-    environment:
-      - REDIS_URL=redis://redis:6379
-      - RAILS_ENV=development
+    env_file: .env
     volumes:
       - .:/idone
     depends_on:
@@ -68,11 +59,7 @@ services:
     command: ['bin/webpack-dev-server']
     ports:
       - "3035:3035"
-    environment:
-      - NODE_ENV=development
-      - RAILS_ENV=development
-      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
-      - WEBPACKER_DEV_SERVER_HOT=true
+    env_file: .env
 volumes:
   bundle_install:
     driver: local
