@@ -13,11 +13,11 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     && sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' \
     && apt-get update && apt-get install -y google-chrome-stable
 
-WORKDIR /shuho
-ADD package.json /shuho/package.json
-ADD yarn.lock /shuho/yarn.lock
+WORKDIR /idone
+ADD package.json /idone/package.json
+ADD yarn.lock /idone/yarn.lock
 RUN yarn install
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
 RUN bundle install --jobs 4
-ADD . /shuho
+ADD . /idone
