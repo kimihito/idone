@@ -51,6 +51,8 @@ gem 'puma'
 
 gem 'rollout'
 
+gem 'hamlit-rails'
+
 gem 'webpacker', "4.0.0.rc.7"
 
 gem 'bootsnap', require: false

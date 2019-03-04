@@ -14,7 +14,7 @@ import quicklink from 'quicklink/dist/quicklink.umd.js'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
-import '../styles/application.css'
+import '../styles/application.scss'
 
 require("@rails/ujs").start()
 
