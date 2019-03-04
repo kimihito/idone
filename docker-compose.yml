@@ -4,7 +4,7 @@ services:
     image: busybox
     volumes:
       - bundle_install:/usr/local/bundle
-      - node_modules:/shuho/node_modules
+      - node_modules:/idone/node_modules
       - postgres:/var/lib/postgresql/data
       - maildir:/tmp
   mailhog:
@@ -31,7 +31,7 @@ services:
       - datastore
   rails: &rails
     build: .
-    command: /bin/sh -c "rm -f /shuho/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
+    command: /bin/sh -c "rm -f /idone/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
     environment:
       - DATABASE_HOST=postgres
       - DATABASE_PORT=5432
@@ -43,7 +43,7 @@ services:
     volumes_from:
       - datastore
     volumes:
-      - .:/shuho
+      - .:/idone
     tty: true
     stdin_open: true
     ports:
@@ -59,7 +59,7 @@ services:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
     volumes:
-      - .:/shuho
+      - .:/idone
     depends_on:
       - postgres
       - redis

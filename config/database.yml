@@ -21,9 +21,9 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-development:
+development: &development
   <<: *default
-  database: shuho_development
+  database: idone_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -56,8 +56,8 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: shuho_test
+  <<: *development
+  database: idone_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,8 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: shuho_production
-  username: shuho
-  password: <%= ENV['SHUHO_DATABASE_PASSWORD'] %>
+  database: idone_production
+  username: idone
+  password: <%= ENV['IDONE_DATABASE_PASSWORD'] %>
   variables:
     statement_timeout: 5000
