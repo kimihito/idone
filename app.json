@@ -1,0 +1,16 @@
+{
+  "name": "idone",
+  "scripts": {},
+  "env": {},
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "stack": "heroku-18"
+}
