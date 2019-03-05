@@ -53,7 +53,7 @@ gem 'rollout'
 
 gem 'hamlit-rails'
 
-gem 'webpacker', "4.0.0.rc.7"
+gem 'webpacker'
 
 gem 'bootsnap', require: false
 
