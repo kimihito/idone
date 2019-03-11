@@ -53,7 +53,7 @@ services:
       - mailhog
       - redis
   sidekiq:
-    build: .
+    <<: *rails
     command: 'bundle exec sidekiq'
     environment:
       - REDIS_URL=redis://redis:6379
