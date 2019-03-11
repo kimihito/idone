@@ -13,11 +13,13 @@ jobs:
           BUNDLE_PATH: vendor/bundle
           RACK_ENV: test
           RAILS_ENV: test
+          REDIS_URL: "redis://localhost:6379"
       # DB: PostgreSQL
       - image: circleci/postgres:10.7-alpine-ram
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: circle_test
+      - image: redis
 
     steps:
       - checkout
@@ -47,13 +49,16 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # Build JavaScript files
-      - run: bin/webpack
+      - run: bundle exec bin/webpack
 
       # run tests!
       - run:
           name: run tests
-          command: |
-            bin/rails test
+          command: bundle exec rails test
 
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
       - store_artifacts:
-          path: ~/idone/coverage
+          path: /tmp/test-results
+          destination: test-results
