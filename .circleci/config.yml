@@ -1,0 +1,59 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/idone
+    environment:
+      TZ: "/usr/share/zoneinfo/Japan"
+    docker:
+      # Web: Ruby
+      - image: circleci/ruby:2.6.0-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          RACK_ENV: test
+          RAILS_ENV: test
+      # DB: PostgreSQL
+      - image: circleci/postgres:10.7-alpine-ram
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: circle_test
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - idone-{{ checksum "Gemfile.lock" }}
+            - idone-
+      - run:
+          name: install libidn11-dev
+          command: sudo apt-get install -y libidn11-dev
+      - run:
+          name: install dependencies
+          command: bundle check || bundle install
+      - run:
+          name: install dependencies
+          command: yarn
+
+      - save_cache:
+          key: idone-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ./vendor/bundle
+            - ./node_modules
+      # Database setup
+      - run: mv config/database.ci.yml config/database.yml
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+      # Build JavaScript files
+      - run: bin/webpack
+
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            bin/rails test
+
+      - store_artifacts:
+          path: ~/idone/coverage
