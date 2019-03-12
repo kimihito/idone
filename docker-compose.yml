@@ -58,6 +58,8 @@ services:
     environment:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
+    ports:
+      - "3001:3000"
     volumes:
       - .:/idone
     depends_on:
