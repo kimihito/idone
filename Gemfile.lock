@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rails/spring.git
+  revision: e7a36afa436fcc59b6945f68dbc08f1076e65585
+  specs:
+    spring (2.0.2)
+      activesupport (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -231,8 +238,6 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.5)
       tilt (~> 2.0)
-    spring (2.0.2)
-      activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -312,7 +317,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq
   sinatra
-  spring
+  spring!
   spring-watcher-listen
   strong_migrations
   tzinfo-data
