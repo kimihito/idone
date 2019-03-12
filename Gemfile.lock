@@ -166,7 +166,7 @@ GEM
     ougai (1.7.1)
       oj (~> 3.4)
     pagy (2.1.0)
-    pg (1.0.0)
+    pg (1.1.4)
     pghero (2.2.0)
       activerecord
     pretender (0.3.4)
