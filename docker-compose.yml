@@ -29,8 +29,14 @@ services:
       - "5432:5432"
     volumes_from:
       - datastore
-  rails: &rails
+
+  app_base: &app_base
     build: .
+    tty: true
+    stdin_open: true
+
+  rails:
+    <<: *app_base
     command: /bin/sh -c "rm -f /idone/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
     environment:
       - DATABASE_HOST=postgres
@@ -44,8 +50,6 @@ services:
       - datastore
     volumes:
       - .:/idone
-    tty: true
-    stdin_open: true
     ports:
       - "3000:3000"
     depends_on:
@@ -53,19 +57,23 @@ services:
       - mailhog
       - redis
   sidekiq:
-    <<: *rails
+    <<: *app_base
     command: 'bundle exec sidekiq'
     environment:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
     volumes:
       - .:/idone
+    volumes_from:
+      - datastore
     depends_on:
       - postgres
       - redis
   webpacker:
-    <<: *rails
+    <<: *app_base
     command: ['bin/webpack-dev-server']
+    volumes_from:
+      - datastore
     ports:
       - "3035:3035"
     environment:
