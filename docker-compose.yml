@@ -100,7 +100,5 @@ volumes:
     driver: local
   postgres:
     driver: local
-  maildir:
-    driver: local
   redis:
     driver: local
