@@ -6,16 +6,10 @@ services:
       - bundle_install:/usr/local/bundle
       - node_modules:/idone/node_modules
       - postgres:/var/lib/postgresql/data
-      - maildir:/tmp
   mailhog:
     image: mailhog/mailhog:v1.0.0
-    environment:
-      MH_STORAGE: maildir
-      MH_MAILDIR_PATH: /tmp
     ports:
       - '8025:8025'
-    volumes_from:
-      - datastore
   redis:
     image: redis
     ports:
@@ -81,16 +75,12 @@ services:
     environment:
       - NODE_ENV=development
       - RAILS_ENV=development
-      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
-      - WEBPACKER_DEV_SERVER_HOT=true
 volumes:
   bundle_install:
     driver: local
   node_modules:
     driver: local
   postgres:
-    driver: local
-  maildir:
     driver: local
   redis:
     driver: local
