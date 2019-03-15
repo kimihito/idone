@@ -38,6 +38,8 @@ services:
       - WEBPACKER_DEV_SERVER_PUBLIC=webpacker:3035
       - WEBPACKER_DEV_SERVER_HOT=true
       - REDIS_URL=redis://redis:6379
+      - SMTP_ADDRESS=mailhog
+      - SMTP_PORT=1025
     volumes_from:
       - datastore
     volumes:
