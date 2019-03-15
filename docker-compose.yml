@@ -58,7 +58,7 @@ services:
       - redis
   sidekiq:
     <<: *app_base
-    command: 'bundle exec sidekiq'
+    command: 'bundle exec sidekiq -q default -q mailers'
     environment:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
