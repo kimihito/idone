@@ -6,16 +6,10 @@ services:
       - bundle_install:/usr/local/bundle
       - node_modules:/idone/node_modules
       - postgres:/var/lib/postgresql/data
-      - maildir:/tmp
   mailhog:
     image: mailhog/mailhog:v1.0.0
-    environment:
-      MH_STORAGE: maildir
-      MH_MAILDIR_PATH: /tmp
     ports:
       - '8025:8025'
-    volumes_from:
-      - datastore
   redis:
     image: redis
     ports:
@@ -30,13 +24,10 @@ services:
     volumes_from:
       - datastore
 
-  app_base: &app_base
+  rails:
     build: .
     tty: true
     stdin_open: true
-
-  rails:
-    <<: *app_base
     command: /bin/sh -c "rm -f /idone/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
     environment:
       - DATABASE_HOST=postgres
@@ -44,6 +35,7 @@ services:
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=password
       - WEBPACKER_DEV_SERVER_HOST=webpacker
+      - WEBPACKER_DEV_SERVER_PUBLIC=webpacker:3035
       - WEBPACKER_DEV_SERVER_HOT=true
       - REDIS_URL=redis://redis:6379
     volumes_from:
@@ -56,14 +48,13 @@ services:
       - postgres
       - mailhog
       - redis
+      - webpacker
   sidekiq:
-    <<: *app_base
+    build: .
     command: 'bundle exec sidekiq'
     environment:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
-    ports:
-      - "3001:3000"
     volumes:
       - .:/idone
     volumes_from:
@@ -72,8 +63,10 @@ services:
       - postgres
       - redis
   webpacker:
-    <<: *app_base
-    command: ['bin/webpack-dev-server']
+    build: .
+    command: bin/webpack-dev-server
+    volumes:
+      - .:/idone
     volumes_from:
       - datastore
     ports:
@@ -82,7 +75,24 @@ services:
       - NODE_ENV=development
       - RAILS_ENV=development
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
+      - WEBPACKER_DEV_SERVER_PUBLIC=0.0.0.0:3035
       - WEBPACKER_DEV_SERVER_HOT=true
+  guard:
+    build: .
+    command: "bundle exec guard start -p -i -B"
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password
+      - REDIS_URL=redis://redis:6379
+
+    volumes:
+      - .:/idone
+    volumes_from:
+      - datastore
+    ports:
+      - '35729:35729'
 volumes:
   bundle_install:
     driver: local

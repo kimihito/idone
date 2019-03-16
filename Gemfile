@@ -71,6 +71,10 @@ group :development do
   gem 'bullet'
   gem 'marginalia'
   gem 'cacheflow'
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
 end
 
 group :test do
