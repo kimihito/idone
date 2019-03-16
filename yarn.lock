@@ -649,6 +649,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@primer/css@^12.2.0":
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.2.0.tgz#59d2d51560269b94e8d2779b58e0aa55d08a6215"
+  integrity sha512-RDavaudOWWta5X11p/q7+nSS+5p+FHCbKWXkHECm1THQ+l1bRk5FUr9Csy78lbqbknqnlF1Lw9qePAG+S4+WgQ==
+
 "@rails/ujs@^6.0.0-alpha":
   version "6.0.0-alpha"
   resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.0.0-alpha.tgz#d5761d93e19215f5f342229f934d5ca8f6dd22a5"
