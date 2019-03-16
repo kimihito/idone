@@ -77,6 +77,22 @@ services:
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
       - WEBPACKER_DEV_SERVER_PUBLIC=0.0.0.0:3035
       - WEBPACKER_DEV_SERVER_HOT=true
+  guard:
+    build: .
+    command: "bundle exec guard start -p -i -B"
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password
+      - REDIS_URL=redis://redis:6379
+
+    volumes:
+      - .:/idone
+    volumes_from:
+      - datastore
+    ports:
+      - '35729:35729'
 volumes:
   bundle_install:
     driver: local
