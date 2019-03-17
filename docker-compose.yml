@@ -38,6 +38,8 @@ services:
       - WEBPACKER_DEV_SERVER_PUBLIC=webpacker:3035
       - WEBPACKER_DEV_SERVER_HOT=true
       - REDIS_URL=redis://redis:6379
+      - SMTP_ADDRESS=mailhog
+      - SMTP_PORT=1025
     volumes_from:
       - datastore
     volumes:
@@ -51,7 +53,7 @@ services:
       - webpacker
   sidekiq:
     build: .
-    command: 'bundle exec sidekiq'
+    command: 'bundle exec sidekiq -q default -q mailers'
     environment:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
@@ -99,8 +101,6 @@ volumes:
   node_modules:
     driver: local
   postgres:
-    driver: local
-  maildir:
     driver: local
   redis:
     driver: local

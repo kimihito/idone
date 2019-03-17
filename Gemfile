@@ -5,6 +5,8 @@ ruby '2.6.0'
 
 gem 'rails'
 
+gem 'rails-i18n'
+
 gem 'attr_encrypted'
 
 gem 'groupdate'
@@ -12,6 +14,8 @@ gem 'groupdate'
 gem 'action_args'
 
 gem 'devise'
+
+gem 'devise-i18n'
 
 gem 'authtrail'
 
