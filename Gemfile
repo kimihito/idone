@@ -27,6 +27,8 @@ gem 'pg'
 
 gem 'pghero'
 
+gem 'public_activity'
+
 gem 'memoist'
 
 gem 'pundit'
