@@ -1,0 +1,23 @@
+= content_for :title do
+  = t('.sign_in')
+= render 'devise/shared/form_box', url: session_path(resource_name) do |f|
+  .Box-body
+    %dl.form-group
+      %dt
+        %label= f.label :email
+      %dd
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+    %dl.form-group
+      %dt
+        %label= f.label :password
+        %span.text-small
+          = link_to t('devise.passwords.new.forgot_your_password'), new_password_path(resource_name)
+      %dd
+        = f.password_field :password, autocomplete: "current-password", class: "form-control"
+    - if devise_mapping.rememberable?
+      .form-checkbox
+        %label
+          = f.label :remember_me
+          = f.check_box :remember_me
+  .Box-footer.text-right
+    = f.submit t('devise.sessions.new.sign_in'), class: 'btn btn-primary'

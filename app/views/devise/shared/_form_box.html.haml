@@ -1,0 +1,8 @@
+.col-sm-12.col-md-6.col-lg-6.mx-auto
+  .Box
+    .Box-header
+      %h2.Box-title
+        = yield(:title)
+    = form_for(resource, as: resource_name, url: url) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      = yield f
