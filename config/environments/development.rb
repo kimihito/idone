@@ -73,4 +73,6 @@ Rails.application.configure do
   # Add Rack::LiveReload to the bottom of the middleware stack with the default options
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
   config.middleware.use(Rack::LiveReload, host: 'localhost', source: :vendored)
+
+  config.web_console.whitelisted_ips = %w( 0.0.0.0/0 ::/0 )
 end
