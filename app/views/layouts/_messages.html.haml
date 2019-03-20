@@ -1,0 +1,4 @@
+- flash.each do |key, value|
+  .flash-messages
+    .flash{class: "flash-#{key == 'alert' ? 'error' : key}"}
+      = value
