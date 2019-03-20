@@ -57,6 +57,8 @@ services:
     environment:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
+      - SMTP_ADDRESS=mailhog
+      - SMTP_PORT=1025
     volumes:
       - .:/idone
     volumes_from:
