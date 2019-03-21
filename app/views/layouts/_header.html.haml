@@ -4,5 +4,8 @@
       .col-4.d-flex
         = link_to '✅ idone', root_path, class: 'h2 text-shadow-light text-gray-dark no-underline'
       .col-12.d-flex.flex-justify-end
-        = link_to t('.sign_in'), new_user_session_path, class: 'btn mr-1', role: 'button'
-        = link_to t('.sign_up'), new_user_registration_path, class: 'btn btn-primary'
+        - if user_signed_in?
+          = link_to t('.sign_out'), destroy_user_session_path, class: 'btn mr-1', role: 'button', method: :delete
+        - else
+          = link_to t('.sign_in'), new_user_session_path, class: 'btn mr-1', role: 'button'
+          = link_to t('.sign_up'), new_user_registration_path, class: 'btn btn-primary'
