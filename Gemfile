@@ -82,6 +82,7 @@ group :development do
   gem 'guard'
   gem 'guard-minitest'
   gem 'guard-livereload', require: false
+  gem 'guard-annotate'
   gem 'rack-livereload'
 end
 
