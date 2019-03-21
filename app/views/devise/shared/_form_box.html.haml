@@ -3,6 +3,10 @@
     .Box-header
       %h2.Box-title
         = yield(:title)
-    = form_for(resource, as: resource_name, url: url) do |f|
+    -# - binding.pry
+    = form_for resource, as: resource_name, url: url, html: local_assigns[:html] do |f|
       = render "devise/shared/error_messages", resource: resource
-      = yield f
+      .Box-body
+        = yield f
+      .Box-footer.text-right
+        = f.submit yield(:submit), class: 'btn btn-primary'

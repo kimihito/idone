@@ -1,25 +1,25 @@
 - content_for :title do
   =t('.sign_up')
 
+- content_for :submit do
+  =t('.sign_up')
+
 = render 'devise/shared/form_box', url: registration_path(resource_name) do |f|
-  .Box-body
-    %dl.form-group
-      %dt
-        %label= f.label :email
-      %dd
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-    %dl.form-group
-      %dt
-        %label= f.label :password
-        - if @minimum_password_length
-          %em
-            = "(#{t('devise.registrations.new.charactors_minimum', count: @minimum_password_length)})"
-      %dd
-        = f.password_field :password, autocomplete: "new-password", class: 'form-control'
-    %dl.form-group
-      %dt
-        %label= f.label :password_confirmation
-      %dd
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
-  .Box-footer.text-right
-    = f.submit t("devise.registrations.new.sign_up"), class: 'btn btn-primary'
+  %dl.form-group
+    %dt
+      %label= f.label :email
+    %dd
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+  %dl.form-group
+    %dt
+      %label= f.label :password
+      - if @minimum_password_length
+        %em
+          = "(#{t('devise.registrations.new.charactors_minimum', count: @minimum_password_length)})"
+    %dd
+      = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+  %dl.form-group
+    %dt
+      %label= f.label :password_confirmation
+    %dd
+      = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'

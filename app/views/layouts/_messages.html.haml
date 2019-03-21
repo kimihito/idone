@@ -1,0 +1,6 @@
+- flash.each do |key, value|
+  .flash-messages{data: { controller: 'flash'}}
+    .flash{class: "flash-#{key == 'alert' ? 'error' : key}"}
+      %button.flash-close{data: { action: 'flash#dismiss', target: 'flash.close'}, type: 'button'}
+        &times;
+      = value
