@@ -17,7 +17,7 @@
 #
 
 class Project < ApplicationRecord
-  belongs_to :owner, class_name: 'User', inverse_of: :owner
+  belongs_to :owner, class_name: 'User'
 
   scope :recent, -> { order('created_at DESC') }
 end

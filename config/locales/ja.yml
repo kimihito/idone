@@ -4,3 +4,10 @@ ja:
       sign_up: 新規登録
       sign_in: ログイン
       sign_out: ログアウト
+  projects:
+    create:
+      success: プロジェクトを作成しました
+      failed: プロジェクトの作成に失敗しました
+    update:
+      success: プロジェクトを更新しました
+      failed: プロジェクトの更新に失敗しました

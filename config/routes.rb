@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'root#index'
   resources :users, only: [:index]
 
-  resources :projects, only: [:index]
+  resources :projects
 
   mount PgHero::Engine, at: "pghero"
 
