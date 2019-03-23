@@ -1,1 +1,16 @@
-= @project.title
+.col-lg-3.col-12.float-left.pr-lg-3
+  .Box.border-0
+    .Box-body
+      = @project.title
+    .Box-footer
+      = @project.owner.email
+.col-lg-9.col-12.float-left
+  %nav.mt-lg-0.my-3.d-flex.flex-row
+    = link_to "👀 Overview", project_path(@project), class: 'border border-0 bg-white rounded-2 mr-2 p-2 no-underline text-gray-dark'
+    = link_to "✅ Done", project_path(@project), class: 'border border-0 rounded-2 mr-2 p-2 no-underline text-gray-light'
+    = link_to "📊 Stats", project_path(@project), class: 'border border-0 rounded-2 mr-2 p-2 no-underline text-gray-light'
+  .Box
+    .Box-header
+      = Time.current
+    .Box-body
+      hohohohohooooo
