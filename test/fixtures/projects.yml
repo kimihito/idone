@@ -6,5 +6,5 @@
 #
 
 project_1:
-  owner: user(:idoneman)
+  owner: idoneman
   title: 'Project 1'

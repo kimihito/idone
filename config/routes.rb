@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'root#index'
   resources :users, only: [:index]
 
-  resources :projects
+  resources :projects do
+    resource :done, only: [:show], module: 'projects'
+    resource :stats, only: [:show], module: 'projects'
+  end
 
   mount PgHero::Engine, at: "pghero"
 

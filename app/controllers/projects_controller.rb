@@ -13,13 +13,13 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @form = ProjectForm.new(Project.new)
+    @form = ProjectForm.new(current_user.projects.build)
   end
 
   def create(project)
-    form = ProjectForm.new(Project.new(owner: current_user), project)
-    if form.save
-      redirect_to form, notice: t('.success')
+    @form = ProjectForm.new(current_user.projects.build, project)
+    if @form.save
+      redirect_to @form, notice: t('.success')
     else
       @form = ProjectForm.new(Project.new(owner: current_user), project)
       flash.now[:alert] = t('.failed')
