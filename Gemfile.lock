@@ -52,8 +52,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    archive-zip (0.12.0)
-      io-like (~> 0.3.0)
     arel (9.0.0)
     attr_encrypted (3.1.0)
       encryptor (~> 3.0.0)
@@ -89,9 +87,6 @@ GEM
       xpath (~> 3.2)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
-    chromedriver-helper (2.1.1)
-      archive-zip (~> 0.10)
-      nokogiri (~> 1.8)
     coderay (1.1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -153,7 +148,6 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
-    io-like (0.3.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -189,6 +183,7 @@ GEM
     multi_json (1.13.1)
     mustermann (1.0.3)
     nenv (0.3.0)
+    net_http_ssl_fix (0.0.10)
     nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
@@ -323,6 +318,11 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdrivers (3.7.1)
+      net_http_ssl_fix
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (~> 3.0)
     webpacker (4.0.2)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -346,7 +346,6 @@ DEPENDENCIES
   byebug
   cacheflow
   capybara
-  chromedriver-helper
   devise
   devise-i18n
   groupdate
@@ -385,6 +384,7 @@ DEPENDENCIES
   strong_migrations
   tzinfo-data
   web-console
+  webdrivers
   webpacker
 
 RUBY VERSION
