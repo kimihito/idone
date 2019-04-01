@@ -1,6 +1,6 @@
 - if resource.errors.any?
-  .flash-messages
-    .flash.flash-error.m-2
+  .flash-messages.m-2
+    .flash.flash-error
       %p
         = I18n.t("errors.messages.not_saved",                 |
           count: resource.errors.count,                       |
