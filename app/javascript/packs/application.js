@@ -11,6 +11,7 @@ console.log('Hello World from Webpacker')
 
 import Turbolinks from 'turbolinks'
 import quicklink from 'quicklink/dist/quicklink.umd.js'
+import feather from 'feather-icons'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
@@ -26,5 +27,6 @@ import "controllers"
 
 Turbolinks.start()
 document.addEventListener('turbolinks:load', () => {
+  feather.replace({'width': 18, 'height': 18})
   quicklink()
 })

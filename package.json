@@ -5,6 +5,7 @@
     "@primer/css": "^12.2.3",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.2",
+    "feather-icons": "^4.21.0",
     "musubii": "^6.6.0",
     "octicons": "^8.5.0",
     "quicklink": "^1.0.0",
