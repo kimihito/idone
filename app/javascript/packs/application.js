@@ -28,5 +28,9 @@ import "controllers"
 Turbolinks.start()
 document.addEventListener('turbolinks:load', () => {
   feather.replace({'width': 18, 'height': 18})
-  quicklink()
+  quicklink({
+    ignores: [
+      (uri, elem) => elem.dataset.method == 'delete'
+    ]
+  })
 })
