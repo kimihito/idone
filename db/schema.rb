@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_133624) do
+ActiveRecord::Schema.define(version: 2019_04_01_060938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "actions", force: :cascade do |t|
+    t.uuid "project_id", null: false
+    t.uuid "owner_id", null: false
+    t.string "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["body"], name: "index_actions_on_body"
+    t.index ["created_at"], name: "index_actions_on_created_at"
+    t.index ["owner_id"], name: "index_actions_on_owner_id"
+    t.index ["project_id"], name: "index_actions_on_project_id"
+    t.index ["updated_at"], name: "index_actions_on_updated_at"
+  end
 
   create_table "activities", force: :cascade do |t|
     t.string "trackable_type"
@@ -85,5 +98,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_133624) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "actions", "projects"
+  add_foreign_key "actions", "users", column: "owner_id"
   add_foreign_key "projects", "users", column: "owner_id"
 end

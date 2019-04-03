@@ -1,0 +1,7 @@
+- @actions_by_date.each do |date, actions|
+  .Box.mb-2
+    .Box-header{data: { controller: 'days' }}
+      %h3.Box-title{data: {'days-initial-date': date.to_date.to_s, target: 'days.date' }}
+        = date.to_date.to_s
+    %ul
+      = render actions

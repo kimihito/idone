@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'root#index'
   resources :users, only: [:index]
+  resources :actions, only: [:index]
 
   resources :projects do
     resource :done, only: [:show], module: 'projects'

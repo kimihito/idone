@@ -21,7 +21,6 @@ class ProjectsController < ApplicationController
     if @form.save
       redirect_to @form, notice: t('.success')
     else
-      @form = ProjectForm.new(Project.new(owner: current_user), project)
       flash.now[:alert] = t('.failed')
       render :new
     end

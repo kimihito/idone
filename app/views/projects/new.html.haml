@@ -1,3 +1,16 @@
-= form_with model: @form, local: true do |f|
-  = f.text_field :title
-  = f.submit
+.col-sm-12.col-md-6.col-lg-6.mx-auto
+  .Box
+    .Box-header
+      %h2.Box-title
+        = t('.create_new_project')
+
+    = form_with model: @form, local: true do |f|
+      = render "devise/shared/error_messages", resource: f.object
+      .Box-body
+        %dl
+          %dt
+            %label= f.label :title
+          %dd
+            = f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control input-block"
+      .Box-footer.text-right
+        = f.submit t('.submit'), class: 'btn btn-primary'

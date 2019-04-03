@@ -3,8 +3,10 @@
     .d-flex.flex-md-row.flex-items-center.flex-md-items-start
       .col-4.d-flex
         = link_to '✅ idone', root_path, class: 'h2 text-shadow-light text-gray-dark no-underline'
-      .col-12.d-flex.flex-justify-end
+      .col-12.d-flex.flex-justify-end.flex-items-center
         - if user_signed_in?
+          = link_to new_project_path, class: 'd-block mr-2 text-gray-dark no-underline tooltipped tooltipped-s', "aria-label": t('.create_new_project') do
+            %i{data:{feather: 'plus'}, height: 24, width: 24}
           = link_to t('.sign_out'), destroy_user_session_path, class: 'btn mr-1', role: 'button', method: :delete
         - else
           = link_to t('.sign_in'), new_user_session_path, class: 'btn mr-1', role: 'button'

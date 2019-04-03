@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+<% (1..100).to_a.each_slice(2).with_index do |(a,b), i| %>
+project_1_action_<%= a %>:
+  owner: idoneman
+  project: project_1
+  body: "Action <%= a %>"
+  created_at: <%= Time.current.days_ago(i) %>
+
+project_1_action_<%= b %>:
+  owner: idoneman
+  project: project_1
+  body: "Action <%= b %>"
+  created_at: <%= Time.current.days_ago(i) %>
+<% end %>
