@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
   end
 
   def show(id)
-    @project = Project.find(id)
+    @project = Project.includes(actions: :owner).find(id)
   end
 
   def new

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :projects do
     resource :done, only: [:show], module: 'projects'
     resource :stats, only: [:show], module: 'projects'
+    resources :actions, only: [:index, :new, :create], module: 'projects'
   end
 
   mount PgHero::Engine, at: "pghero"

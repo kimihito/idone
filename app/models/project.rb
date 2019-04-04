@@ -19,5 +19,7 @@
 class Project < ApplicationRecord
   belongs_to :owner, class_name: 'User'
 
+  has_many :actions, dependent: :destroy
+
   scope :recent, -> { order('created_at DESC') }
 end
