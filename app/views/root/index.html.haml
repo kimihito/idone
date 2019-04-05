@@ -7,5 +7,12 @@
     .Box-footer
       HiHI
 
-.col-lg-9.col-12.float-left
-  %div{data: {controller: 'action-loader', 'action-loader-url': actions_path }}
+.col-lg-9.col-12.float-left.recent-actions
+  - @actions_by_date.each do |date, actions|
+    .Box.mb-2
+      .Box-header
+        %h3.Box-title
+          = date
+      %ul
+        =render actions
+  =render 'layouts/pagination', pagy: @pagy
