@@ -7,9 +7,9 @@
     .Box-footer
       HiHI
 
-.col-lg-9.col-12.float-left.recent-actions
+.col-lg-9.col-12.float-left{ data: { controller: 'infinite-scroll' } }
   - @actions_by_date.each do |date, actions|
-    .Box.mb-2
+    .Box.mb-2.action
       .Box-header
         %h3.Box-title
           = date
