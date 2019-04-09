@@ -139,7 +139,7 @@ GEM
       temple (>= 0.8.0)
       thor
       tilt
-    hamlit-rails (0.2.2)
+    hamlit-rails (0.2.3)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
       hamlit (>= 1.2.0)
