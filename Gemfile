@@ -35,6 +35,8 @@ gem 'pundit'
 
 gem 'pretender'
 
+gem 'twitter-text'
+
 gem 'strong_migrations'
 
 gem 'rails-patterns'

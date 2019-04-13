@@ -154,6 +154,7 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    idn-ruby (0.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -308,8 +309,14 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    twitter-text (3.0.0)
+      idn-ruby
+      unf (~> 0.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
     uniform_notifier (1.12.1)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -387,6 +394,7 @@ DEPENDENCIES
   spring!
   spring-watcher-listen
   strong_migrations
+  twitter-text
   tzinfo-data
   web-console
   webdrivers
