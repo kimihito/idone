@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     resources :actions, only: [:index, :new, :create], module: 'projects'
   end
 
+  authenticated :user do
+    namespace :my do
+      resources :projects, only: :index, default: { format: :json }
+    end
+  end
+
   mount PgHero::Engine, at: "pghero"
 
   require 'sidekiq/web'

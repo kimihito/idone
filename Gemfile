@@ -53,6 +53,10 @@ gem 'ougai'
 
 gem 'sidekiq'
 
+gem 'search_cop'
+
+gem 'fast_jsonapi'
+
 gem 'sinatra', require: false
 
 gem 'puma'

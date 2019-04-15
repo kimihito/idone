@@ -16,17 +16,13 @@
 #  index_projects_on_updated_at  (updated_at)
 #
 
-class Project < ApplicationRecord
-  include SearchCop
+class ProjectSerializer
+  include FastJsonapi::ObjectSerializer
+  set_key_transform :camel_lower
+  set_type :project
+  attributes :title, :created_at
 
-  search_scope :search do
-    attributes :title
-    options :title, left_wildcard: false
+  link :self, :url do |object|
+    Rails.application.routes.url_helpers.project_url(object)
   end
-
-  belongs_to :owner, class_name: 'User'
-
-  has_many :actions, dependent: :destroy
-
-  scope :recent, -> { order('created_at DESC') }
 end

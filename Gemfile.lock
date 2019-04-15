@@ -113,6 +113,8 @@ GEM
     equalizer (0.0.11)
     erubi (1.8.0)
     eventmachine (1.2.7)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.10.0)
     formatador (0.2.5)
     geocoder (1.5.1)
@@ -204,6 +206,7 @@ GEM
     pg (1.1.4)
     pghero (2.2.0)
       activerecord
+    polyglot (0.3.5)
     pretender (0.3.4)
       actionpack (>= 4.2)
     pry (0.12.2)
@@ -279,6 +282,8 @@ GEM
     rollout (2.4.3)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
+    search_cop (1.0.9)
+      treetop
     selenium-webdriver (3.141.5926)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -309,6 +314,8 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    treetop (1.6.10)
+      polyglot (~> 0.3)
     twitter-text (3.0.0)
       idn-ruby
       unf (~> 0.1.0)
@@ -359,6 +366,7 @@ DEPENDENCIES
   capybara
   devise
   devise-i18n
+  fast_jsonapi
   groupdate
   guard
   guard-annotate
@@ -388,6 +396,7 @@ DEPENDENCIES
   rails-i18n
   rails-patterns
   rollout
+  search_cop
   selenium-webdriver
   sidekiq
   sinatra
