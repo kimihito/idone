@@ -16,6 +16,8 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 
 import '../styles/application.scss'
 
+import "@babel/polyfill"
+
 require("@rails/ujs").start()
 
 const application = Application.start()

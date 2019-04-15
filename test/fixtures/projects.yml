@@ -7,4 +7,8 @@
 
 project_1:
   owner: idoneman
-  title: 'Project 1'
+  title: 'プロジェクト1'
+
+project_2:
+  owner: idoneman
+  title: 'プロジェクト2'
