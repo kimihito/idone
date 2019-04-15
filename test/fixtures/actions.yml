@@ -9,11 +9,13 @@ project_1_action_<%= a %>:
   owner: idoneman
   project: project_1
   body: "Action <%= a %>"
+  raw_body: "Raw body <%= a %>"
   created_at: <%= Time.current.days_ago(i) %>
 
 project_1_action_<%= b %>:
   owner: idoneman
   project: project_1
   body: "Action <%= b %>"
+  raw_body: "Raw body <%= b %>"
   created_at: <%= Time.current.days_ago(i) %>
 <% end %>
