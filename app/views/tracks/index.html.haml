@@ -1,0 +1,7 @@
+- @tracks_by_date.each do |date, tracks|
+  .Box.mb-2
+    .Box-header
+      %h3.Box-title
+        = date
+    %ul
+      = render tracks, cache: true
