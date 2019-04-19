@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_135539) do
+ActiveRecord::Schema.define(version: 2019_04_19_123750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -81,6 +81,18 @@ ActiveRecord::Schema.define(version: 2019_04_10_135539) do
     t.index ["updated_at"], name: "index_projects_on_updated_at"
   end
 
+  create_table "tracks", force: :cascade do |t|
+    t.uuid "project_id", null: false
+    t.uuid "owner_id", null: false
+    t.text "raw_body", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["created_at"], name: "index_tracks_on_created_at"
+    t.index ["owner_id"], name: "index_tracks_on_owner_id"
+    t.index ["project_id"], name: "index_tracks_on_project_id"
+    t.index ["updated_at"], name: "index_tracks_on_updated_at"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -102,4 +114,6 @@ ActiveRecord::Schema.define(version: 2019_04_10_135539) do
   add_foreign_key "contributions", "projects"
   add_foreign_key "contributions", "users", column: "owner_id"
   add_foreign_key "projects", "users", column: "owner_id"
+  add_foreign_key "tracks", "projects"
+  add_foreign_key "tracks", "users", column: "owner_id"
 end
