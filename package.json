@@ -16,7 +16,7 @@
     "ts-loader": "^5.3.3",
     "turbolinks": "^5.2.0",
     "twitter-text": "^3.0.0",
-    "typescript": "^3.4.1",
+    "typescript": "^3.4.4",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
