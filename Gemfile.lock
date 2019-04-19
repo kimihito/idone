@@ -52,6 +52,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    annotate (2.7.4)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (9.0.0)
     attr_encrypted (3.1.0)
       encryptor (~> 3.0.0)
@@ -110,6 +113,8 @@ GEM
     equalizer (0.0.11)
     erubi (1.8.0)
     eventmachine (1.2.7)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.10.0)
     formatador (0.2.5)
     geocoder (1.5.1)
@@ -126,6 +131,9 @@ GEM
       pry (>= 0.9.12)
       shellany (~> 0.0)
       thor (>= 0.18.1)
+    guard-annotate (2.3)
+      annotate (~> 2.4, >= 2.4.0)
+      guard-compat (~> 1.2, >= 1.2.1)
     guard-compat (1.2.1)
     guard-livereload (2.5.2)
       em-websocket (~> 0.5)
@@ -148,6 +156,7 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    idn-ruby (0.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -197,6 +206,7 @@ GEM
     pg (1.1.4)
     pghero (2.2.0)
       activerecord
+    polyglot (0.3.5)
     pretender (0.3.4)
       actionpack (>= 4.2)
     pry (0.12.2)
@@ -272,6 +282,8 @@ GEM
     rollout (2.4.3)
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
+    search_cop (1.0.9)
+      treetop
     selenium-webdriver (3.141.5926)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -302,8 +314,16 @@ GEM
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
+    treetop (1.6.10)
+      polyglot (~> 0.3)
+    twitter-text (3.0.0)
+      idn-ruby
+      unf (~> 0.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
     uniform_notifier (1.12.1)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -346,8 +366,10 @@ DEPENDENCIES
   capybara
   devise
   devise-i18n
+  fast_jsonapi
   groupdate
   guard
+  guard-annotate
   guard-livereload
   guard-minitest
   hamlit-rails
@@ -374,12 +396,14 @@ DEPENDENCIES
   rails-i18n
   rails-patterns
   rollout
+  search_cop
   selenium-webdriver
   sidekiq
   sinatra
   spring!
   spring-watcher-listen
   strong_migrations
+  twitter-text
   tzinfo-data
   web-console
   webdrivers

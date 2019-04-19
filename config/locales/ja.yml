@@ -1,6 +1,32 @@
 ja:
+  activerecord:
+    attributes:
+      project:
+        title: タイトル
+    models:
+      project: プロジェクト
+  activemodel:
+    attributes:
+      project_form:
+        title: タイトル
   layouts:
     header:
       sign_up: 新規登録
       sign_in: ログイン
       sign_out: ログアウト
+      create_new_project: 'プロジェクトを作成'
+  projects:
+    create:
+      success: プロジェクトを作成しました
+      failed: プロジェクトの作成に失敗しました
+    update:
+      success: プロジェクトを更新しました
+      failed: プロジェクトの更新に失敗しました
+    new:
+      submit: 作成する
+      create_new_project: 新しいプロジェクトを作成
+    destroy:
+      success: プロジェクトを削除しました
+  contributions:
+    contribution:
+      ago: '%{time_ago_in_words}前'

@@ -35,6 +35,8 @@ gem 'pundit'
 
 gem 'pretender'
 
+gem 'twitter-text'
+
 gem 'strong_migrations'
 
 gem 'rails-patterns'
@@ -50,6 +52,10 @@ gem 'lograge'
 gem 'ougai'
 
 gem 'sidekiq'
+
+gem 'search_cop'
+
+gem 'fast_jsonapi'
 
 gem 'sinatra', require: false
 
@@ -82,6 +88,7 @@ group :development do
   gem 'guard'
   gem 'guard-minitest'
   gem 'guard-livereload', require: false
+  gem 'guard-annotate'
   gem 'rack-livereload'
 end
 

@@ -7,14 +7,16 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
-
 import Turbolinks from 'turbolinks'
 import quicklink from 'quicklink/dist/quicklink.umd.js'
+import feather from 'feather-icons'
+import 'whatwg-fetch'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
 import '../styles/application.scss'
+
+import "@babel/polyfill"
 
 require("@rails/ujs").start()
 
@@ -26,5 +28,10 @@ import "controllers"
 
 Turbolinks.start()
 document.addEventListener('turbolinks:load', () => {
-  quicklink()
+  feather.replace({'width': 18, 'height': 18})
+  quicklink({
+    ignores: [
+      (uri, elem) => elem.dataset.method == 'delete'
+    ]
+  })
 })

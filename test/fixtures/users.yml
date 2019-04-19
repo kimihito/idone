@@ -2,3 +2,10 @@
 
 idoneman:
   email: 'test@idone.today'
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= Time.current.to_time %>
+
+idoneman2:
+  email: 'test2@idone.today'
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= Time.current.to_time %>
