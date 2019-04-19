@@ -11,7 +11,7 @@ project_1_track_<%= a %>:
   raw_body: "project 1 Raw body <%= a %>"
   created_at: <%= Time.current.days_ago(i) %>
 
-project_2_contribution_<%= b %>:
+project_2_track_<%= b %>:
   owner: idoneman2
   project: project_2
   raw_body: "project 2 Raw body <%= b %>"
