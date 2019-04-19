@@ -2,7 +2,8 @@ class RootController < ApplicationController
   include Pagy::Backend
 
   def index
-    @pagy, actions = pagy(Action.includes(:project).recent)
-    @actions_by_date = actions.group_by { |action| action.created_at.to_date }
+    @pagy, contributions = pagy(Contribution.includes(:project).recent)
+    authorize(contributions)
+    @contributions_by_date = contributions.group_by { |contribution| contribution.created_at.to_date }
   end
 end

@@ -5,17 +5,17 @@
 # below each fixture, per the syntax in the comments below
 #
 <% (1..100).to_a.each_slice(2).with_index do |(a,b), i| %>
-project_1_action_<%= a %>:
+project_1_contribution_<%= a %>:
   owner: idoneman
   project: project_1
-  body: "Action <%= a %>"
+  body: "Contribution <%= a %>"
   raw_body: "Raw body <%= a %>"
   created_at: <%= Time.current.days_ago(i) %>
 
-project_2_action_<%= b %>:
+project_2_contribution_<%= b %>:
   owner: idoneman
   project: project_2
-  body: "Action <%= b %>"
+  body: "Contribution <%= b %>"
   raw_body: "Raw body <%= b %>"
   created_at: <%= Time.current.days_ago(i) %>
 <% end %>

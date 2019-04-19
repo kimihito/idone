@@ -1,0 +1,7 @@
+%li.Box-row.d-flex.flex-items-center
+  .flex-auto
+    %span.mr-2
+      ✅
+      = contribution.body
+    = link_to "##{contribution.project.title}", contribution.project, class: 'Label Label--gray-darker'
+  %time.text-small.text-gray= t('.ago', time_ago_in_words: time_ago_in_words(contribution.created_at))

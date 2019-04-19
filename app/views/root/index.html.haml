@@ -1,5 +1,5 @@
 .col-12
-  = form_with model: ActionForm.new(owner: current_user), data: { controller: 'autocomplete' } do |f|
+  = form_with model: ContributionForm.new(owner: current_user), data: { controller: 'autocomplete' }, local: true do |f|
     .col-10.mb-3.pr-2.float-left
       = f.text_field :raw_body, class: 'form-control input-block', autocomplete: 'off', data: { target: 'autocomplete.rawBody' }
     .col-2.mb-3.float-left
@@ -13,11 +13,11 @@
       HiHI
 
 .col-lg-9.col-12.float-left{ data: { controller: 'infinite-scroll' } }
-  - @actions_by_date.each do |date, actions|
-    .Box.mb-2.action
+  - @contributions_by_date.each do |date, contributions|
+    .Box.mb-2.contribution
       .Box-header
         %h3.Box-title
           = date
       %ul
-        =render actions
+        =render contributions
   =render 'layouts/pagination', pagy: @pagy

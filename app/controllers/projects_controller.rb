@@ -6,18 +6,24 @@ class ProjectsController < ApplicationController
 
   def index
     @pagy, @projects = pagy(Project.recent)
+    authorize(@projects)
   end
 
   def show(id)
-    @project = Project.includes(actions: :owner).find(id)
+    @project = Project.includes(contributions: :owner).find(id)
+    authorize(@project)
   end
 
   def new
-    @form = ProjectForm.new(current_user.projects.build)
+    new_project = current_user.projects.build
+    authorize(new_project)
+    @form = ProjectForm.new(new_project)
   end
 
   def create(project)
-    @form = ProjectForm.new(current_user.projects.build, project)
+    new_project = current_user.projects.build
+    authorize(new_project)
+    @form = ProjectForm.new(new_project, project)
     if @form.save
       redirect_to @form, notice: t('.success')
     else
@@ -27,16 +33,28 @@ class ProjectsController < ApplicationController
   end
 
   def edit(id)
-    @form = ProjectForm.new(Project.find(id))
+    project = Project.find(id)
+    authorize(project)
+    @form = ProjectForm.new(project)
   end
 
   def update(id, project)
-    form = ProjectForm.new(Project.find(id), project)
+    edit_project = Project.find(id)
+    authorize(edit_project)
+    form = ProjectForm.new(edit_project, project)
     if form.save
       redirect_to form, notice: t('.success')
     else
       flash[:alert] = t('.failed')
       redirect_to edit_project_path(form)
     end
+  end
+
+  def destroy(id)
+    @project = Project.find(id)
+    authorize(@project)
+    @project.destroy!
+
+    redirect_to projects_path, notice: t('.success')
   end
 end

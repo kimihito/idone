@@ -25,6 +25,8 @@ ja:
     new:
       submit: 作成する
       create_new_project: 新しいプロジェクトを作成
-  actions:
-    action:
+    destroy:
+      success: プロジェクトを削除しました
+  contributions:
+    contribution:
       ago: '%{time_ago_in_words}前'

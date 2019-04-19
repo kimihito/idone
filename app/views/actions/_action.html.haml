@@ -1,7 +1,0 @@
-%li.Box-row.d-flex.flex-items-center
-  .flex-auto
-    %span.mr-2
-      ✅
-      = action.body
-    = link_to "##{action.project.title}", action.project, class: 'Label Label--gray-darker'
-  %time.text-small.text-gray= t('.ago', time_ago_in_words: time_ago_in_words(action.created_at))
