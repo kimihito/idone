@@ -26,7 +26,6 @@ class Project < ApplicationRecord
 
   belongs_to :owner, class_name: 'User'
 
-  has_many :contributions, dependent: :destroy
   has_many :tracks, dependent: :destroy
 
   scope :recent, -> { order('created_at DESC') }

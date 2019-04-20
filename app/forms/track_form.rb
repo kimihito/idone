@@ -1,4 +1,4 @@
-class ContributionForm < Patterns::Form
+class TrackForm < Patterns::Form
   include Twitter::TwitterText::Extractor
 
   param_key "track"

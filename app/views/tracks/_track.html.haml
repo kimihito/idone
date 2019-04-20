@@ -3,5 +3,5 @@
     %span.mr-2
       ✅
       = track.raw_body
-    = link_to "##{track.project.title}", contribution.project, class: 'Label Label--gray-darker'
+    = link_to "##{track.project.title}", track.project, class: 'Label Label--gray-darker'
   %time.text-small.text-gray= t('.ago', time_ago_in_words: time_ago_in_words(track.created_at))

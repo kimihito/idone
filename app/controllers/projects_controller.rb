@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   end
 
   def show(id)
-    @project = Project.includes(contributions: :owner).find(id)
+    @project = Project.includes(tracks: :owner).find(id)
     authorize(@project)
   end
 

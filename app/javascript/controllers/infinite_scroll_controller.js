@@ -5,7 +5,7 @@ export default class extends Controller {
   connect() {
     new InfiniteScroll(this.element, {
       path: '.next_page',
-      append: '.contribution',
+      append: '.track',
       hideNav: '.paginate-container',
       history: false
     })
