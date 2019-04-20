@@ -1,7 +1,7 @@
-class ContributionForm < Patterns::Form
+class TrackForm < Patterns::Form
   include Twitter::TwitterText::Extractor
 
-  param_key "contribution"
+  param_key "track"
   attribute :raw_body, String
   attribute :owner_id, String
 

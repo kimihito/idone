@@ -30,7 +30,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :lockable
 
   has_many :projects, foreign_key: 'owner_id', dependent: :delete_all
-  has_many :contributions, foreign_key: 'owner_id', dependent: :delete_all
+  has_many :tracks, foreign_key: 'owner_id', dependent: :delete_all
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later

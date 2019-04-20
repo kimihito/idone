@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'root#index'
   resources :users, only: [:index]
   resources :contributions
+  resources :tracks
 
   resources :projects do
     resource :done, only: [:show], module: 'projects'

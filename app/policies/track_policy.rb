@@ -1,4 +1,4 @@
-class ContributionPolicy < ApplicationPolicy
+class TrackPolicy < ApplicationPolicy
   def index?
     true
   end
