@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_19_123750) do
+ActiveRecord::Schema.define(version: 2019_04_20_112733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -33,20 +33,6 @@ ActiveRecord::Schema.define(version: 2019_04_19_123750) do
     t.index ["recipient_type", "recipient_id"], name: "index_activities_on_recipient_type_and_recipient_id"
     t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
     t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
-  end
-
-  create_table "contributions", force: :cascade do |t|
-    t.uuid "project_id", null: false
-    t.uuid "owner_id", null: false
-    t.string "body", default: "", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "raw_body", default: "", null: false
-    t.index ["body"], name: "index_contributions_on_body"
-    t.index ["created_at"], name: "index_contributions_on_created_at"
-    t.index ["owner_id"], name: "index_contributions_on_owner_id"
-    t.index ["project_id"], name: "index_contributions_on_project_id"
-    t.index ["updated_at"], name: "index_contributions_on_updated_at"
   end
 
   create_table "login_activities", force: :cascade do |t|
@@ -111,8 +97,6 @@ ActiveRecord::Schema.define(version: 2019_04_19_123750) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "contributions", "projects"
-  add_foreign_key "contributions", "users", column: "owner_id"
   add_foreign_key "projects", "users", column: "owner_id"
   add_foreign_key "tracks", "projects"
   add_foreign_key "tracks", "users", column: "owner_id"
