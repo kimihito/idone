@@ -29,8 +29,8 @@ jobs:
             - idone-{{ checksum "Gemfile.lock" }}
             - idone-
       - run:
-          name: install libidn11-dev
-          command: sudo apt-get install -y libidn11-dev
+          name: install dependency packages
+          command: sudo apt-get install -y libidn11-dev fonts-migmix
       - run:
           name: install dependencies
           command: bundle check || bundle install
