@@ -1,6 +1,6 @@
 FROM ruby:2.6.2
 ENV LANG C.UTF-8
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev unzip libldap2-dev libidn11-dev
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev unzip libldap2-dev libidn11-dev fonts-migmix
 
 # Node.js
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
