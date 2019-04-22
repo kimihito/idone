@@ -13,6 +13,8 @@ gem 'groupdate'
 
 gem 'action_args'
 
+gem 'active_decorator'
+
 gem 'devise'
 
 gem 'devise-i18n'
