@@ -1,0 +1,7 @@
+%nav.mt-lg-0.my-3.d-flex.flex-row
+  = link_to_unless_current "✅ Tracks", project_path(@project), class: 'border border-0 rounded-2 mr-2 p-2 no-underline text-gray-light' do
+    = link_to "✅ Tracks", project_path(@project), class: 'border border-0 bg-white rounded-2 mr-2 p-2 no-underline text-gray-dark'
+  = link_to_unless_current "👥 Member", project_members_path(@project), class: 'border border-0 rounded-2 mr-2 p-2 no-underline text-gray-light' do
+    = link_to "👥 Member", project_members_path(@project), class: 'border border-0 bg-white rounded-2 mr-2 p-2 no-underline text-gray-dark'
+  = link_to_unless_current "📊 Stats", project_stats_path(@project), class: 'border border-0 rounded-2 mr-2 p-2 no-underline text-gray-light' do
+    = link_to "📊 Stats", project_stats_path(@project), class: 'border border-0 bg-white rounded-2 mr-2 p-2 no-underline text-gray-dark'

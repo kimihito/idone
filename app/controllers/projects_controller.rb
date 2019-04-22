@@ -11,6 +11,8 @@ class ProjectsController < ApplicationController
   def show(id)
     @project = Project.includes(tracks: :owner).find(id)
     authorize(@project)
+    @pagy, tracks = pagy(@project.tracks.recent)
+    @tracks_by_date = tracks.group_by{ |track| track.created_at.to_date }
   end
 
   def new

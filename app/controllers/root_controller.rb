@@ -1,6 +1,4 @@
 class RootController < ApplicationController
-  include Pagy::Backend
-
   def index
     @pagy, tracks = pagy(Track.includes(:project).recent)
     authorize(tracks)

@@ -27,6 +27,9 @@ ja:
       create_new_project: 新しいプロジェクトを作成
     destroy:
       success: プロジェクトを削除しました
-  contributions:
-    contribution:
+    tracks:
+      track:
+        ago: '%{time_ago_in_words}前'
+  tracks:
+    track:
       ago: '%{time_ago_in_words}前'

@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   resources :tracks
 
   resources :projects do
-    resource :done, only: [:show], module: 'projects'
-    resource :stats, only: [:show], module: 'projects'
-    resources :contributions, only: [:index, :new, :create], module: 'projects'
+    with_options module: 'projects' do
+      resources :tracks, only: [:index]
+      resources :members, only: [:index]
+      resource :stats, only: [:show]
+    end
   end
 
   authenticated :user do

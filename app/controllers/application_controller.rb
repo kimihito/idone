@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
   include Pundit
   after_action :verify_authorized, unless: :devise_controller?
 
