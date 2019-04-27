@@ -1,6 +1,6 @@
 .col-lg-3.col-12.float-left.pr-lg-3
   =render 'projects/layouts/summary', project: @project
-.col-lg-9.col-12.float-left{ data: { controller: 'infinite-scroll' }}
+.col-lg-9.col-12.float-left
   =render 'navigation', project: @project
   - @tracks_by_date.each do |date, tracks|
     .Box.mb-2.track
