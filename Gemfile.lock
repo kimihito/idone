@@ -352,6 +352,9 @@ GEM
     tilt (2.0.9)
     treetop (1.6.10)
       polyglot (~> 0.3)
+    turbolinks (5.2.0)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     twitter-text (3.0.0)
       idn-ruby
       unf (~> 0.1.0)
@@ -446,6 +449,7 @@ DEPENDENCIES
   spring!
   spring-watcher-listen
   strong_migrations
+  turbolinks
   twitter-text
   tzinfo-data
   web-console

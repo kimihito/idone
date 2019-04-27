@@ -39,6 +39,8 @@ gem 'pretender'
 
 gem 'twitter-text'
 
+gem 'turbolinks'
+
 gem 'strong_migrations'
 
 gem 'rails-patterns'
