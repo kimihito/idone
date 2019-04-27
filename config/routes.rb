@@ -15,10 +15,16 @@ Rails.application.routes.draw do
 
   authenticated :user do
     resources :contributions, only: [:new, :create]
+
     namespace :my do
       resources :projects, only: :index, default: { format: :json }
     end
+
+    namespace :root do
+      resources :tracks, only: [:create]
+    end
   end
+
 
   mount PgHero::Engine, at: "pghero"
 
