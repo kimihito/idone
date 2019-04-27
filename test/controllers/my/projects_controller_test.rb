@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProjectsControllerTest < ActionDispatch::IntegrationTest
+class My::ProjectsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
   fixtures :users, :projects
 
