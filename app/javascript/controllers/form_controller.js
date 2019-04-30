@@ -5,6 +5,6 @@ export default class extends Controller {
 
   onSaveFail(event) {
     const [data, status, xhr] = event.detail
-    this.errorsTarget.innerHTML(xhr.response)
+    this.errorsTarget.innerHTML = xhr.response
   }
 }

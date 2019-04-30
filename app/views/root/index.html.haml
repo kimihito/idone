@@ -1,6 +1,6 @@
 - if policy(Track).new?
   .col-12
-    = form_with model: TrackForm.new(owner: current_user), data: { controller: 'autocomplete form', action: 'ajax:error->form#onSaveFail' }, url: root_tracks_url do |f|
+    = form_with model: TrackForm.new(owner: current_user), data: { type: 'html', controller: 'autocomplete form', action: 'ajax:error->form#onSaveFail' }, url: root_tracks_url do |f|
       %div{data: {target: 'form.errors' }}
       .col-10.mb-3.pr-2.float-left
         = f.text_field :raw_body, class: 'form-control input-block', autocomplete: 'off', data: { target: 'autocomplete.rawBody' }
