@@ -1,0 +1,6 @@
+version: '2'
+services:
+  rails:
+    volumes:
+      - ~/.gitconfig:/root/.gitconfig
+

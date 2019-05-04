@@ -1,0 +1,13 @@
+// See https://aka.ms/vscode-remote/containers for the
+// documentation about the devcontainer.json format
+{
+    "name": "idone",
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "docker-compose.extend.yml"
+    ],
+    "service": "rails",
+    "workspaceFolder": "/idone",
+    "extensions": ["karunamurti.haml", "castwide.solargraph"],
+    "postCreateCommand": ["bundle", "yarn"]
+}

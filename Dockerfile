@@ -22,3 +22,7 @@ ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
 RUN bundle install --jobs 4
 ADD . /idone
+
+RUN apt-get autoremove -y \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*

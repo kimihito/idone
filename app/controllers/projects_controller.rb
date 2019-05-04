@@ -1,8 +1,7 @@
 class ProjectsController < ApplicationController
   include Pagy::Backend
   permits :title, :owner_id, model_name: 'Project'
-
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @pagy, @projects = pagy(Project.recent)
