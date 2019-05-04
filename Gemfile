@@ -41,6 +41,8 @@ gem 'twitter-text'
 
 gem 'turbolinks'
 
+gem 'turbolinks_render'
+
 gem 'strong_migrations'
 
 gem 'rails-patterns'

@@ -1,6 +1,8 @@
 class My::ProjectsController < MyController
   def index
-    projects = current_user.projects.search(title: params[:q]).recent
+    queries = params[:q]&.split
+    tags = queries.blank? ? [{title: ''}] : queries.map { |p| { title: p } }
+    projects = current_user.projects.search(or: tags).recent
     authorize(projects)
     render json: ProjectSerializer.new(projects).serialized_json
   end

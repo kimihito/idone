@@ -9,6 +9,8 @@ ja:
     attributes:
       project_form:
         title: タイトル
+      track_form:
+        raw_body: 記録
   layouts:
     header:
       sign_up: 新規登録
@@ -33,3 +35,7 @@ ja:
   tracks:
     track:
       ago: '%{time_ago_in_words}前'
+  root:
+    tracks:
+      create:
+        success: '%{project_name}に記録しました'

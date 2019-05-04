@@ -3,7 +3,10 @@
     = form_with model: TrackForm.new(owner: current_user), data: { type: 'html', controller: 'autocomplete form', action: 'ajax:error->form#onSaveFail' }, url: root_tracks_url do |f|
       %div{data: {target: 'form.errors' }}
       .col-10.mb-3.pr-2.float-left
-        = f.text_field :raw_body, class: 'form-control input-block', autocomplete: 'off', data: { target: 'autocomplete.rawBody' }
+        %dl.form-group.m-0.errored
+          %dd
+            = f.text_field :raw_body, class: 'form-control input-block width-full', autocomplete: 'off', data: { target: 'autocomplete.rawBody', action: 'input->autocomplete#validProject tribute-replaced->autocomplete#validProject' }
+          %dd.error{data: {target: 'autocomplete.error'}}
       .col-2.mb-3.float-left
         = f.submit class: 'btn btn-block btn-primary'
 

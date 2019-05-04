@@ -355,6 +355,9 @@ GEM
     turbolinks (5.2.0)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    turbolinks_render (0.9.13)
+      rails (>= 5.2.0)
+      turbolinks-source (~> 5.1)
     twitter-text (3.0.0)
       idn-ruby
       unf (~> 0.1.0)
@@ -450,6 +453,7 @@ DEPENDENCIES
   spring-watcher-listen
   strong_migrations
   turbolinks
+  turbolinks_render
   twitter-text
   tzinfo-data
   web-console
