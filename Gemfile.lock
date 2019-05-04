@@ -435,6 +435,7 @@ DEPENDENCIES
   rails-i18n
   rails-patterns
   rollout
+  rubocop
   ruby-debug-ide
   search_cop
   selenium-webdriver
