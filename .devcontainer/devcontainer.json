@@ -8,5 +8,6 @@
     ],
     "service": "rails",
     "workspaceFolder": "/idone",
-    "extensions": ["karunamurti.haml", "castwide.solargraph"]
+    "extensions": ["karunamurti.haml", "castwide.solargraph"],
+    "postCreateCommand": ["bundle", "yarn"]
 }
