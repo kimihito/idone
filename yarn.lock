@@ -6564,10 +6564,10 @@ tough-cookie@~2.4.3:
     psl "^1.1.24"
     punycode "^1.4.1"
 
-tributejs@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/tributejs/-/tributejs-3.7.0.tgz#1a6f285412bf478d622fcce32781a7ce7f7a9314"
-  integrity sha512-NdLbx4D39GNY2gucEUPnSep/soDyjrVjADrd7sMRidfVHdlRU7nTbsqIPN6HeJVuql7m8nBCM26iQrYSk1jvBA==
+tributejs@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/tributejs/-/tributejs-3.7.1.tgz#af6529358810022bc90650b3ff2094344591a1dd"
+  integrity sha512-GsRnD7w7u4BgrzYm/9ZskuVpVTVtY83WrLA5PtBl2oOYTQFGVVVHS7vAGwgmO0iStXzEa6LlVUiB4dsEUYo2ug==
 
 trim-newlines@^1.0.0:
   version "1.0.0"
