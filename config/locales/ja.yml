@@ -39,3 +39,6 @@ ja:
     tracks:
       create:
         success: '%{project_name}に記録しました'
+    index:
+      placeholder:
+        use_hashtag: '#を入力するとプロジェクトが入力できます'

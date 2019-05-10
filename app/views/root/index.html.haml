@@ -5,7 +5,8 @@
       .col-10.mb-3.pr-2.float-left
         %dl.form-group.m-0.errored
           %dd
-            = f.text_field :raw_body, class: 'form-control input-block width-full', autocomplete: 'off', data: { target: 'autocomplete.rawBody', action: 'input->autocomplete#validProject tribute-replaced->autocomplete#validProject' }
+            = f.text_field :raw_body, class: 'form-control input-block width-full', placeholder: t('.placeholder.use_hashtag'), autocomplete: 'off', data: { target: 'autocomplete.rawBody', action: 'input->autocomplete#validProject tribute-replaced->autocomplete#validProject' }
+            = f.hidden_field :project_id, data: { target: 'autocomplete.projectId' }
           %dd.error{data: {target: 'autocomplete.error'}}
       .col-2.mb-3.float-left
         = f.submit class: 'btn btn-block btn-primary'
