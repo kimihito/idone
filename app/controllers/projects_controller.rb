@@ -1,18 +1,11 @@
 class ProjectsController < ApplicationController
   include Pagy::Backend
   permits :title, :owner_id, model_name: 'Project'
-  before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[index]
 
   def index
     @pagy, @projects = pagy(Project.recent)
     authorize(@projects)
-  end
-
-  def show(id)
-    @project = Project.includes(tracks: :owner).find(id)
-    authorize(@project)
-    @pagy, tracks = pagy(@project.tracks.recent)
-    @tracks_by_date = tracks.group_by_day(reverse: true) { |t| t.created_at }
   end
 
   def new

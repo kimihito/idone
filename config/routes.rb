@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :contributions
   resources :tracks
 
-  resources :projects do
+  resources :projects, only: [:index, :new, :create, :edit, :update, :destroy] do
     with_options module: 'projects' do
       resources :tracks, only: [:index]
       resources :members, only: [:index]
