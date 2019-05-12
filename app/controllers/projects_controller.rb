@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
     @project = Project.includes(tracks: :owner).find(id)
     authorize(@project)
     @pagy, tracks = pagy(@project.tracks.recent)
-    @tracks_by_date = tracks.group_by{ |track| track.created_at.to_date }
+    @tracks_by_date = tracks.group_by_day(reverse: true) { |t| t.created_at }
   end
 
   def new

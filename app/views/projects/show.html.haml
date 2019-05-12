@@ -7,6 +7,9 @@
       .Box-header
         %h3.Box-title
           = date
-      %ul
-        =render tracks
+      .Box-body
+        - tracks.group_by(&:owner_id).each do |id, ts|
+          =id
+          %ul
+            =render ts
   =render 'layouts/pagination', pagy: @pagy
