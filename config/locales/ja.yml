@@ -1,4 +1,8 @@
 ja:
+  helpers:
+    submit:
+      track:
+        create: '保存する'
   activerecord:
     attributes:
       project:
@@ -17,6 +21,8 @@ ja:
       sign_in: ログイン
       sign_out: ログアウト
       create_new_project: 'プロジェクトを作成'
+      new_track: '記録する'
+      close_dialog: 閉じる
   projects:
     create:
       success: プロジェクトを作成しました
@@ -33,6 +39,9 @@ ja:
       track:
         ago: '%{time_ago_in_words}前'
   tracks:
+    form:
+      placeholder:
+        use_hashtag: '#を入力するとプロジェクトが入力できます'
     track:
       ago: '%{time_ago_in_words}前'
   root:

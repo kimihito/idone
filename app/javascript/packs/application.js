@@ -11,6 +11,8 @@ import Turbolinks from 'turbolinks'
 import quicklink from 'quicklink/dist/quicklink.umd.js'
 import feather from 'feather-icons'
 import 'whatwg-fetch'
+import '@webcomponents/custom-elements'
+import 'details-dialog-element'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 

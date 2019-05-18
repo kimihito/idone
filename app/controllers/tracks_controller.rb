@@ -12,6 +12,9 @@ class TracksController < ApplicationController
     new_track = current_user.tracks.build
     authorize(new_track)
     @form = TrackForm.new(new_track, track)
-    @form.save
+    if @form.save
+    else
+      render partial: 'layouts/shared/error_messages', locals: { resource: @form }, status: :unprocessable_entity, turbolinks: false
+    end
   end
 end

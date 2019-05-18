@@ -1,12 +1,42 @@
 %header.border-bottom.bg-white
   .container-lg.clearfix.p-2
-    .d-flex.flex-md-row.flex-items-center.flex-md-items-start
-      .col-4.d-flex
+    .d-flex.flex-items-center
+      .col-4
         = link_to '✅ idone', root_path, class: 'h2 text-shadow-light text-gray-dark no-underline'
+      - if policy(Track).new?
+        .col-2
+          %details.details-reset.details-with-dialog
+            %summary.text-gray-dark.d-inline-block
+              %span.h2.v-align-middle
+                📝
+              = t('.new_track')
+            %details-dialog.anim-fade-in.fast.wide
+              .Box.d-flex.flex-column
+                %h5.Box-header
+                  %span.h2.v-align-middle
+                    📝
+                  = t('.new_track')
+                .Box-body.overflow-auto
+                  = render 'tracks/form'
+                .Box-footer.text-right
+                  %button.btn{type: "button", data: { 'close-dialog': true } }
+                    = t('.close_dialog')
+      .col-3
+        = link_to projects_path, class: 'text-gray-dark no-underline' do
+          %span.h2.v-align-middle
+            🗂
+          プロジェクト
+      .col-3
+        = link_to users_path, class: 'text-gray-dark no-underline' do
+          %span.h2.v-align-middle
+            👥
+          メンバー
       .col-12.d-flex.flex-justify-end.flex-items-center
         - if user_signed_in?
-          = link_to new_project_path, class: 'd-block mr-2 text-gray-dark no-underline tooltipped tooltipped-s', "aria-label": t('.create_new_project') do
-            %i{data:{feather: 'plus'}, height: 24, width: 24}
+          %details.details-reset.details-overlay
+            %summary
+              %i{data:{feather: 'more-vertical'}, height: 24, width: 24}
+            = link_to t('.sign_out'), destroy_user_session_path, class: 'btn mr-1', role: 'button', method: :delete
           = link_to t('.sign_out'), destroy_user_session_path, class: 'btn mr-1', role: 'button', method: :delete
         - else
           = link_to t('.sign_in'), new_user_session_path, class: 'btn mr-1', role: 'button'
