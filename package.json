@@ -6,7 +6,7 @@
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
     "dayjs": "^1.8.14",
-    "feather-icons": "^4.21.0",
+    "feather-icons": "^4.22.0",
     "infinite-scroll": "^3.0.6",
     "lodash": "^4.17.11",
     "qs": "^6.7.0",
