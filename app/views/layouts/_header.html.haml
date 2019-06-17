@@ -1,10 +1,10 @@
 %header.border-bottom.bg-white
   .container-lg.clearfix.p-2
-    .d-flex.flex-items-center
-      .col-4
+    .d-flex.flex-items-center.flex-justify-between
+      .flex-item-equal
         = link_to '✅ idone', root_path, class: 'h2 text-shadow-light text-gray-dark no-underline'
       - if policy(Track).new?
-        .col-2
+        .flex-item-equal
           %details.details-reset.details-with-dialog
             %summary.text-gray-dark.d-inline-block
               %span.h2.v-align-middle
@@ -21,22 +21,29 @@
                 .Box-footer.text-right
                   %button.btn{type: "button", data: { 'close-dialog': true } }
                     = t('.close_dialog')
-      .col-3
+      .flex-item-equal
         = link_to projects_path, class: 'text-gray-dark no-underline' do
           %span.h2.v-align-middle
             🗂
           プロジェクト
-      .col-3
+      .flex-item-equal
         = link_to users_path, class: 'text-gray-dark no-underline' do
           %span.h2.v-align-middle
             👥
-          メンバー
-      .col-12.d-flex.flex-justify-end.flex-items-center
+          ユーザ
+      .d-flex.flex-justify-end.flex-items-center
         - if user_signed_in?
-          %details.details-reset.details-overlay
+          %details.details-reset.details-overlay.position-relative
             %summary
               %i{data:{feather: 'more-vertical'}, height: 24, width: 24}
-            = link_to t('.sign_out'), destroy_user_session_path, class: 'btn mr-1', role: 'button', method: :delete
+            .position-absolute.right-0
+              %nav.menu.d-flex.flex-column{style: 'min-width: 100px;'}
+                = link_to 'hi', root_path, class: 'menu-item'
+                = link_to t('.sign_out'), destroy_user_session_path, class: 'menu-item', method: :delete
+                = link_to t('.sign_out'), destroy_user_session_path, class: 'menu-item', method: :delete
+                = link_to t('.sign_out'), destroy_user_session_path, class: 'menu-item', method: :delete
+
+              %ul
           = link_to t('.sign_out'), destroy_user_session_path, class: 'btn mr-1', role: 'button', method: :delete
         - else
           = link_to t('.sign_in'), new_user_session_path, class: 'btn mr-1', role: 'button'
