@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/rails/spring.git
-  revision: e426883975e5e239e05397ed47fc9f3069a6cb3a
+  revision: ec03cc7ba126535a9d5562fb44583485245ee816
   specs:
-    spring (2.0.2)
+    spring (2.1.0)
 
 GEM
   remote: https://rubygems.org/
