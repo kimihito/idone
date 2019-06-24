@@ -60,10 +60,10 @@ GEM
       encryptor (~> 3.0.0)
     audited (4.8.0)
       activerecord (>= 4.0, < 5.3)
-    authtrail (0.1.3)
-      activerecord (>= 4.2)
+    authtrail (0.2.0)
+      activerecord (>= 5)
       geocoder
-      railties (>= 4.2)
+      railties (>= 5)
       warden
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
