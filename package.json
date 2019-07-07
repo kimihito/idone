@@ -15,7 +15,7 @@
     "tributejs": "^3.7.1",
     "ts-loader": "^5.4.5",
     "turbolinks": "^5.2.0",
-    "twemoji": "^12.0.4",
+    "twemoji": "^12.1.2",
     "twitter-text": "^3.0.0",
     "typescript": "^3.5.2",
     "whatwg-fetch": "^3.0.0"
