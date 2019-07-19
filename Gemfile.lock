@@ -58,8 +58,8 @@ GEM
     ast (2.4.0)
     attr_encrypted (3.1.0)
       encryptor (~> 3.0.0)
-    audited (4.8.0)
-      activerecord (>= 4.0, < 5.3)
+    audited (4.9.0)
+      activerecord (>= 4.2, < 6.1)
     authtrail (0.2.0)
       activerecord (>= 5)
       geocoder
