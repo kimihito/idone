@@ -205,7 +205,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oj (3.8.0)
+    oj (3.8.1)
     orm_adapter (0.5.0)
     ougai (1.7.1)
       oj (~> 3.4)
