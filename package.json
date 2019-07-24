@@ -2,7 +2,7 @@
   "name": "idone",
   "private": true,
   "dependencies": {
-    "@primer/css": "^12.4.0",
+    "@primer/css": "^12.5.0",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
     "dayjs": "^1.8.15",
