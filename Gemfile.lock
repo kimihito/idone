@@ -343,7 +343,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    strong_migrations (0.4.0)
+    strong_migrations (0.4.1)
       activerecord (>= 5)
     temple (0.8.1)
     thor (0.20.3)
