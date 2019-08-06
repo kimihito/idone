@@ -12,7 +12,7 @@
     "qs": "^6.7.0",
     "quicklink": "^1.0.0",
     "stimulus": "^1.1.1",
-    "tributejs": "^3.7.1",
+    "tributejs": "^3.7.2",
     "ts-loader": "^5.4.5",
     "turbolinks": "^5.2.0",
     "twemoji": "^12.1.2",
