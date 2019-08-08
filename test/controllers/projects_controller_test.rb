@@ -32,7 +32,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   test "should show project" do
     get project_url(@project)
-    assert_response :success
+    assert_redirected_to project_tracks_url(@project)
   end
 
   test "should get edit" do

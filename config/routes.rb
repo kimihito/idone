@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'projects/:id', to: redirect("/projects/%{id}/tracks")
+
   authenticated :user do
     resources :contributions, only: [:new, :create]
 

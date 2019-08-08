@@ -36,7 +36,7 @@
           %details.details-reset.details-overlay.position-relative
             %summary
               %i{data:{feather: 'more-vertical'}, height: 24, width: 24}
-            .position-absolute.right-0
+            .position-absolute.right-0{style: 'z-index: 999;' }
               %nav.menu.d-flex.flex-column{style: 'min-width: 100px;'}
                 = link_to 'hi', root_path, class: 'menu-item'
                 = link_to t('.sign_out'), destroy_user_session_path, class: 'menu-item', method: :delete
