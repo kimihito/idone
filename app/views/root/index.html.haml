@@ -1,10 +1,3 @@
-.col-12
-  = form_with model: TrackForm.new(owner: current_user), data: { controller: 'autocomplete' }, local: true do |f|
-    .col-10.mb-3.pr-2.float-left
-      = f.text_field :raw_body, class: 'form-control input-block', autocomplete: 'off', data: { target: 'autocomplete.rawBody' }
-    .col-2.mb-3.float-left
-      = f.submit class: 'btn btn-block btn-primary'
-
 .col-lg-3.col-12.float-left.pr-lg-3
   .Box.border-0
     .Box-body
@@ -12,12 +5,15 @@
     .Box-footer
       HiHI
 
-.col-lg-9.col-12.float-left{ data: { controller: 'infinite-scroll' } }
+.col-lg-9.col-12.float-left
   - @tracks_by_date.each do |date, tracks|
     .Box.mb-2.track
       .Box-header
         %h3.Box-title
           = date
-      %ul
-        =render tracks
+      - tracks.group_by(&:owner_id).each do |owner_id, ts|
+        .Box-body
+          =owner_id
+          %ul
+            =render ts
   =render 'layouts/pagination', pagy: @pagy

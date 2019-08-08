@@ -8,12 +8,12 @@
 project_1_track_<%= a %>:
   owner: idoneman
   project: project_1
-  raw_body: "project 1 Raw body <%= a %>"
+  raw_body: "#プロジェクト1 Raw body <%= a %>"
   created_at: <%= Time.current.days_ago(i) %>
 
 project_2_track_<%= b %>:
   owner: idoneman2
   project: project_2
-  raw_body: "project 2 Raw body <%= b %>"
+  raw_body: "#プロジェクト2 Raw body <%= b %>"
   created_at: <%= Time.current.days_ago(i) %>
 <% end %>

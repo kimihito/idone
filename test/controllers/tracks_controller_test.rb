@@ -11,7 +11,7 @@ class TracksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create track" do
     assert_difference "Track.count" do
-      post tracks_url, params: { track: { raw_body: "##{@project.title} track", owner: @user }}
+      post tracks_url, params: { track: { raw_body: "##{@project.title} track", owner_id: @user.id, project_id: @project.id }}
     end
 
     assert_equal Track.recent.first.raw_body, "##{@project.title} track"

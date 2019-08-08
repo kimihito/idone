@@ -6,4 +6,8 @@ class TrackPolicy < ApplicationPolicy
   def create?
     !!user
   end
+
+  def new?
+    !!user
+  end
 end

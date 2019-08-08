@@ -31,6 +31,7 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_decorator (1.2.0)
     activejob (5.2.3)
       activesupport (= 5.2.3)
       globalid (>= 0.3.6)
@@ -351,6 +352,12 @@ GEM
     tilt (2.0.9)
     treetop (1.6.10)
       polyglot (~> 0.3)
+    turbolinks (5.2.0)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
+    turbolinks_render (0.9.13)
+      rails (>= 5.2.0)
+      turbolinks-source (~> 5.1)
     twitter-text (3.0.0)
       idn-ruby
       unf (~> 0.1.0)
@@ -393,6 +400,7 @@ PLATFORMS
 
 DEPENDENCIES
   action_args
+  active_decorator
   attr_encrypted
   audited
   authtrail
@@ -444,6 +452,8 @@ DEPENDENCIES
   spring!
   spring-watcher-listen
   strong_migrations
+  turbolinks
+  turbolinks_render
   twitter-text
   tzinfo-data
   web-console

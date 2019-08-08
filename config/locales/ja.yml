@@ -1,4 +1,8 @@
 ja:
+  helpers:
+    submit:
+      track:
+        create: '保存する'
   activerecord:
     attributes:
       project:
@@ -9,12 +13,16 @@ ja:
     attributes:
       project_form:
         title: タイトル
+      track_form:
+        raw_body: 記録
   layouts:
     header:
       sign_up: 新規登録
       sign_in: ログイン
       sign_out: ログアウト
       create_new_project: 'プロジェクトを作成'
+      new_track: '記録する'
+      close_dialog: 閉じる
   projects:
     create:
       success: プロジェクトを作成しました
@@ -27,6 +35,19 @@ ja:
       create_new_project: 新しいプロジェクトを作成
     destroy:
       success: プロジェクトを削除しました
-  contributions:
-    contribution:
+    tracks:
+      track:
+        ago: '%{time_ago_in_words}前'
+  tracks:
+    form:
+      placeholder:
+        use_hashtag: '#を入力するとプロジェクトが入力できます'
+    track:
       ago: '%{time_ago_in_words}前'
+  root:
+    tracks:
+      create:
+        success: '%{project_name}に記録しました'
+    index:
+      placeholder:
+        use_hashtag: '#を入力するとプロジェクトが入力できます'

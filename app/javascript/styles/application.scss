@@ -1,9 +1,28 @@
 @import "~@primer/css/index.scss";
 @import "~tributejs/scss/tribute.scss";
+@import "details-dialog-element/index.css";
 
 img.emoji {
   height: 1em;
   width: 1em;
   margin: 0 .05em 0 .1em;
   vertical-align: -0.1em;
+}
+
+.details-with-dialog[open] {
+  summary {
+    cursor: default;
+  }
+
+  &:before {
+    content: " ";
+    background: rgba(0, 0, 0, 0.3);
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
 }

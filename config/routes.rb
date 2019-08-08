@@ -5,18 +5,28 @@ Rails.application.routes.draw do
   resources :contributions
   resources :tracks
 
-  resources :projects do
-    resource :done, only: [:show], module: 'projects'
-    resource :stats, only: [:show], module: 'projects'
-    resources :contributions, only: [:index, :new, :create], module: 'projects'
+  resources :projects, only: [:index, :new, :create, :edit, :update, :destroy] do
+    with_options module: 'projects' do
+      resources :tracks, only: [:index]
+      resources :members, only: [:index]
+      resource :stats, only: [:show]
+    end
   end
+
+  get 'projects/:id', to: redirect("/projects/%{id}/tracks")
 
   authenticated :user do
     resources :contributions, only: [:new, :create]
+
     namespace :my do
       resources :projects, only: :index, default: { format: :json }
     end
+
+    namespace :root do
+      resources :tracks, only: [:create]
+    end
   end
+
 
   mount PgHero::Engine, at: "pghero"
 

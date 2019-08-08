@@ -13,6 +13,8 @@ gem 'groupdate'
 
 gem 'action_args'
 
+gem 'active_decorator'
+
 gem 'devise'
 
 gem 'devise-i18n'
@@ -36,6 +38,10 @@ gem 'pundit'
 gem 'pretender'
 
 gem 'twitter-text'
+
+gem 'turbolinks'
+
+gem 'turbolinks_render'
 
 gem 'strong_migrations'
 

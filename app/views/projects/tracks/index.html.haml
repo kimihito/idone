@@ -1,0 +1,15 @@
+.col-lg-3.col-12.float-left.pr-lg-3
+  =render 'projects/layouts/summary', project: @project
+.col-lg-9.col-12.float-left
+  =render 'projects/navigation', project: @project
+  - @tracks_by_date.each do |date, tracks|
+    .Box.mb-2.track
+      .Box-header
+        %h3.Box-title
+          = date
+      .Box-body
+        - tracks.group_by(&:owner_id).each do |id, ts|
+          =id
+          %ul
+            =render ts
+  =render 'layouts/pagination', pagy: @pagy

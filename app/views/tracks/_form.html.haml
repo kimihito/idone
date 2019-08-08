@@ -1,0 +1,11 @@
+= form_with model: TrackForm.new(owner_id: current_user.id), data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' }, url: tracks_url do |f|
+  %div{data: { target: 'form.errors' }}
+  .mb-3
+    %dl.form-group.m-0.mb-1.errored
+      %dd
+        = f.select :project_id, current_user.projects.map { |p| [p.title, p.id]}, {}, { class: 'form-select' }
+    %dl.form-group.m-0.errored
+      %dd
+        = f.text_area :raw_body, class: 'form-control', placeholder: t('.placeholder.use_hashtag'), autocomplete: 'on', style: 'height: 100px; min-height: 100px;'
+  .mb-3
+    = f.submit class: 'btn btn-block btn-primary'
