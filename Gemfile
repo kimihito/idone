@@ -43,8 +43,6 @@ gem 'turbolinks'
 
 gem 'turbolinks_render'
 
-gem 'strong_migrations'
-
 gem 'rails-patterns'
 
 gem 'rack-attack'
