@@ -3,9 +3,9 @@ services:
   datastore:
     image: busybox
     volumes:
-      - bundle_install:/usr/local/bundle
-      - node_modules:/idone/node_modules
-      - postgres:/var/lib/postgresql/data
+      - bundle_install:/usr/local/bundle:cached
+      - node_modules:/idone/node_modules:cached
+      - postgres:/var/lib/postgresql/data:cached
   mailhog:
     image: mailhog/mailhog:v1.0.0
     ports:
@@ -43,7 +43,7 @@ services:
     volumes_from:
       - datastore
     volumes:
-      - .:/idone
+      - .:/idone:cached
     ports:
       - "3000:3000"
     depends_on:
@@ -60,7 +60,7 @@ services:
       - SMTP_ADDRESS=mailhog
       - SMTP_PORT=1025
     volumes:
-      - .:/idone
+      - .:/idone:cached
     volumes_from:
       - datastore
     depends_on:
@@ -70,7 +70,7 @@ services:
     build: .
     command: bin/webpack-dev-server
     volumes:
-      - .:/idone
+      - .:/idone:cached
     volumes_from:
       - datastore
     ports:
@@ -92,7 +92,7 @@ services:
       - REDIS_URL=redis://redis:6379
 
     volumes:
-      - .:/idone
+      - .:/idone:cached
     volumes_from:
       - datastore
     ports:
