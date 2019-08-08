@@ -97,7 +97,7 @@ GEM
     concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     crass (1.0.4)
-    debase (0.2.3)
+    debase (0.2.4)
       debase-ruby_core_source (>= 0.10.2)
     debase-ruby_core_source (0.10.5)
     descendants_tracker (0.0.4)
