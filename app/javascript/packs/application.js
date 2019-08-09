@@ -24,7 +24,7 @@ import "regenerator-runtime/runtime"
 require("@rails/ujs").start()
 
 const application = Application.start()
-const context = require.context("controllers", true, /.js$/)
+const context = require.context("controllers", true, /.(js|.ts)$/)
 application.load(definitionsFromContext(context))
 
 import "controllers"
