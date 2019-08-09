@@ -2808,6 +2808,14 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
+event-emitter@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/event-emitter/-/event-emitter-0.3.5.tgz#df8c69eef1647923c7157b9ce83840610b02cc39"
+  integrity sha1-34xp7vFkeSPHFXuc6DhAYQsCzDk=
+  dependencies:
+    d "1"
+    es5-ext "~0.10.14"
+
 eventemitter3@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
@@ -2990,10 +2998,10 @@ faye-websocket@~0.11.1:
   dependencies:
     websocket-driver ">=0.5.1"
 
-feather-icons@^4.23.0:
-  version "4.23.0"
-  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.23.0.tgz#9b4b727140a9bf8f266aedbfba73eba2e82649a2"
-  integrity sha512-hTDIOMsr7RLNxG4mAUAFLqSkrUfSOgWL5lPvMwyOrNEFbjlOdaXP4ImZJAR5EkI0C8F1EtfkGODGJbxgeg98Uw==
+feather-icons@^4.24.0:
+  version "4.24.0"
+  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.24.0.tgz#5b2245cfc7fd8845344ccd86a28f29fae0c350b6"
+  integrity sha512-1FdY6lVcCUjWOdHj8PuCdNTSAY1wrXoBdgQBaxftS0r8SDj9pMAcl7zDxz7W9uqsO663f4MQZYBWGOmUL+pUjg==
   dependencies:
     classnames "^2.2.5"
     core-js "^3.1.3"
