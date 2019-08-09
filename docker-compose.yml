@@ -3,9 +3,9 @@ services:
   datastore:
     image: busybox
     volumes:
-      - bundle_install:/usr/local/bundle:cached
-      - node_modules:/idone/node_modules:cached
-      - postgres:/var/lib/postgresql/data:cached
+      - bundle_install:/usr/local/bundle
+      - node_modules:/idone/node_modules
+      - postgres:/var/lib/postgresql/data
   mailhog:
     image: mailhog/mailhog:v1.0.0
     ports:
@@ -24,7 +24,7 @@ services:
     volumes_from:
       - datastore
 
-  rails:
+  rails: &app
     build: .
     tty: true
     stdin_open: true
@@ -44,6 +44,9 @@ services:
       - datastore
     volumes:
       - .:/idone:cached
+      - /idone/tmp
+      - /idone/log
+      - ./node_modules:/idone/node_modules
     ports:
       - "3000:3000"
     depends_on:
@@ -52,27 +55,20 @@ services:
       - redis
       - webpacker
   sidekiq:
-    build: .
+    <<: *app
     command: 'bundle exec sidekiq -q default -q mailers'
     environment:
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
       - SMTP_ADDRESS=mailhog
       - SMTP_PORT=1025
-    volumes:
-      - .:/idone:cached
-    volumes_from:
-      - datastore
+    ports: []
     depends_on:
       - postgres
       - redis
   webpacker:
-    build: .
+    <<: *app
     command: bin/webpack-dev-server
-    volumes:
-      - .:/idone:cached
-    volumes_from:
-      - datastore
     ports:
       - "3035:3035"
     environment:
@@ -81,20 +77,10 @@ services:
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
       - WEBPACKER_DEV_SERVER_PUBLIC=0.0.0.0:3035
       - WEBPACKER_DEV_SERVER_HOT=true
+    depends_on: []
   guard:
-    build: .
+    <<: *app
     command: "bundle exec guard start -p -i -B"
-    environment:
-      - DATABASE_HOST=postgres
-      - DATABASE_PORT=5432
-      - DATABASE_USER=postgres
-      - DATABASE_PASSWORD=password
-      - REDIS_URL=redis://redis:6379
-
-    volumes:
-      - .:/idone:cached
-    volumes_from:
-      - datastore
     ports:
       - '35729:35729'
 volumes:
