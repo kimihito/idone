@@ -51,10 +51,6 @@ gem 'oj'
 
 gem 'logstop'
 
-gem 'lograge'
-
-gem 'ougai'
-
 gem 'sidekiq'
 
 gem 'search_cop'
