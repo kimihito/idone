@@ -83,6 +83,12 @@ services:
     command: "bundle exec guard start -p -i -B"
     ports:
       - '35729:35729'
+  solargraph:
+    <<: *app
+    command: "bundle exec solargraph socket --host 0.0.0.0"
+    depends_on: []
+    ports:
+      - "7658:7658"
 volumes:
   bundle_install:
     driver: local

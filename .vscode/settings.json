@@ -1,6 +1,5 @@
 {
     "editor.fontSize": 14,
-    "solargraph.useBundler": true
     "[ruby]": {
         "editor.formatOnSave": true
     },
@@ -12,5 +11,13 @@
             "rails": true,
             "useBundler": true
         },
+    },
+    "solargraph.logLevel": "debug",
+    "solargraph.transport": "external",
+    "solargraph.diagnostics": true,
+    "solargraph.hover": false,
+    "solargraph.externalServer": {
+        "host": "localhost",
+        "port": 7658
     }
 }
