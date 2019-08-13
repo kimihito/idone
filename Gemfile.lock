@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/spring.git
-  revision: caa09ef84270ffaf546b7cf4179ffaebed5f7cd0
+  revision: 22df9100c81c21777f792facc2d4c72cd4aa1fef
   specs:
     spring (2.1.0)
 
