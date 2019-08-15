@@ -771,10 +771,19 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@primer/css@^12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.5.0.tgz#c67314c7da4a92b7251ef1221daa8038c48cfcc2"
-  integrity sha512-MyA2hoCY3UAmMKPHPN+LM1HrwGz5VR92fkEkIzAQgHBYMPstT77tjHkO8OPoWW//DShdYMYAgukZdMJ8lnsfbg==
+"@primer/css@^12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.6.0.tgz#e5e748037892e2be3b7cc545e5ece49d28a2b66d"
+  integrity sha512-GzQr/MPCbTlgvAd4bEXy4RA5cZvz7k/wkCzG7sOmjB9g9EtGnkzmLz6aS58EBRJsxfe6QU/iZ2/N/66/Bn5eZA==
+  dependencies:
+    "@primer/octicons" "9.1.1"
+
+"@primer/octicons@9.1.1":
+  version "9.1.1"
+  resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-9.1.1.tgz#a72a59e8ec77521cc2eefb36c345f780a61c79fb"
+  integrity sha512-7EGM0+Kx39bIgaYr9bTCzFvBCxm+fqh/YJIoSns8zfCwss32ZJ2GDP3024UH709VQtM5cKFU4JcIYPHyGdSfIg==
+  dependencies:
+    object-assign "^4.1.1"
 
 "@rails/ujs@^6.0.0-alpha":
   version "6.0.0-alpha"
@@ -4994,7 +5003,7 @@ oauth-sign@~0.9.0:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
-object-assign@4.X, object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@4.X, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
