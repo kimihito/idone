@@ -115,7 +115,7 @@ GEM
     eventmachine (1.2.7)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
-    ffi (1.10.0)
+    ffi (1.11.1)
     formatador (0.2.5)
     geocoder (1.5.1)
     globalid (0.4.2)
