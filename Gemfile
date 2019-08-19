@@ -79,7 +79,7 @@ end
 group :development do
   gem 'web-console'
   gem 'listen'
-  gem 'spring', github: 'rails/spring'
+  gem 'spring'
   gem 'spring-watcher-listen'
   gem 'lol_dba'
   gem 'bullet'
