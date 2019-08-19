@@ -93,9 +93,6 @@ GEM
     concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     crass (1.0.4)
-    debase (0.2.4)
-      debase-ruby_core_source (>= 0.10.2)
-    debase-ruby_core_source (0.10.5)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.7.0)
@@ -287,8 +284,6 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
-    ruby-debug-ide (0.7.0)
-      rake (>= 0.8.1)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
@@ -394,7 +389,6 @@ DEPENDENCIES
   byebug
   cacheflow
   capybara
-  debase
   devise
   devise-i18n
   fast_jsonapi
@@ -426,7 +420,6 @@ DEPENDENCIES
   rails-patterns
   rollout
   rubocop
-  ruby-debug-ide
   search_cop
   selenium-webdriver
   sidekiq
