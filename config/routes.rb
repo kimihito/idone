@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'root#index'
   resources :users, only: [:index]
-  resources :contributions
   resources :tracks
 
   resources :projects, only: [:index, :new, :create, :edit, :update, :destroy] do
@@ -16,8 +15,6 @@ Rails.application.routes.draw do
   get 'projects/:id', to: redirect("/projects/%{id}/tracks")
 
   authenticated :user do
-    resources :contributions, only: [:new, :create]
-
     namespace :my do
       resources :projects, only: :index, default: { format: :json }
     end
