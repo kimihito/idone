@@ -6211,9 +6211,9 @@ querystringify@^2.0.0:
   integrity sha512-sluvZZ1YiTLD5jsqZcDmFyV2EwToyXZBfpoVOmktMmW+VEnhgakFHnasVph65fOjGPTWN0Nw3+XQaSeMayr0kg==
 
 quicklink@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/quicklink/-/quicklink-1.0.0.tgz#71cb32be603d0ded93a7a48cf3c7e101ea4b1f6d"
-  integrity sha512-Zk0+RLevrrrrPzcPO9IKBAbmtFrinDP0ifSxeft5AG9eI+lBsvQ2XFjH7kceuS+LNehtZatQX+3LyEDYAPpmrg==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/quicklink/-/quicklink-1.0.1.tgz#7a3251a8ae71aa8a02c27d8c740b53a850e7721d"
+  integrity sha512-XeHOnjh9WZKVvVdkDraArYPAbDg4VWnlzscXNUcPMiJCk1aGFwE/JOFKqdnKaChWGnmYcnKCFCbep0t8U4KbOw==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
