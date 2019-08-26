@@ -31,6 +31,9 @@
     },
     "SENDGRID_USERNAME": {
       "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
     }
   },
   "formation": {

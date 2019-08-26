@@ -34,6 +34,7 @@ services:
       - DATABASE_PORT=5432
       - DATABASE_USER=postgres
       - DATABASE_PASSWORD=password
+      - DEFAULT_URL_HOST=localhost:3000
       - WEBPACKER_DEV_SERVER_HOST=webpacker
       - WEBPACKER_DEV_SERVER_PUBLIC=webpacker:3035
       - WEBPACKER_DEV_SERVER_HOT=true
