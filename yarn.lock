@@ -772,9 +772,9 @@
     through2 "^2.0.3"
 
 "@primer/css@^12.6.0":
-  version "12.6.0"
-  resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.6.0.tgz#e5e748037892e2be3b7cc545e5ece49d28a2b66d"
-  integrity sha512-GzQr/MPCbTlgvAd4bEXy4RA5cZvz7k/wkCzG7sOmjB9g9EtGnkzmLz6aS58EBRJsxfe6QU/iZ2/N/66/Bn5eZA==
+  version "12.6.1"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.6.1.tgz#45b239f14a9f67655d96fc5a4771475cf5f883ce"
+  integrity sha512-upgl/ZxMvYoB1wL1hbr/Pb3fFAz0n+W+t43UrU6QwJvrUItBCfF47RZKHagMwXwBrNQ44ldqbtw010WGIjRkjQ==
   dependencies:
     "@primer/octicons" "9.1.1"
 
