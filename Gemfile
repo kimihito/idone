@@ -90,8 +90,6 @@ group :development do
   gem 'guard-livereload', require: false
   gem 'guard-annotate'
   gem 'rack-livereload'
-  gem 'ruby-debug-ide'
-  gem 'debase'
   gem 'solargraph'
   gem 'rubocop', require: false
 end
