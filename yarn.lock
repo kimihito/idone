@@ -772,13 +772,13 @@
     through2 "^2.0.3"
 
 "@primer/css@^12.6.0":
-  version "12.6.1"
-  resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.6.1.tgz#45b239f14a9f67655d96fc5a4771475cf5f883ce"
-  integrity sha512-upgl/ZxMvYoB1wL1hbr/Pb3fFAz0n+W+t43UrU6QwJvrUItBCfF47RZKHagMwXwBrNQ44ldqbtw010WGIjRkjQ==
+  version "12.6.2"
+  resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.6.2.tgz#2d9947e910d2f97c05231f5ba940919165067832"
+  integrity sha512-oysHWaq/dzu8bj6KF+30jnF8lao5XuecKl2RQKh+gTgojDfzIErmYAJQoJGvntH0tTrTr+9EfQd3O/fA3zPBPg==
   dependencies:
-    "@primer/octicons" "9.1.1"
+    "@primer/octicons" "^9.1.1"
 
-"@primer/octicons@9.1.1":
+"@primer/octicons@^9.1.1":
   version "9.1.1"
   resolved "https://registry.yarnpkg.com/@primer/octicons/-/octicons-9.1.1.tgz#a72a59e8ec77521cc2eefb36c345f780a61c79fb"
   integrity sha512-7EGM0+Kx39bIgaYr9bTCzFvBCxm+fqh/YJIoSns8zfCwss32ZJ2GDP3024UH709VQtM5cKFU4JcIYPHyGdSfIg==
