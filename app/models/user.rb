@@ -34,7 +34,24 @@ class User < ApplicationRecord
   has_many :projects, foreign_key: 'owner_id', dependent: :delete_all
   has_many :tracks, foreign_key: 'owner_id', dependent: :delete_all
 
+  validates :name, presence: true, format: { with: /^[a-zA-Z0-9_\.]*$/, multiline: true }, uniqueness: { case_sensitive: true }
+
+  attr_writer :login
+
+  def login
+    @login || self.name || self.email
+  end
+
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions.to_h).where(["lower(name) = :value OR lower(email) = :value", { value: login.downcase }]).first
+    elsif conditions.has_key?(:name) || conditions.has_key?(:email)
+      where(conditions.to_h).first
+    end
   end
 end
