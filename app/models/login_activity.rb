@@ -2,14 +2,14 @@
 #
 # Table name: login_activities
 #
-#  id             :bigint(8)        not null, primary key
+#  id             :bigint           not null, primary key
 #  scope          :string
 #  strategy       :string
 #  identity       :string
 #  success        :boolean
 #  failure_reason :string
 #  user_type      :string
-#  user_id        :bigint(8)
+#  user_id        :bigint
 #  context        :string
 #  ip             :string
 #  user_agent     :text

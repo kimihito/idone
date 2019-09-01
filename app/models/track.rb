@@ -2,7 +2,7 @@
 #
 # Table name: tracks
 #
-#  id         :bigint(8)        not null, primary key
+#  id         :bigint           not null, primary key
 #  project_id :uuid             not null
 #  owner_id   :uuid             not null
 #  raw_body   :text             default(""), not null
