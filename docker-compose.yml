@@ -59,6 +59,7 @@ services:
     <<: *app
     command: 'bundle exec sidekiq -q default -q mailers'
     environment:
+      - DEFAULT_URL_HOST=localhost:3000
       - REDIS_URL=redis://redis:6379
       - RAILS_ENV=development
       - SMTP_ADDRESS=mailhog
@@ -75,6 +76,7 @@ services:
     environment:
       - NODE_ENV=development
       - RAILS_ENV=development
+      - DEFAULT_URL_HOST=localhost:3000
       - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
       - WEBPACKER_DEV_SERVER_PUBLIC=0.0.0.0:3035
       - WEBPACKER_DEV_SERVER_HOT=true
