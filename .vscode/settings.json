@@ -7,10 +7,13 @@
     "editor.formatOnSaveTimeout": 1500
     "ruby.lint": {
         "rubocop": {
-            "lint": true,
-            "rails": true,
-            "useBundler": true
+          "command": "docker-compose exec rails bundle exec rubocop",
+          "lint": true,
+          "rails": true
         },
+        "reek": {
+          "command": "docker-compose exec rails bundle exec reek"
+        }
     },
     "solargraph.logLevel": "debug",
     "solargraph.transport": "external",

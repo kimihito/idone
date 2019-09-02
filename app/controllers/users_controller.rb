@@ -3,4 +3,8 @@ class UsersController < ApplicationController
     @users = User.all
     authorize(@users)
   end
+
+  def show(name)
+    @user = authorize User.find_by!(name: name)
+  end
 end

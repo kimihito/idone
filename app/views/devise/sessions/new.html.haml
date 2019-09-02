@@ -7,9 +7,9 @@
 = render 'devise/shared/form_box', url: session_path(resource_name) do |f|
   %dl.form-group
     %dt
-      %label= f.label :email
+      %label= f.label :login
     %dd
-      = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+      = f.text_field :login, autofocus: true, class: "form-control"
   %dl.form-group
     %dt
       %label= f.label :password

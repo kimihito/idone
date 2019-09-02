@@ -47,6 +47,8 @@ gem 'rails-patterns'
 
 gem 'rack-attack'
 
+gem 'rambulance'
+
 gem 'oj'
 
 gem 'logstop'
@@ -92,6 +94,7 @@ group :development do
   gem 'rack-livereload'
   gem 'solargraph'
   gem 'rubocop', require: false
+  gem 'reek', require: false
 end
 
 group :test do
