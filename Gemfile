@@ -92,6 +92,7 @@ group :development do
   gem 'rack-livereload'
   gem 'solargraph'
   gem 'rubocop', require: false
+  gem 'reek', require: false
 end
 
 group :test do
