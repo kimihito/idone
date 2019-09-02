@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
+  include Rambulance::TestHelper
+
   test 'should get index' do
     get users_url
     assert_response :success
@@ -13,7 +15,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should return not found response when no existed user' do
-    get user_url(name: 'no-exist-username')
-    assert_response :internal_server_error
+    with_exceptions_app do
+      get user_url(name: 'no-exist-username')
+    end
+
+    assert_response :not_found
   end
 end
