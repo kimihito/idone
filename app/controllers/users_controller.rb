@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def show(name)
-    @user = User.find_by(name: name)
-    authorize(@user)
+    @user = authorize User.find_by!(name: name)
   end
 end

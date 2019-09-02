@@ -11,4 +11,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get user_url(user)
     assert_response :success
   end
+
+  test 'should return not found response when no existed user' do
+    get user_url(name: 'no-exist-username')
+    assert_response :internal_server_error
+  end
 end
