@@ -270,6 +270,10 @@ GEM
       thor (>= 0.19.0, < 2.0)
     rainbow (3.0.0)
     rake (12.3.3)
+    rambulance (1.0.2)
+      actionpack
+      activesupport
+      railties
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -428,6 +432,7 @@ DEPENDENCIES
   rails
   rails-i18n
   rails-patterns
+  rambulance
   reek
   rollout
   rubocop

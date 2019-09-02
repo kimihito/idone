@@ -47,6 +47,8 @@ gem 'rails-patterns'
 
 gem 'rack-attack'
 
+gem 'rambulance'
+
 gem 'oj'
 
 gem 'logstop'
