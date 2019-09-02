@@ -36,6 +36,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, format: { with: /^[a-zA-Z0-9_\.]*$/, multiline: true }, uniqueness: { case_sensitive: true }
 
+  audited only: :name, max_audits: 3
+
   attr_writer :login
 
   def login
