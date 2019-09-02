@@ -34,6 +34,9 @@
     },
     "HEROKU_APP_NAME": {
       "required": true
+    },
+    "JEMALLOC_ENABLED": {
+      "value": "true"
     }
   },
   "formation": {
@@ -64,6 +67,10 @@
     }
   ],
   "buildpacks": [
+    {
+      "url": "https://github.com/gaffneyc/heroku-buildpack-jemalloc"
+
+    },
     {
       "url": "heroku/nodejs"
     },
