@@ -9,6 +9,6 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body.bg-gray{ data: { controller: 'emoji-parser'} }
     = render 'layouts/header'
-    .container-lg.clearfix.p-2
+    .container-lg.d-flex.clearfix.p-2
       = render 'layouts/flash_messages'
       = yield
