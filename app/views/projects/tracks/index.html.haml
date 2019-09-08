@@ -7,9 +7,9 @@
       .Box-header
         %h3.Box-title
           = date
-      .Box-body
-        - tracks.group_by(&:owner_id).each do |id, ts|
-          =id
+      - tracks.group_by(&:owner).each do |owner, ts|
+        .Box-body
+          = link_to owner.name, user_path(owner), class: 'link-gray-dark'
           %ul
             =render ts
   =render 'layouts/pagination', pagy: @pagy
