@@ -51,3 +51,7 @@ ja:
     index:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'
+  users:
+    show:
+      overview: '概要'
+      project: 'プロジェクト'

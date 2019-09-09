@@ -13,9 +13,11 @@
               = link_to 'Edit profile', edit_user_path(@user), class: 'btn btn-block mt-2 mb-3'
 
 .col-lg-9.col-md-8.col-12.float-md-left.pl-md-2
-  %nav.UnderlineNav
+  %nav.UnderlineNav{data: { controller: 'tab', 'tab-index': "0" } }
     .UnderlineNav-body
-      %a.UnderlineNav-item.selected(href="#overview")
-        Overview
-      %a.UnderlineNav-item(href="#overview")
-        Projects
+      %a.UnderlineNav-item(href="#overview"){data: { target: 'tab.item', action: 'tab#selectedItem' }}
+        = t('.overview')
+      %a.UnderlineNav-item(href="#projects"){data: { target: 'tab.item', action: 'tab#selectedItem' }}
+        = t('.project')
+        %span.Counter
+          = @user.projects.size
