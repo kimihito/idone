@@ -7,4 +7,8 @@ class UsersController < ApplicationController
   def show(name)
     @user = authorize User.find_by!(name: name)
   end
+
+  def edit(name)
+    @user = authorize User.find_by!(name: name)
+  end
 end

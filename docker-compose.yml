@@ -45,7 +45,7 @@ services:
       - datastore
     volumes:
       - .:/idone:cached
-      - /idone/tmp
+      - ./tmp/screenshots:/idone/tmp/screenshots
       - /idone/log
       - ./node_modules:/idone/node_modules
     ports:

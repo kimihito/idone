@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'root#index'
-  resources :users, param: :name, only: %w[index show]
+  resources :users, param: :name, only: %w[index show edit update]
   resources :tracks
 
   resources :projects, only: [:index, :new, :create, :edit, :update, :destroy] do
