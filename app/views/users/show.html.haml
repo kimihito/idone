@@ -21,3 +21,11 @@
         = t('.project')
         %span.Counter
           = @user.projects.size
+  .position-relative
+    .mt-4
+      %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
+        - @user.projects.each do |project|
+          %li.col-12.col-md-6.col-lg-6.mb-3.d-flex.flex-content-stretch
+            .Box.d-flex.p-3.width-full
+              .d-flex.width-full.flex-items-center.position-relative
+                = link_to project.title, project_path(project), class: 'text-bold flex-auto min-width-0'
