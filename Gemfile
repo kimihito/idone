@@ -13,6 +13,8 @@ gem 'groupdate'
 
 gem 'action_args'
 
+gem 'actionview-component'
+
 gem 'active_decorator'
 
 gem 'devise'
