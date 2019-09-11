@@ -3024,7 +3024,7 @@ fstream@^1.0.0, fstream@^1.0.12:
     mkdirp ">=0.5 0"
     rimraf "2"
 
-function-bind@^1.0.2, function-bind@^1.1.1:
+function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
@@ -6919,9 +6919,9 @@ trim-right@^1.0.1:
     glob "^7.1.2"
 
 ts-loader@^6.0.4:
-  version "6.0.4"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-6.0.4.tgz#bc331ad91a887a60632d94c9f79448666f2c4b63"
-  integrity sha512-p2zJYe7OtwR+49kv4gs7v4dMrfYD1IPpOtqiSPCbe8oR+4zEBtdHwzM7A7M91F+suReqgzZrlClk4LRSSp882g==
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-6.1.0.tgz#999cb0a7644f9c7c6c0901802dce50ceb0a76e5b"
+  integrity sha512-7JedeOu2rsYHQDEr2fwmMozABwbQTZXEaEMZPSIWG7gpzRefOLJCqwdazcegHtyaxp04PeEgs/b0m08WMpnIzQ==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
