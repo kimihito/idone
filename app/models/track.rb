@@ -18,11 +18,10 @@
 #
 
 class Track < ApplicationRecord
-  include PublicActivity::Model
-  tracked owner: proc { |controller, model| controller.current_user }
+  include PublicActivity::Common
 
-  belongs_to :owner, class_name: 'User'
-  belongs_to :project
+  belongs_to :owner, class_name: 'User', inverse_of: :tracks
+  belongs_to :project, inverse_of: :tracks
 
   scope :recent, -> { order('created_at DESC') }
 end
