@@ -3,6 +3,7 @@ require_relative '../config/environment'
 require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/minitest'
+require 'public_activity/testing'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
@@ -10,6 +11,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+PublicActivity.enabled = false
 
 Capybara.server = :puma, { Slient: true }
 Capybara.server_host = "0.0.0.0"

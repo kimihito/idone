@@ -18,6 +18,9 @@
 #
 
 class Track < ApplicationRecord
+  include PublicActivity::Model
+  tracked owner: proc { |controller, model| controller.current_user }
+
   belongs_to :owner, class_name: 'User'
   belongs_to :project
 

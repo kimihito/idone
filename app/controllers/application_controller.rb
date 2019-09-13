@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  include PublicActivity::StoreController
+
   include Pagy::Backend
 
   include Pundit

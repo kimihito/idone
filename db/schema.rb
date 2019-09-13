@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_024919) do
     t.string "trackable_type"
     t.bigint "trackable_id"
     t.string "owner_type"
-    t.bigint "owner_id"
+    t.uuid "owner_id"
     t.string "key"
     t.text "parameters"
     t.string "recipient_type"
