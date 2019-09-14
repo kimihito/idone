@@ -1,10 +1,14 @@
 import * as Stimulus from 'stimulus'
 
 export default class extends Stimulus.Controller {
-  static targets = ['item']
+  static targets = ['item', 'content']
   readonly itemTarget!: Element
   readonly itemTargets!: Element[]
   readonly hasItemTargets!: boolean
+
+  readonly contentTarget!: Element
+  readonly contentTargets!: Element[]
+  readonly hasContentTargets!: boolean
 
 
   initialize() {
@@ -12,8 +16,12 @@ export default class extends Stimulus.Controller {
   }
 
   public showCurrentItem() {
-    this.itemTargets.forEach((el, i) => {
-      el.classList.toggle('selected', this.index == i)
+    const url = this.itemTargets[this.data.get('index')].dataset.tabUrl
+    fetch(url).then(response => response.text()).then((data) => {
+      this.contentTarget.innerHTML = data
+      this.itemTargets.forEach((el, i) => {
+        el.classList.toggle('selected', this.index == i)
+      })
     })
   }
 

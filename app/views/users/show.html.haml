@@ -21,16 +21,16 @@
               = mail_to @user.email
 
 
-.col-lg-9.col-md-8.col-12.float-md-left.pl-md-2
-  %nav.UnderlineNav{data: { controller: 'tab', 'tab-index': "0" } }
+.col-lg-9.col-md-8.col-12.float-md-left.pl-md-2{data: { controller: 'tab', 'tab-index': "0" }}
+  %nav.UnderlineNav
     .UnderlineNav-body
-      %a.UnderlineNav-item(href="#overview"){data: { target: 'tab.item', action: 'tab#selectedItem' }}
+      %a.UnderlineNav-item(href="#overview"){data: { target: 'tab.item', action: 'tab#selectedItem', 'tab-url': nil }}
         = t('.overview')
-      %a.UnderlineNav-item(href="#projects"){data: { target: 'tab.item', action: 'tab#selectedItem' }}
+      %a.UnderlineNav-item(href="#projects"){data: { target: 'tab.item', action: 'tab#selectedItem', 'tab-url': user_projects_path(@user) }}
         = t('.project')
         %span.Counter
           = @user.projects.size
   .position-relative
-    .mt-4
+    .mt-4{ data: { target: 'tab.content' } }
       %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
         = render partial: 'users/overview/project', collection: @user.projects
