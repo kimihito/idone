@@ -55,3 +55,4 @@ ja:
     show:
       overview: '概要'
       project: 'プロジェクト'
+      creation_date: '%{date}から参加'
