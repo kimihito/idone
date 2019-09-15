@@ -5,5 +5,6 @@
     = render partial: 'users/overviews/project', collection: @projects, as: :project
   .f4.mb-2.text-normal
     = t('.activities')
-  %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
+
+  %ol.d-flex.flex-wrap.list-style-none.mb-4
     = render partial: 'users/overviews/activity', collection: @activities, as: :activity
