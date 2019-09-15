@@ -6,4 +6,4 @@
   .f4.mb-2.text-normal
     = t('.activities')
   %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
-    = render_activities(@activities)
+    = render partial: 'users/overviews/activity', collection: @activities, as: :activity
