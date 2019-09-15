@@ -60,6 +60,9 @@ ja:
       project:
         owner_label: 作成者
         updated_at: 更新日
+      show:
+        projects: 'プロジェクト'
+        activities: 'アクティビティ'
     show:
       overview: '概要'
       project: 'プロジェクト'

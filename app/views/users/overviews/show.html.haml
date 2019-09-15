@@ -1,3 +1,9 @@
 = render(Users::Show::Layout, editable: policy(@user).update?, user: @user, current_path: request.path) do
+  .f4.mb-2.text-normal
+    = t('.projects')
   %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
     = render partial: 'users/overviews/project', collection: @projects, as: :project
+  .f4.mb-2.text-normal
+    = t('.activities')
+  %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
+    = render_activities(@activities)
