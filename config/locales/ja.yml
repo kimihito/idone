@@ -52,7 +52,23 @@ ja:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'
   users:
+    projects:
+      project:
+        owner_label: 作成者
+        updated_at: 更新日
+    overviews:
+      project:
+        owner_label: 作成者
+        updated_at: 更新日
     show:
       overview: '概要'
       project: 'プロジェクト'
-      creation_date: '%{date}から参加'
+  components:
+    users:
+      show:
+        navigation:
+          projects: 'プロジェクト'
+          overview: '概要'
+        layout:
+          edit_profile: 'プロフィールを編集'
+          creation_date: '%{date}から参加'

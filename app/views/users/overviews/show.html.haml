@@ -1,0 +1,3 @@
+= render(Users::Show::Layout, editable: policy(@user).update?, user: @user, current_path: request.path) do
+  %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
+    = render partial: 'users/overviews/project', collection: @projects, as: :project

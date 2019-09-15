@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'root#index'
-  resources :users, param: :name, only: %w[index show edit update] do
-    resources :projects, only: %w[index]. module: 'users'
+  resources :users, param: :name, only: %w[index edit update] do
+    with_options module: 'users' do
+      resources :projects, only: %w[index]
+      resource :overview, only: %w[show]
+    end
   end
+
+  get 'users/:name', to: redirect("/users/%{name}/overview")
 
   resources :tracks
 

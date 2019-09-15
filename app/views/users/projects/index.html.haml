@@ -1,0 +1,4 @@
+= render(Users::Show::Layout, editable: policy(@user).update?, user: @user, current_path: request.path) do
+  %ul.d-flex.flex-wrap.list-style-none
+    = render @projects
+
