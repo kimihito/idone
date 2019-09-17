@@ -224,6 +224,8 @@ GEM
     public_suffix (4.0.1)
     puma (4.1.1)
       nio4r (~> 2.0)
+    puma-heroku (1.1.0)
+      puma (>= 3.0, < 5.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.7)
@@ -426,6 +428,7 @@ DEPENDENCIES
   pry-rails
   public_activity
   puma
+  puma-heroku
   pundit
   rack-attack
   rack-livereload
