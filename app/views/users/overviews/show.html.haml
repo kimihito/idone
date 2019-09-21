@@ -6,4 +6,6 @@
   .f4.mb-2.text-normal
     = t('.recent_tracks')
   %ol.d-flex.flex-wrap.list-style-none.mb-4
-    = render partial: 'users/overviews/track', collection: @tracks, as: :track
+    = render partial: 'users/overviews/track', collection: @tracks_by_dates, as: :tracks_by_date
+    %li.col-12
+      = link_to t('.more'), user_tracks_path(@user), class: 'btn btm-sm btn-block border-gray-dark width-full f6 mt-0 py-2'

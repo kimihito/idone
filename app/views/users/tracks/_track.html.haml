@@ -1,0 +1,6 @@
+%li.Box-row.border-0.p-2.d-flex.flex-items-center
+  .flex-auto
+    %span.mr-2
+      ✅
+      = track.body
+  %time.text-small.text-gray= t('.ago', time_ago_in_words: time_ago_in_words(track.created_at))
