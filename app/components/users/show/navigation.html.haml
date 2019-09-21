@@ -5,8 +5,10 @@
         = t('components.users.show.navigation.overview')
 
     = link_to_unless (current_path == user_projects_path(@user)), line_nav_item(type: :project), user_projects_path(@user), class: 'UnderlineNav-item' do
-      = line_nav_item(type: :project, class_name: 'selected')
+      %span.UnderlineNav-item.selected
+        = line_nav_item(type: :project)
 
     = link_to_unless (current_path == user_tracks_path(@user)), line_nav_item(type: :track), user_tracks_path(@user), class: 'UnderlineNav-item' do
-      = line_nav_item(type: :track, class_name: 'selected')
+      %span.UnderlineNav-item.selected
+        = line_nav_item(type: :track)
 

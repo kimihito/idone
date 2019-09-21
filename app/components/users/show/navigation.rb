@@ -12,12 +12,10 @@ class Users::Show::Navigation < ActionView::Component::Base
 
   attr_reader :user, :project_size, :line_nav_item, :track_size, :current_path
 
-  def line_nav_item(type:, class_name: nil)
+  def line_nav_item(type:)
     capture do
-      content_tag :span, class: "UnderlineNav-item #{class_name}" do
-        concat(t("components.users.show.navigation.#{type}"))
-        concat(content_tag(:span, send("#{type}_size"), class: 'Counter'))
-      end
+      concat(t("components.users.show.navigation.#{type}"))
+      concat(content_tag(:span, send("#{type}_size"), class: 'Counter'))
     end
   end
 end
