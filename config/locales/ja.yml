@@ -63,7 +63,7 @@ ja:
       show:
         recent_updated_projects: '最近更新したプロジェクト'
         recent_tracks: '最近の記録'
-        more: 'もっと見る'
+        more: 'もっとみる'
     tracks:
       track:
         ago: '%{time_ago_in_words}前'
