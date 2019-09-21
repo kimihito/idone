@@ -10,4 +10,12 @@ class TrackPolicy < ApplicationPolicy
   def new?
     !!user
   end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    record.owner_id == user.id
+  end
 end

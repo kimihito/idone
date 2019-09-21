@@ -752,6 +752,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@github/include-fragment-element@^5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.0.6.tgz#6caa325d6a286ced2ecb1b20cb9cb864f0fb1807"
+  integrity sha512-jaftUrpW1DF5WGgFtDaINfbW9QbQjsetNDIGuQp8BLRskahuG87NDipE//15DZCUzaG3T/SrM2dTVAy7bmjIxw==
+
 "@primer/css@^12.6.0":
   version "12.7.0"
   resolved "https://registry.yarnpkg.com/@primer/css/-/css-12.7.0.tgz#7ea766625a3cdcfe34f7d2bb48bbdc21211f1950"

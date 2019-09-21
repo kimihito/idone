@@ -4,3 +4,10 @@
       ✅
       = track.body
   %time.text-small.text-gray= t('.ago', time_ago_in_words: time_ago_in_words(track.created_at))
+  - if policy(track).update?
+    %details.details-reset.details-with-dialog
+      %summary.btn-link.text-gray-dark.d-inline-block
+        %i{data: { feather: 'edit'} }
+      %details-dialog.anim-fade-in.fast.wide(src="#{edit_track_path(track)}")
+        %include-fragment
+          =t('.loading')

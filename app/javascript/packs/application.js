@@ -13,6 +13,7 @@ import feather from 'feather-icons'
 import 'whatwg-fetch'
 import '@webcomponents/custom-elements'
 import 'details-dialog-element'
+import '@github/include-fragment-element'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
