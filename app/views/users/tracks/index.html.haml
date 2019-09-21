@@ -1,4 +1,6 @@
 = render(Users::Show::Layout, editable: policy(@user).update?, user: @user, current_path: request.path) do
   %ul.d-flex.flex-wrap.list-style-none
-    = render @tracks
+    = render partial: 'users/overviews/track', collection: @tracks_by_dates, as: :tracks_by_date
+    %li.col-12
+      = render 'layouts/pagination', pagy: @pagy
 
