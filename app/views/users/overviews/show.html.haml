@@ -1,10 +1,9 @@
 = render(Users::Show::Layout, editable: policy(@user).update?, user: @user, current_path: request.path) do
   .f4.mb-2.text-normal
-    = t('.projects')
+    = t('.recent_updated_projects')
   %ol.d-flex.flex-wrap.list-style-none.mb-4.gutter-condensed
     = render partial: 'users/overviews/project', collection: @projects, as: :project
   .f4.mb-2.text-normal
-    = t('.activities')
-
+    = t('.recent_tracks')
   %ol.d-flex.flex-wrap.list-style-none.mb-4
-    = render partial: 'users/overviews/activity', collection: @activities, as: :activity
+    = render partial: 'users/overviews/track', collection: @tracks, as: :track

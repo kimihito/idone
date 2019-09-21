@@ -4,8 +4,9 @@
       %span.UnderlineNav-item.selected
         = t('components.users.show.navigation.overview')
 
-    = link_to_unless (current_path == user_projects_path(@user)), t('components.users.show.navigation.projects'), user_projects_path(@user), class: 'UnderlineNav-item' do
-      %span.UnderlineNav-item.selected
-        = t('components.users.show.navigation.projects')
-        %span.Counter
-          = @project_size
+    = link_to_unless (current_path == user_projects_path(@user)), line_nav_item(type: :project), user_projects_path(@user), class: 'UnderlineNav-item' do
+      = line_nav_item(type: :project, class_name: 'selected')
+
+    = link_to_unless (current_path == user_tracks_path(@user)), line_nav_item(type: :track), user_tracks_path(@user), class: 'UnderlineNav-item' do
+      = line_nav_item(type: :track, class_name: 'selected')
+

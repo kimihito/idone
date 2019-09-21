@@ -61,8 +61,8 @@ ja:
         owner_label: 作成者
         updated_at: 更新日
       show:
-        projects: 'プロジェクト'
-        activities: 'アクティビティ'
+        recent_updated_projects: '最近更新したプロジェクト'
+        recent_tracks: '最近の記録'
     show:
       overview: '概要'
       project: 'プロジェクト'
@@ -70,7 +70,8 @@ ja:
     users:
       show:
         navigation:
-          projects: 'プロジェクト'
+          track: '記録'
+          project: 'プロジェクト'
           overview: '概要'
         layout:
           edit_profile: 'プロフィールを編集'

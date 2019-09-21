@@ -1,13 +1,23 @@
 class Users::Show::Navigation < ActionView::Component::Base
   validates :user, :current_path, presence: true
 
-  def initialize(user:, current_path:, project_size: 0)
+  def initialize(user:, current_path:)
     @user = user
-    @project_size = project_size
+    @project_size = user.projects.size
+    @track_size = user.tracks.size
     @current_path = current_path
   end
 
   private
 
-  attr_reader :user, :project_size, :current_path
+  attr_reader :user, :project_size, :line_nav_item, :track_size, :current_path
+
+  def line_nav_item(type:, class_name: nil)
+    capture do
+      content_tag :span, class: "UnderlineNav-item #{class_name}" do
+        concat(t("components.users.show.navigation.#{type}"))
+        concat(content_tag(:span, send("#{type}_size"), class: 'Counter'))
+      end
+    end
+  end
 end
