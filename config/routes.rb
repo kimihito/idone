@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, param: :name, only: %w[index edit update] do
     with_options module: 'users' do
       resources :projects, only: %w[index]
-      resources :tracks, only: %w[index]
+      resources :tracks, only: %w[index edit update destroy]
       resource :overview, only: %w[show]
     end
   end

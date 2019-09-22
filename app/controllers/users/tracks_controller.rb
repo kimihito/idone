@@ -5,4 +5,9 @@ class Users::TracksController < ApplicationController
     @tracks_by_dates = @tracks.group_by_day(reverse: true, &:created_at)
     skip_authorization
   end
+
+  def update(user_name, id)
+    user = User.includes(:tracks).find_by!(name: user_name)
+    @track = authorize(user.tracks.find(id))
+  end
 end

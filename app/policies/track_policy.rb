@@ -16,6 +16,10 @@ class TrackPolicy < ApplicationPolicy
   end
 
   def update?
-    record.owner_id == user.id
+    record.owner_id == user&.id
+  end
+
+  def destroy?
+    update?
   end
 end

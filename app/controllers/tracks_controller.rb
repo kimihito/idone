@@ -21,10 +21,29 @@ class TracksController < ApplicationController
   end
 
   def edit(id)
-    track = Track.find(id)
-    authorize(track)
+    track = authorize Track.find(id)
     @form = TrackForm.new(track)
 
     render layout: false
+  end
+
+  def update(id, track)
+    @track = authorize Track.find(id)
+
+    @form = TrackForm.new(@track, track.merge({action_name: action_name})).as(current_user)
+    
+    if @form.save
+    else
+      render partial: 'layouts/shared/error_messages', locals: { resource: @form }, status: :unprocessable_entity, turbolinks: false
+    end
+  end
+
+  def destroy(id)
+    track = authorize Track.find(id)
+
+    if track.destroy
+    else
+      render partial: 'layouts/shared/error_messages', locals: { resource: track }, status: :unprocessable_entity, turbolinks: false
+    end
   end
 end
