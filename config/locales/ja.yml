@@ -71,6 +71,15 @@ ja:
       overview: '概要'
       project: 'プロジェクト'
   components:
+    empty_state:
+      project:
+        header: '参加しているプロジェクトがひとつもありません'
+        description: 'プロジェクトへ参加する、もしくは新しいプロジェクトを作ってみましょう'
+        new_link: 'プロジェクトを作成する'
+        list: 'すべてのプロジェクトをみる'
+      track:
+        header: '記録がひとつもありません'
+        description: '「📝 記録する」を押してプロジェクトへの記録を作りましょう'
     users:
       show:
         navigation:
