@@ -51,3 +51,41 @@ ja:
     index:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'
+  users:
+    projects:
+      project:
+        owner_label: 作成者
+        updated_at: 更新日
+    overviews:
+      project:
+        owner_label: 作成者
+        updated_at: 更新日
+      show:
+        recent_updated_projects: '最近更新したプロジェクト'
+        recent_tracks: '最近の記録'
+        more: 'もっとみる'
+    tracks:
+      track:
+        ago: '%{time_ago_in_words}前'
+    show:
+      overview: '概要'
+      project: 'プロジェクト'
+  components:
+    empty_state:
+      project:
+        header: '参加しているプロジェクトがひとつもありません'
+        description: 'プロジェクトへ参加する、もしくは新しいプロジェクトを作ってみましょう'
+        new_link: 'プロジェクトを作成する'
+        list: 'すべてのプロジェクトをみる'
+      track:
+        header: '記録がひとつもありません'
+        description: '「📝 記録する」を押してプロジェクトへの記録を作りましょう'
+    users:
+      show:
+        navigation:
+          track: '記録'
+          project: 'プロジェクト'
+          overview: '概要'
+        layout:
+          edit_profile: 'プロフィールを編集'
+          creation_date: '%{date}から参加'

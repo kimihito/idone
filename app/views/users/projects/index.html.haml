@@ -1,0 +1,15 @@
+= render(Users::Show::Layout, editable: policy(@user).update?, user: @user, current_path: request.path) do
+  - if @projects.present?
+    %ul.d-flex.flex-wrap.list-style-none
+      = render @projects
+      %li.col-12
+        = render 'layouts/pagination', pagy: @pagy
+  - else
+    = render(EmptyState, type: :project) do
+      - if policy(@user).update?
+        %p
+          = t("components.empty_state.project.description")
+        = link_to t('components.empty_state.project.new_link'), new_project_path, class: 'btn btn-primary my-3'
+        %p
+          = link_to t('components.empty_state.project.list'), projects_path, class: 'btn-link'
+

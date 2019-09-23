@@ -18,8 +18,10 @@
 #
 
 class Track < ApplicationRecord
-  belongs_to :owner, class_name: 'User'
-  belongs_to :project
+  include PublicActivity::Common
+
+  belongs_to :owner, class_name: 'User', inverse_of: :tracks
+  belongs_to :project, inverse_of: :tracks
 
   scope :recent, -> { order('created_at DESC') }
 end

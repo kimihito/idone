@@ -11,14 +11,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test 'should get show' do
     user = users(:idoneman)
     get user_url(user)
-    assert_response :success
-  end
-
-  test 'should return not found response when no existed user' do
-    with_exceptions_app do
-      get user_url(name: 'no-exist-username')
-    end
-
-    assert_response :not_found
+    assert_redirected_to user_overview_url(user)
   end
 end

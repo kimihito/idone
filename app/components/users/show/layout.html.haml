@@ -1,0 +1,26 @@
+.col-lg-3.col-md-4.col-12.float-md-left.pr-md-3.pr-xl-6
+  .clearfix.mb-2
+    .float-left.col-3.col-md-12.pr-3.pr-md-0
+      = image_tag "https://via.placeholder.com/150", class: 'avatar width-full height-full'
+    .float-left.col-9.col-md-12.pl-2.pl-md-0
+      .pt-1.pt-md-2.pb-1.pb-md-2
+        %h1
+          %span.d-block.overflow-hidden
+            = user.name
+        - if editable
+          .d-none.d-md-block
+            .hide-sm.hide-md
+              = link_to t('components.users.show.layout.edit_profile'), edit_user_path(user), class: 'btn btn-block mt-2 mb-3'
+        .d-none.d-md-block
+          %ul.list-style-none.mb-3
+            %li.pt-1
+              %i.v-align-text-top{data: { feather: 'calendar' }, 'stroke-width': 1 }
+              = t('components.users.show.layout.creation_date', date: l(user.created_at.to_date))
+            %li.pt-1
+              %i.v-align-text-top{data: { feather: 'mail' }, 'stroke-width': 1 }
+              = mail_to user.email
+.col-lg-9.col-md-8.col-12.float-md-left.pl-md-2
+  = render(Users::Show::Navigation, user: user, current_path: current_path)
+  .position-relative
+    .mt-4
+      = content

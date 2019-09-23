@@ -1,0 +1,17 @@
+%li.col-12.d-flex.width-full.p-4.border-bottom.bg-white
+  = image_tag "https://via.placeholder.com/100", class: 'avatar flex-shrink-0 mr-3', size: '100x100'
+  .flex-auto.min-width-0
+    .d-flex
+      %h3.text-normal.flex-auto.pb-1
+        = link_to project.title, project
+    %p これは説明文です。これは説明文です。これは説明文です
+    %p これは説明文です。これは説明文です。これは説明文です。
+    %p これは説明文です。これは説明文です。これは説明文です。
+    .d-flex.flex-column.text-small.text-gray
+      %span.flex-auto
+        = t('.owner_label')
+        = link_to project.owner.name, [project.owner, :overview], class: 'muted-link'
+      %span.flex-auto
+        = t('.updated_at')
+        = l(project.updated_at.to_date)
+

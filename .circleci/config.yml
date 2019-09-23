@@ -52,13 +52,16 @@ jobs:
       - run: bundle exec bin/webpack
 
       # run tests!
-      - run:
-          name: run tests
-          command: bundle exec rails test
+      - run: bundle exec rails test
+
+      - run: bundle exec rails test:system
 
       # collect reports
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
           path: /tmp/test-results
-          destination: test-results
+          destination: test-result
+      - store_artifacts:
+          path: tmp/screenshots
+          destination: screenshotss

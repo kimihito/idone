@@ -11,3 +11,9 @@ idoneman2:
   name: $LABEL
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   confirmed_at: <%= Time.current.to_time %>
+
+no_track_and_project_user:
+  email: 'no_track@idone.today'
+  name: $LABEL
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  confirmed_at: <%= Time.current.to_time %>

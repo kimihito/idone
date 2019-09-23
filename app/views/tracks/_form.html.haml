@@ -1,4 +1,4 @@
-= form_with model: TrackForm.new(owner_id: current_user.id), data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' }, url: tracks_url do |f|
+= form_with model: TrackForm.new(track), data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' } do |f|
   %div{data: { target: 'form.errors' }}
   .mb-3
     %dl.form-group.m-0.mb-1.errored
@@ -7,5 +7,7 @@
     %dl.form-group.m-0.errored
       %dd
         = f.text_area :raw_body, class: 'form-control', placeholder: t('.placeholder.use_hashtag'), autocomplete: 'on', style: 'height: 100px; min-height: 100px;'
-  .mb-3
-    = f.submit class: 'btn btn-block btn-primary'
+  .mb-3{ class: "#{track.persisted? ? 'text-right' : nil }"}
+    - if track.persisted?
+      = link_to t('.delete'), track, method: :delete, data: { confirm: t('.confirmation') }, class: 'btn btn-danger'
+    = f.submit class: "btn btn-primary #{track.persisted? ? nil : 'btn-block' }"

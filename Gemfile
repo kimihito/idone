@@ -13,6 +13,8 @@ gem 'groupdate'
 
 gem 'action_args'
 
+gem 'actionview-component'
+
 gem 'active_decorator'
 
 gem 'devise'
@@ -100,6 +102,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'minitest-retry'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

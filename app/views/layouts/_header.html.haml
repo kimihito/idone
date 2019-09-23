@@ -17,7 +17,7 @@
                     📝
                   = t('.new_track')
                 .Box-body.overflow-auto
-                  = render 'tracks/form'
+                  = render 'tracks/form', track: Track.new(owner_id: current_user.id)
                 .Box-footer.text-right
                   %button.btn{type: "button", data: { 'close-dialog': true } }
                     = t('.close_dialog')
