@@ -6,7 +6,7 @@
       = render(partial: 'users/overviews/project', collection: @projects, as: :project)
   - else
     = render(EmptyState, type: :project) do
-      - if policy(Project.new).update?
+      - if policy(@user).update?
         %p
           = t("components.empty_state.project.description")
         = link_to t('components.empty_state.project.new_link'), new_project_path, class: 'btn btn-primary my-3'
@@ -21,6 +21,6 @@
         = link_to t('.more'), user_tracks_path(@user), class: 'btn btm-sm btn-block border-gray-dark width-full f6 mt-0 py-2'
   - else
     = render(EmptyState, type: :track) do
-      - if policy(Track.new).new?
+      - if policy(@user).update?
         %p
           = t("components.empty_state.track.description")

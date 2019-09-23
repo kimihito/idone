@@ -16,7 +16,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def edit?
-    record&.owner_id == user&.id
+    record.owner_id == user.id
   end
 
   def update?
