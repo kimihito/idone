@@ -4,6 +4,7 @@ require 'rails/test_help'
 require 'capybara/rails'
 require 'capybara/minitest'
 require 'public_activity/testing'
+require 'minitest/retry'
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.

@@ -15,10 +15,9 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test 'login user can show edit button in same user page' do
-    login_user(@user.name)
+    login_as(@user, scope: :user)
     visit user_url(@user)
-    assert_link I18n.t('components.users.show.layout.edit_profile')
-    logout
+    assert_text I18n.t('components.users.show.layout.edit_profile')
   end
 
   test 'display empty state user has no track' do
@@ -29,9 +28,8 @@ class UsersTest < ApplicationSystemTestCase
   end
 
   test 'display new project button in same user page' do
-    login_user(@no_track_and_project_user.name)
+    login_as(@no_track_and_project_user, scope: :user)
     visit user_url(@no_track_and_project_user)
-    assert_link I18n.t('components.empty_state.project.new_link')
-    logout
+    assert_text I18n.t('components.empty_state.project.new_link')
   end
 end

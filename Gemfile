@@ -101,6 +101,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'minitest-retry'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
