@@ -102,6 +102,7 @@ ja:
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
         edit_profile: 'プロフィールを編集'
+        delete_all_created_projects_and_tracks: 作成したプロジェクト、記録もすべて削除します
       new:
         sign_up: アカウント登録
         charactors_minimum: "%{count}文字以上"
