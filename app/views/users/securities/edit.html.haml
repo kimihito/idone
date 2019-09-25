@@ -1,15 +1,7 @@
-.col-3.float-left.pr-4
-  %nav.menu
-    %h3.menu-heading
-      = t('.menu.header')
-    = link_to_unless_current('.edit_profile', edit_user_registration_path, class: 'menu-item') do
-      = link_to t('.edit_profile'), edit_user_registration_path, class: 'menu-item selected', aria: { current: 'page' }
-    = link_to_unless_current('.security', edit_users_security_path, class: 'menu-item') do
-      = link_to t('.security'), edit_users_security_path, class: 'menu-item selected', aria: { current: 'page' }
-.col-9.float-left
+= render(Users::Edit::Layout, current_path: request.path) do
   .Subhead.my-0
     .Subhead-heading
-      = t('.edit_profile')
+      = t('.change_password')
   .clearfix.d-flex.gutter.flex-shrink-0
     .col-8
       = form_for(resource, as: resource_name, url: users_security_path, html: { method: :put })do |f|
@@ -23,7 +15,6 @@
                   = t('devise.registrations.new.charactors_minimum', count: @minimum_password_length)
             %dd
               = f.password_field :password, autocomplete: "new-password", class: 'form-control'
-              %p.note (leave blank if you don't want to change it)
           %dl.form-group
             %dt
               = f.label :password_confirmation
@@ -36,4 +27,4 @@
               = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
           %p
             = f.submit class: 'btn btn-primary'
-            = link_to t(".forgot_password"), new_user_password_path, class: 'btn-link'
+            = link_to t('.forgot_password'), new_user_password_path, class: 'btn-link'

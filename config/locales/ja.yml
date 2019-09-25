@@ -70,6 +70,10 @@ ja:
     show:
       overview: '概要'
       project: 'プロジェクト'
+    securities:
+      edit:
+        change_password: パスワードを変更する
+        forgot_password: 'パスワードを忘れた'
   components:
     empty_state:
       project:
@@ -89,3 +93,9 @@ ja:
         layout:
           edit_profile: 'プロフィールを編集'
           creation_date: '%{date}から参加'
+      edit:
+        layout:
+          menu:
+            header: 個人設定
+          profile: 'プロフィール'
+          security: 'セキュリティ'

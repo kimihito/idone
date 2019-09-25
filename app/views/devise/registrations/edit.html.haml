@@ -1,12 +1,4 @@
-.col-3.float-left.pr-4
-  %nav.menu
-    %h3.menu-heading
-      = t('.menu.header')
-    = link_to_unless_current('.edit_profile', edit_user_registration_path, class: 'menu-item') do
-      = link_to t('.edit_profile'), edit_user_registration_path, class: 'menu-item selected', aria: { current: 'page' }
-    = link_to_unless_current('.security', edit_users_security_path, class: 'menu-item') do
-      = link_to t('.security'), edit_users_security_path, class: 'menu-item selected', aria: { current: 'page' }
-.col-9.float-left
+= render(Users::Edit::Layout, current_path: request.path) do
   .Subhead.my-0
     .Subhead-heading
       = t('.edit_profile')
@@ -30,18 +22,27 @@
               = f.text_field :name, class: 'form-control'
           %p
             = f.submit class: 'btn btn-primary'
-      %hr
-      .Subhead.border-bottom-0.mb-0
-        %h2.Subhead-heading.Subhead-heading--danger
-          = t('.danger_zone')
-      .Box.Box--danger
-        %ul
-          %li.Box-row.d-flex.flex-items-center
-            .flex-auto
-              %strong
-                = t('.cancel_my_account')
-              %p.text-small.text-gray-light
-                作成したプロジェクト、記録もすべて削除します
-            = button_to t('.cancel_my_account'), registration_path(resource), data: { confirm: t('.are_you_sure') }, method: :delete, class: 'btn btn-danger'
-
     .col-4
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = render 'devise/shared/error_messages', resource: resource
+        %div
+          %dl.form-group
+            %dt
+              = f.label :icon
+            %dd
+          %p
+            = f.submit class: 'btn btn-primary'
+  %hr.cleafix
+  .col-12
+    .Subhead.border-bottom-0.mb-0
+      %h2.Subhead-heading.Subhead-heading--danger
+        = t('.danger_zone')
+    .Box.Box--danger
+      %ul
+        %li.Box-row.d-flex.flex-items-center
+          .flex-auto
+            %strong
+              = t('.cancel_my_account')
+            %p.text-small.text-gray-light
+              作成したプロジェクト、記録もすべて削除します
+          = button_to t('.cancel_my_account'), registration_path(resource), data: { confirm: t('.are_you_sure') }, method: :delete, class: 'btn btn-danger'
