@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'root#index'
-  resources :users, param: :name, only: %w[index edit update] do
-    with_options module: 'users' do
-      resources :projects, only: %w[index]
-      resources :tracks, only: %w[index edit update destroy]
-      resource :overview, only: %w[show]
+  devise_scope :user do
+    namespace :users do
+      resource :security, only: %w[edit update]
     end
   end
 
-  get 'users/:name', to: redirect("/users/%{name}/overview")
+  devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
+
+
+  root 'root#index'
+
+  authenticated :user do
+    namespace :my do
+      resources :projects, only: :index, default: { format: :json }
+    end
+
+    namespace :root do
+      resources :tracks, only: [:create]
+    end
+  end
 
   resources :tracks
 
@@ -23,15 +32,15 @@ Rails.application.routes.draw do
 
   get 'projects/:id', to: redirect("/projects/%{id}/tracks")
 
-  authenticated :user do
-    namespace :my do
-      resources :projects, only: :index, default: { format: :json }
-    end
-
-    namespace :root do
-      resources :tracks, only: [:create]
+  resources :users, param: :name, only: %w[index] do
+    with_options module: 'users' do
+      resources :projects, only: %w[index]
+      resources :tracks, only: %w[index edit update destroy]
+      resource :overview, only: %w[show]
     end
   end
+
+  get 'users/:name', to: redirect("/users/%{name}/overview")
 
 
   mount PgHero::Engine, at: "pghero"

@@ -1,0 +1,30 @@
+= render(Users::Edit::Layout, current_path: request.path) do
+  .Subhead.my-0
+    .Subhead-heading
+      = t('.change_password')
+  .clearfix.d-flex.gutter.flex-shrink-0
+    .col-8
+      = form_for(resource, as: resource_name, url: users_security_path, html: { method: :put })do |f|
+        = render "devise/shared/error_messages", resource: resource
+        %div
+          %dl.form-group
+            %dt
+              = f.label :password
+              - if @minimum_password_length
+                %em.note
+                  = t('devise.registrations.new.charactors_minimum', count: @minimum_password_length)
+            %dd
+              = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+          %dl.form-group
+            %dt
+              = f.label :password_confirmation
+            %dd
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+          %dl.form-group
+            %dt
+              = f.label :current_password
+            %dd
+              = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
+          %p
+            = f.submit class: 'btn btn-primary'
+            = link_to t('.forgot_password'), new_user_password_path, class: 'btn-link'

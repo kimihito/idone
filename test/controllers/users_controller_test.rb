@@ -7,10 +7,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get users_url
     assert_response :success
   end
-
-  test 'should get show' do
-    user = users(:idoneman)
-    get user_url(user)
-    assert_redirected_to user_overview_url(user)
-  end
 end
