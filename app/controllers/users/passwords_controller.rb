@@ -1,5 +1,5 @@
 class Users::PasswordsController < Devise::PasswordsController
-  skip_before_action :require_no_authentication, :only => [:edit, :update]
+  skip_before_action :require_no_authentication, :only => [:new, :create, :edit, :update]
 
   # we need to override the update, too.
   # After a password is reset, all outstanding sessions are gone.

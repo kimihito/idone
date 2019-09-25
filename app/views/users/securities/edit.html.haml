@@ -29,6 +29,11 @@
               = f.label :password_confirmation
             %dd
               = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+          %dl.form-group
+            %dt
+              = f.label :current_password
+            %dd
+              = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
           %p
             = f.submit class: 'btn btn-primary'
             = link_to t(".forgot_password"), new_user_password_path, class: 'btn-link'
