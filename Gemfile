@@ -98,6 +98,8 @@ group :development do
   gem 'solargraph'
   gem 'rubocop', require: false
   gem 'reek', require: false
+  gem 'derailed_benchmarks'
+  gem 'stackprof'
 end
 
 group :test do
