@@ -22,8 +22,6 @@ Rails.application.routes.draw do
 
   resources :tracks
 
-  get 'projects/:id', to: redirect("/projects/%{id}/tracks")
-
   resources :projects, only: [:index, :new, :create, :edit, :update, :destroy] do
     with_options module: 'projects' do
       resources :tracks, only: [:index]
@@ -32,7 +30,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'users/:name', to: redirect("/users/%{name}/overview")
+  get 'projects/:id', to: redirect("/projects/%{id}/tracks")
 
   resources :users, param: :name, only: %w[index] do
     with_options module: 'users' do
@@ -41,6 +39,9 @@ Rails.application.routes.draw do
       resource :overview, only: %w[show]
     end
   end
+
+  get 'users/:name', to: redirect("/users/%{name}/overview")
+
 
   mount PgHero::Engine, at: "pghero"
 
