@@ -64,4 +64,4 @@ jobs:
           destination: test-result
       - store_artifacts:
           path: tmp/screenshots
-          destination: screenshotss
+          destination: screenshots
