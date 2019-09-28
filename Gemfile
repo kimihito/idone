@@ -11,6 +11,8 @@ gem 'attr_encrypted'
 
 gem 'groupdate'
 
+gem 'google-cloud-storage', require: false
+
 gem 'action_args'
 
 gem 'actionview-component'
