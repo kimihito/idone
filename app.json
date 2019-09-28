@@ -1,7 +1,34 @@
 {
   "name": "idone",
-  "scripts": {},
+  "scripts": {
+    "postdeploy": "bin/rails heroku_review_apps:create_bucket",
+    "pr-predestroy": "bin/rails heroku_review_apps:cleanup"
+  },
   "env":  {
+    "GCS_PROJECT_ID": {
+      "required": true
+    },
+
+    "GCS_PRIVATE_KEY_ID": {
+      "required": true
+    },
+
+    "GCS_PRIVATE_KEY": {
+      "required": true
+    },
+
+    "GCS_CLIENT_ID": {
+      "required": true
+    },
+
+    "GCS_CLIENT_EMAIL": {
+      "required": true
+    },
+
+    "GCS_X509_CERT_URL": {
+      "required": true
+    },
+
     "LANG": {
       "required": true
     },

@@ -18,7 +18,7 @@ local:
 google:
   service: GCS
   project: idone
-  bucket: <%= ENV.fetch('GCS_BUCKET_NAME') %>
+  bucket: <%= ENV['GCS_BUCKET_NAME'] || ENV['HEROKU_APP_NAME'] %>
   credentials:
     type: "service_account"
     project_id: <%= ENV.fetch('GCS_PROJECT_ID') %>
