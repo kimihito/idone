@@ -23,7 +23,7 @@ google:
     type: "service_account"
     project_id: <%= ENV.fetch('GCS_PROJECT_ID') %>
     private_key: <%= ENV.fetch('GCS_PRIVATE_KEY') %>
-    private_key_id: <%= ENV.fetch('CGS_PRIVATE_KEY_ID') %>
+    private_key_id: <%= ENV.fetch('GCS_PRIVATE_KEY_ID') %>
     client_email: <%= ENV.fetch('GCS_CLIENT_EMAIL') %>
     client_id: <%= ENV.fetch('GCS_CLIENT_ID') %>
     auth_uri: "https://accounts.google.com/o/oauth2/auth"
