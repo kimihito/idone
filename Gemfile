@@ -7,6 +7,8 @@ gem 'rails'
 
 gem 'rails-i18n'
 
+gem 'active_storage_validations'
+
 gem 'attr_encrypted'
 
 gem 'groupdate'
