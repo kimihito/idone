@@ -24,7 +24,7 @@
             %dt
               = f.label :icon
             %dd
-              = f.file_field :icon, direct: true
+              = f.file_field :icon, direct: true, accept: 'image/*'
           %p
             = f.submit class: 'btn btn-primary'
   %hr

@@ -36,6 +36,7 @@ class User < ApplicationRecord
   has_one_attached :icon
 
   validates :name, presence: true, format: { with: /^[a-zA-Z0-9_\.]*$/, multiline: true }, uniqueness: { case_sensitive: true }
+  validates :icon, content_type: /\Aimage\/.*\z/
 
   audited only: :name, max_audits: 3
 
