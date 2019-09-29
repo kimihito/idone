@@ -20,6 +20,11 @@
           - if devise_mapping.confirmable? && resource.pending_reconfirmation?
             %div.note
               = t('currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
+          %dl.form-group
+            %dt
+              = f.label :icon
+            %dd
+              = f.file_field :icon, direct: true
           %p
             = f.submit class: 'btn btn-primary'
   %hr
