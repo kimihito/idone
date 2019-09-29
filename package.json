@@ -9,6 +9,7 @@
     "@dicebear/avatars-identicon-sprites": "^2.1.4",
     "@github/include-fragment-element": "^5.0.6",
     "@primer/css": "^12.6.0",
+    "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
     "@webcomponents/custom-elements": "^1.2.4",
