@@ -2,10 +2,7 @@
   .clearfix.mb-2
     .float-left.col-3.col-md-12.pr-3.pr-md-0
       .d-block.position-relative
-        - if user.icon.attached?
-          = image_tag user.icon, class: 'avatar width-full height-full', size: 150
-        - else
-          = image_tag '', class: 'avatar width-full height-full', size: 150, data: { controller: 'avatar', 'avatar-seed': user.name }
+        = image_tag user.icon.attached? ? user.icon : '', class: 'avatar width-full height-full', size: 150, data: { controller: 'avatar', 'avatar-seed': user.name }
     .float-left.col-9.col-md-12.pl-2.pl-md-0
       .pt-1.pt-md-2.pb-1.pb-md-2
         %h1
