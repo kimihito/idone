@@ -29,6 +29,8 @@ services:
     tty: true
     stdin_open: true
     command: /bin/sh -c "rm -f /idone/tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0"
+    env_file:
+      - .env
     environment:
       - DATABASE_HOST=postgres
       - DATABASE_PORT=5432

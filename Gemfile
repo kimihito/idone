@@ -7,9 +7,13 @@ gem 'rails'
 
 gem 'rails-i18n'
 
+gem 'active_storage_validations'
+
 gem 'attr_encrypted'
 
 gem 'groupdate'
+
+gem 'google-cloud-storage', require: false
 
 gem 'action_args'
 
@@ -73,6 +77,8 @@ gem 'hamlit-rails'
 gem 'webpacker'
 
 gem 'bootsnap', require: false
+
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

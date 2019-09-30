@@ -20,6 +20,13 @@
           - if devise_mapping.confirmable? && resource.pending_reconfirmation?
             %div.note
               = t('currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
+          %dl.form-group
+            %dt
+              = f.label :icon
+            %dd
+              .d-block.position-relative.mb-2
+                = image_tag resource.icon.attached? ? resource.icon.variant(combine_options: { resize: "150x150^", crop: "150x150+0+0", gravity: :center }) : '', size: 100, class: 'avatar', data: { controller: 'avatar', 'avatar-seed': resource.send(:name) }
+              = f.file_field :icon, direct_upload: true, accept: 'image/*'
           %p
             = f.submit class: 'btn btn-primary'
   %hr

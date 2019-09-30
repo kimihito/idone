@@ -1,7 +1,8 @@
 .col-lg-3.col-md-4.col-12.float-md-left.pr-md-3.pr-xl-6
   .clearfix.mb-2
     .float-left.col-3.col-md-12.pr-3.pr-md-0
-      = image_tag "https://via.placeholder.com/150", class: 'avatar width-full height-full'
+      .d-block.position-relative
+        = image_tag user.icon.attached? ? user.icon.variant(combine_options: { resize: "150x150^", crop: "150x150+0+0", gravity: :center }) : '', class: 'avatar width-full height-full', data: { controller: 'avatar', 'avatar-seed': user.name }
     .float-left.col-9.col-md-12.pl-2.pl-md-0
       .pt-1.pt-md-2.pb-1.pb-md-2
         %h1

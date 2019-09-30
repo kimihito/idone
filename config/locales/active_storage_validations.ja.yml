@@ -1,0 +1,4 @@
+ja:
+  errors:
+    messages:
+      content_type_invalid: "のファイルが不正な形式です"

@@ -23,6 +23,7 @@ import "core-js/stable"
 import "regenerator-runtime/runtime"
 
 require("@rails/ujs").start()
+require("@rails/activestorage").start()
 
 const application = Application.start()
 const context = require.context("controllers", true, /.(js|.ts)$/)
