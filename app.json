@@ -1,7 +1,7 @@
 {
   "name": "idone",
   "scripts": {
-    "postdeploy": "bin/rails heroku_review_apps:create_bucket",
+    "postdeploy": "bin/rails heroku_review_apps:setup",
     "pr-predestroy": "bin/rails heroku_review_apps:cleanup"
   },
   "env":  {
