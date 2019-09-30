@@ -9,7 +9,10 @@
           = date
       - tracks.group_by(&:owner).each do |owner, ts|
         .Box-body
-          = link_to owner.name, user_overview_path(owner), class: 'link-gray-dark'
+          = link_to user_overview_path(owner), class: 'link-gray-dark' do
+            = image_tag owner.icon.attached? ? owner.icon.variant(combine_options: { resize: "150x150^", crop: "150x150+0+0", gravity: :center }) : '', class: 'avatar mr-1', size: 30, data: { controller: 'avatar', 'avatar-seed': owner.name }
+            %span
+              = owner.name
           %ul
             =render ts
   =render 'layouts/pagination', pagy: @pagy
