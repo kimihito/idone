@@ -1,6 +1,9 @@
 {
   "name": "idone",
   "private": true,
+  "scripts": {
+    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force"
+  },
   "engines": {
     "yarn": "1.x"
   },
