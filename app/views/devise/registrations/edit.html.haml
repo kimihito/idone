@@ -24,6 +24,8 @@
             %dt
               = f.label :icon
             %dd
+              .d-block.position-relative.mb-2
+                = image_tag resource.icon.attached? ? resource.icon.variant(combine_options: { resize: "150x150^", crop: "150x150+0+0", gravity: :center }) : '', size: 100, class: 'avatar', data: { controller: 'avatar', 'avatar-seed': resource.send(:name) }
               = f.file_field :icon, direct_upload: true, accept: 'image/*'
           %p
             = f.submit class: 'btn btn-primary'
