@@ -13,7 +13,7 @@ namespace :active_storage do
 
   desc 'cleanup buckets'
   task :cleanup_bucket, [:bucket_name] => :environment do |task, args|
-    ActiveStorage::Blob.find_each(&:purge)
+    ActiveStorage::Attachment.in_batches.each_record(&:purge)
     storage.bucket(args.bucket_name).delete
   end
 end
