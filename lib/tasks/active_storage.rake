@@ -2,8 +2,13 @@ require 'google/cloud/storage'
 
 namespace :active_storage do
   desc 'create bucket'
-  task :create_bucket, [:bucket_name] => :environment do |task, args|
-    storage.create_bucket(args.bucket_name, location: 'us-east1')
+  task :create_bucket, [:bucket_name, :domain] => :environment do |task, args|
+    storage.create_bucket(args.bucket_name, location: 'us-east1') do |b|
+      b.cors.add_rule ["http://#{args.domain}", "https://#{args.domain}"],
+                      '*',
+                      headers: ['Content-Type', 'Content-Md5'],
+                      max_age: 3600
+    end
   end
 
   desc 'cleanup buckets'
