@@ -1,4 +1,4 @@
-FROM ruby:2.6.4
+FROM ruby:2.6.5
 ENV LANG C.UTF-8
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev unzip libldap2-dev libidn11-dev fonts-migmix libjemalloc-dev imagemagick
 
