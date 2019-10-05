@@ -2,7 +2,7 @@
   .clearfix.mb-2
     .float-left.col-3.col-md-12.pr-3.pr-md-0
       .d-block.position-relative
-        = image_tag user.icon.attached? ? user.icon.variant(combine_options: { resize: "150x150^", crop: "150x150+0+0", gravity: :center }) : '', class: 'avatar width-full height-full', data: { controller: 'avatar', 'avatar-seed': user.name }
+        = user.icon_image(class: 'avatar width-full height-full')
     .float-left.col-9.col-md-12.pl-2.pl-md-0
       .pt-1.pt-md-2.pb-1.pb-md-2
         %h1

@@ -10,7 +10,7 @@
       - tracks.group_by(&:owner).each do |owner, ts|
         .Box-body
           = link_to user_overview_path(owner), class: 'link-gray-dark' do
-            = image_tag owner.icon.attached? ? owner.icon.variant(combine_options: { resize: "150x150^", crop: "150x150+0+0", gravity: :center }) : '', class: 'avatar mr-1', size: 30, data: { controller: 'avatar', 'avatar-seed': owner.name }
+            = owner.icon_image(class: 'avatar mr-1', size: 30)
             %span
               = owner.name
           %ul
