@@ -19,6 +19,7 @@
     "dayjs": "^1.8.15",
     "details-dialog-element": "^3.0.3",
     "feather-icons": "^4.24.0",
+    "intersection-observer": "^0.7.0",
     "lodash": "^4.17.15",
     "qs": "^6.7.0",
     "quicklink": "^1.0.0",
@@ -29,6 +30,7 @@
     "twemoji": "^12.1.2",
     "twitter-text": "^3.0.0",
     "typescript": "^3.5.3",
+    "vanilla-lazyload": "^12.0.2",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
