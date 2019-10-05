@@ -10,6 +10,7 @@
 import Turbolinks from 'turbolinks'
 import quicklink from 'quicklink/dist/quicklink.umd.js'
 import feather from 'feather-icons'
+import Lazyload from 'vanilla-lazyload'
 import 'whatwg-fetch'
 import '@webcomponents/custom-elements'
 import 'details-dialog-element'
@@ -22,6 +23,7 @@ import '../styles/application.scss'
 import "core-js/stable"
 import "regenerator-runtime/runtime"
 
+require('intersection-observer')
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 
@@ -33,6 +35,7 @@ import "controllers"
 
 Turbolinks.start()
 document.addEventListener('turbolinks:load', () => {
+  new Lazyload()
   feather.replace({'width': 18, 'height': 18})
   quicklink({
     ignores: [
