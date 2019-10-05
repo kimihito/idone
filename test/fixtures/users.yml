@@ -1,4 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+_fixture:
+  model_class: User
 
 idoneman:
   email: 'test@idone.today'
