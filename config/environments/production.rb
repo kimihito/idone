@@ -61,6 +61,18 @@ Rails.application.configure do
   config.active_job.queue_adapter     = :sidekiq
   # config.active_job.queue_name_prefix = "idone_#{Rails.env}"
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: Rails.application.routes.default_url_options[:host],
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
