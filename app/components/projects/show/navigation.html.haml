@@ -1,0 +1,9 @@
+%nav.UnderlineNav.mb-3.bg-white.px-2
+  .UnderlineNav-body
+    = link_to_unless controller.helpers.current_page?(project_tracks_path(project)), line_nav_item(type: :track), project_tracks_path(project), class: 'UnderlineNav-item' do
+      %span.UnderlineNav-item.selected
+        = line_nav_item(type: :track)
+    = link_to_unless controller.helpers.current_page?(project_members_path(project)), line_nav_item(type: :member), project_members_path(project), class: 'UnderlineNav-item' do
+      %span.UnderlineNav-item.selected
+        = line_nav_item(type: :member)
+
