@@ -28,5 +28,7 @@ class Project < ApplicationRecord
 
   has_many :tracks, dependent: :destroy
 
+  has_one_attached :icon
+
   scope :recent, -> { order('created_at DESC') }
 end
