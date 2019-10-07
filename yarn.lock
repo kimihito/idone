@@ -7110,9 +7110,9 @@ validate-npm-package-license@^3.0.1:
     spdx-expression-parse "^3.0.0"
 
 vanilla-lazyload@^12.0.2:
-  version "12.0.2"
-  resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-12.0.2.tgz#bb6b50db610465f0ab7c6d520b76555ae9d57d67"
-  integrity sha512-b/zcAYG61IxnccCg9OZ8OuWps9+PWE5K8qxC2zuMfA70WAGV/EX5C9EHO3xVjSUTutrLoqEBrEczfxw2WvADLQ==
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/vanilla-lazyload/-/vanilla-lazyload-12.1.0.tgz#b38b7bd6afd06b03287d0da633f5f87ff0256ce9"
+  integrity sha512-qZGPmpuBmNQXOzmF3ufvuU/MbM9a6XToGoQi5G4KmYFKD6ErUO3HTq3aBBcMIFZqqRJaz46yc6ax5syJTXjDJA==
 
 vary@~1.1.2:
   version "1.1.2"
