@@ -250,7 +250,7 @@ GEM
     oj (3.9.2)
     orm_adapter (0.5.0)
     os (1.0.1)
-    pagy (3.5.1)
+    pagy (3.6.0)
     parallel (1.17.0)
     parser (2.6.5.0)
       ast (~> 2.4.0)
