@@ -3,10 +3,10 @@
 # Table name: projects
 #
 #  id         :uuid             not null, primary key
-#  owner_id   :uuid             not null
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  owner_id   :uuid             not null
 #
 # Indexes
 #

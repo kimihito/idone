@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_28_130850) do
+ActiveRecord::Schema.define(version: 2019_10_05_195910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -100,10 +100,10 @@ ActiveRecord::Schema.define(version: 2019_09_28_130850) do
   end
 
   create_table "projects", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "owner_id", null: false
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "owner_id", null: false
     t.index ["created_at"], name: "index_projects_on_created_at"
     t.index ["owner_id"], name: "index_projects_on_owner_id"
     t.index ["title"], name: "index_projects_on_title"
@@ -111,11 +111,11 @@ ActiveRecord::Schema.define(version: 2019_09_28_130850) do
   end
 
   create_table "tracks", force: :cascade do |t|
-    t.uuid "project_id", null: false
-    t.uuid "owner_id", null: false
     t.text "raw_body", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "project_id", null: false
+    t.uuid "owner_id", null: false
     t.index ["created_at"], name: "index_tracks_on_created_at"
     t.index ["owner_id"], name: "index_tracks_on_owner_id"
     t.index ["project_id"], name: "index_tracks_on_project_id"
@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 2019_09_28_130850) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "projects", "users", column: "owner_id"
-  add_foreign_key "tracks", "projects"
-  add_foreign_key "tracks", "users", column: "owner_id"
+  add_foreign_key "projects", "users", column: "owner_id", on_delete: :cascade
+  add_foreign_key "tracks", "projects", on_delete: :cascade
+  add_foreign_key "tracks", "users", column: "owner_id", on_delete: :cascade
 end

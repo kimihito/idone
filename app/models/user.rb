@@ -30,8 +30,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable, :lockable
-  has_many :projects, foreign_key: 'owner_id', dependent: :delete_all
-  has_many :tracks, foreign_key: 'owner_id', dependent: :delete_all
+  has_many :projects, foreign_key: 'owner_id'
+  has_many :tracks, foreign_key: 'owner_id'
 
   has_one_attached :icon
 
