@@ -68,6 +68,7 @@ gem 'fast_jsonapi'
 gem 'sinatra', require: false
 
 gem 'puma'
+gem 'puma_worker_killer'
 gem 'puma-heroku'
 
 gem 'rollout'
