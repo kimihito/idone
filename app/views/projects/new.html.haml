@@ -4,7 +4,7 @@
       %h2.Box-title
         = t('.create_new_project')
 
-    = form_with model: @form, local: true do |f|
+    = form_with model: @project, local: true do |f|
       = render "devise/shared/error_messages", resource: f.object
       .Box-body
         %dl

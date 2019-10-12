@@ -9,17 +9,14 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    new_project = current_user.projects.build
-    authorize(new_project)
-    @form = ProjectForm.new(new_project)
+    @project = authorize current_user.projects.build
+    authorize(@project)
   end
 
   def create(project)
-    new_project = current_user.projects.build
-    authorize(new_project)
-    @form = ProjectForm.new(new_project, project)
-    if @form.save
-      redirect_to @form, notice: t('.success')
+    @project = authorize current_user.projects.build(project)
+    if @project.save
+      redirect_to @project, notice: t('.success')
     else
       flash.now[:alert] = t('.failed')
       render :new
@@ -27,20 +24,15 @@ class ProjectsController < ApplicationController
   end
 
   def edit(id)
-    project = Project.find(id)
-    authorize(project)
-    @form = ProjectForm.new(project)
+    @project = authorize Project.find(id)
   end
 
   def update(id, project)
-    edit_project = Project.find(id)
-    authorize(edit_project)
-    form = ProjectForm.new(edit_project, project)
-    if form.save
-      redirect_to form, notice: t('.success')
+    @project = authorize Project.find(id)
+    if @project.update(project)
+      redirect_to @project, notice: t('.success')
     else
-      flash[:alert] = t('.failed')
-      redirect_to edit_project_path(form)
+      render partial: 'layouts/shared/error_messages', locals: { resource: @project }, status: :unprocessable_entity, turbolinks: false
     end
   end
 
@@ -48,7 +40,6 @@ class ProjectsController < ApplicationController
     @project = Project.find(id)
     authorize(@project)
     @project.destroy!
-
     redirect_to projects_path, notice: t('.success')
   end
 end
