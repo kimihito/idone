@@ -2,7 +2,7 @@
   %nav.menu
     %h3.menu-heading
       = t('components.projects.edit.layout.menu.header')
-    = link_to_unless controller.helpers.current_page?(edit_project_path(project)), t('components.projects.edit.layout.profile'), edit_project_path(project), class: 'menu-item' do
+    = link_to_unless controller.helpers.current_page?(edit_project_path(project)), t('components.projects.edit.layout.edit'), edit_project_path(project), class: 'menu-item' do
       = link_to t('components.projects.edit.layout.edit'), edit_project_path(project), class: 'menu-item selected', aria: { current: 'page' }
     = link_to_unless controller.helpers.current_page?(edit_project_members_path(project)), t('components.projects.edit.layout.member'), edit_project_members_path(project), class: 'menu-item' do
       = link_to t('components.projects.edit.layout.member'), edit_project_members_path(project), class: 'menu-item selected', aria: { current: 'page' }
