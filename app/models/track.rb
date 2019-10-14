@@ -24,4 +24,5 @@ class Track < ApplicationRecord
   belongs_to :project, inverse_of: :tracks
 
   scope :recent, -> { order('created_at DESC') }
+  scope :in_project, -> (project) { where(project: project) }
 end

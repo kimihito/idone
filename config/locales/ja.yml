@@ -83,6 +83,12 @@ ja:
       are_you_sure: '本当に削除してもよろしいですか？'
       cancel_project: '%{title}を削除'
       delete_all_created_tracks: 'プロジェクトの記録もまとめて削除されます'
+    members:
+      member:
+        track_size: '作成した記録数 : %{size}'
+        leave: 'プロジェクトから外す'
+      edit:
+        edit_member: '%{title}のメンバーを編集'
 
   components:
     empty_state:
@@ -116,3 +122,4 @@ ja:
             header: プロジェクト設定
           edit: プロジェクトの編集
           member: メンバーの編集
+
