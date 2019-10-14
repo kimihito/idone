@@ -1,7 +1,7 @@
 = render(Projects::Edit::Layout, project: @project) do
   .Subhead.my-0
     .Subhead-heading
-      = t('.edit_project')
+      = t('.edit_project', title: @project.title)
   .clearfix.d-flex.gutter.flex-shrink-0
     .col-12
       = form_with model: @project, data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' } do |f|
@@ -33,7 +33,7 @@
           %li.Box-row.d-flex.flex-items-center
             .flex-auto
               %strong
-                = t('.cancel_project')
+                = t('.cancel_project', title: @project.title)
               %p.text-small.text-gray-light
                 = t('.delete_all_created_tracks')
             = button_to t('.cancel'), project_path(@project), data: { confirm: t('.are_you_sure') }, method: :delete, class: 'btn btn-danger'
