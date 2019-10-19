@@ -2,10 +2,10 @@ class ProjectForm < Patterns::Form
   param_key "project"
   attribute :title, String
   attribute :owner_id, String
+  attribute :icon, String
 
 
-  validates :title, presence: true
-  validates :owner_id, presence: true
+  validates :title, :owner_id, presence: true
 
   private
 

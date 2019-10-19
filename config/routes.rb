@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :new, :create, :edit, :update, :destroy] do
     with_options module: 'projects' do
       resources :tracks, only: [:index]
-      resources :members, only: [:index]
+      resource :members, only: [:show, :edit, :update]
       resource :stats, only: [:show]
     end
   end

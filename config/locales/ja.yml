@@ -7,6 +7,7 @@ ja:
     attributes:
       project:
         title: タイトル
+        icon: アイコン
     models:
       project: プロジェクト
   activemodel:
@@ -74,6 +75,21 @@ ja:
       edit:
         change_password: パスワードを変更する
         forgot_password: 'パスワードを忘れた'
+  projects:
+    edit:
+      edit_project: '%{title}を編集'
+      back: 戻る
+      cancel: '削除'
+      are_you_sure: '本当に削除してもよろしいですか？'
+      cancel_project: '%{title}を削除'
+      delete_all_created_tracks: 'プロジェクトの記録もまとめて削除されます'
+    members:
+      member:
+        track_size: '作成した記録数 : %{size}'
+        leave: 'プロジェクトから外す'
+      edit:
+        edit_member: '%{title}のメンバーを編集'
+
   components:
     empty_state:
       project:
@@ -99,3 +115,14 @@ ja:
             header: 個人設定
           profile: 'プロフィール'
           security: 'セキュリティ'
+    projects:
+      show:
+        layout:
+          edit: 編集する
+      edit:
+        layout:
+          menu:
+            header: プロジェクト設定
+          edit: プロジェクトの編集
+          member: メンバーの編集
+

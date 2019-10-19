@@ -1,0 +1,2 @@
+= render(Projects::Show::Layout, project: @project) do
+  = render partial: 'projects/members/member', collection: @members, as: :user, locals: { project: @project }

@@ -1,0 +1,7 @@
+= render(Projects::Edit::Layout, project: @project) do
+  .Subhead.my-0
+    .Subhead-heading
+      = t('.edit_member', title: @project.title)
+  .clearfix.d-flex.gutter.flex-shrink-0
+    .col-12.mt-3
+      = render partial: 'projects/members/member', collection: @members, as: :user, locals: { project: @project, deletable: true }

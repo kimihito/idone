@@ -1,7 +1,4 @@
-.col-lg-3.col-12.float-left.pr-lg-3
-  =render 'projects/layouts/summary', project: @project
-.col-lg-9.col-12.float-left
-  =render 'projects/navigation', project: @project
+= render(Projects::Show::Layout, project: @project) do
   - @tracks_by_date.each do |date, tracks|
     .Box.mb-2.track
       .Box-header
@@ -14,5 +11,5 @@
             %span
               = owner.name
           %ul
-            =render ts
+            = render partial: 'tracks/track', collection: ts, as: :track
   =render 'layouts/pagination', pagy: @pagy

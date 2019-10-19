@@ -1,5 +1,9 @@
 .Box.border-0
   .Box-body
     = project.title
+    = project.icon_image(size: 96, class: 'avatar')
   .Box-footer
     = project.owner.email
+
+- if policy(project).update?
+  = link_to "edit", edit_project_path(project)
