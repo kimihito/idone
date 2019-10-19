@@ -32,6 +32,7 @@ class Project < ApplicationRecord
   has_one_attached :icon
   validates :title, presence: true
   validates :icon, content_type: /\Aimage\/.*\z/
+  validates :description, length: { maximum: 300 }, allow_blank: true
 
   scope :recent, -> { order('created_at DESC') }
 end

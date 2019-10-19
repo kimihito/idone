@@ -4,7 +4,7 @@
     .d-flex
       %h3.text-normal.flex-auto.pb-1
         = link_to project.title, project
-    = simple_format(project.description)
+    = simple_format(project.description_with_placeholder)
     .d-flex.flex-column.text-small.text-gray
       %span.flex-auto
         = t('.owner_label')
