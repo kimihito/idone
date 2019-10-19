@@ -1,0 +1,15 @@
+.Box.mb-1
+  %ul
+    %li.Box-row.d-flex.flex-items-center
+      .d-flex.flex-auto
+        .d-flex.mr-3
+          = user.icon_image(class: 'avatar mr-1', size: 50)
+        .flex-column
+          %strong
+            = link_to user.name, user_overview_path(user), class: 'd-block link-gray-dark'
+          %p.text-small.text-gray-light
+            = t('.track_size', size: user.tracks.size)
+          %p.text-small.text-gray-light
+            = t('.project_size', size: user.projects.size)
+      .d-flex.flex-justify-center
+        = link_to t('.go_to_user_page'), user_overview_path(user), class: 'btn'

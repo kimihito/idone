@@ -12,7 +12,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
-#  failed_attempts        :integer          default(0), not null
+#  failed_attempts        :integer          default("0"), not null
 #  locked_at              :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -41,6 +41,8 @@ class User < ApplicationRecord
   audited only: :name, max_audits: 3
 
   attr_writer :login
+
+  scope :recent, -> { order('updated_at DESC') }
 
   def login
     @login || self.name || self.email

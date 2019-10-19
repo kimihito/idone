@@ -1,3 +1,2 @@
-%h1 Users#index
-%p Find me in app/views/users/index.html.erb
-= link_to 'root', root_path
+= render @users
+= render 'layouts/pagination', pagy: @pagy
