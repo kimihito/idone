@@ -22,6 +22,11 @@
               = t('currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
           %dl.form-group
             %dt
+              = f.label :biography
+            %dd
+              = f.text_area :biography, class: 'form-control', rows: '4'
+          %dl.form-group
+            %dt
               = f.label :icon
             %dd
               .d-block.position-relative.mb-2

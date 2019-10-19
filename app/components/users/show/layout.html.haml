@@ -8,6 +8,8 @@
         %h1
           %span.d-block.overflow-hidden
             = user.name
+        .d-none.d-md-block.text-small
+          = simple_format(user.biography, class: 'mb-0')
         - if editable
           .d-none.d-md-block
             .hide-sm.hide-md
