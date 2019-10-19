@@ -24,7 +24,7 @@ class Project < ApplicationRecord
     options :title, left_wildcard: false
   end
 
-  belongs_to :owner, class_name: 'User'
+  belongs_to :owner, class_name: 'User', touch: true
 
   has_many :tracks
 

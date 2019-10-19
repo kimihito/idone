@@ -53,6 +53,10 @@ ja:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'
   users:
+    user:
+      track_size: '作成した記録数 : %{size}'
+      project_size: '作成したプロジェクト数 : %{size}'
+      go_to_user_page: もっとみる
     projects:
       project:
         owner_label: 作成者

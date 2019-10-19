@@ -2,7 +2,7 @@
 #
 # Table name: tracks
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
 #  project_id :uuid             not null
 #  owner_id   :uuid             not null
 #  raw_body   :text             default(""), not null
@@ -20,7 +20,7 @@
 class Track < ApplicationRecord
   include PublicActivity::Common
 
-  belongs_to :owner, class_name: 'User', inverse_of: :tracks
+  belongs_to :owner, class_name: 'User', inverse_of: :tracks, touch: true
   belongs_to :project, inverse_of: :tracks
 
   scope :recent, -> { order('created_at DESC') }

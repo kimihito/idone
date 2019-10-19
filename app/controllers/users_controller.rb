@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  include Pagy::Backend
   def index
-    @users = User.all
-    authorize(@users)
+    @pagy, @users = pagy(User.includes(:tracks, :projects).recent)
+    skip_authorization
   end
 
   def edit(name)
