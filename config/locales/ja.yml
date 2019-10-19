@@ -80,6 +80,9 @@ ja:
         change_password: パスワードを変更する
         forgot_password: 'パスワードを忘れた'
   projects:
+    project:
+      owner_label: 作成者
+      updated_at: 更新日
     edit:
       edit_project: '%{title}を編集'
       back: 戻る

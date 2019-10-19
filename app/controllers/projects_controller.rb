@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
 
   def index
     @pagy, @projects = pagy(Project.recent)
-    authorize(@projects)
+    skip_authorization
   end
 
   def new
