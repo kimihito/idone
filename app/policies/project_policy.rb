@@ -16,6 +16,7 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def edit?
+    return false unless user
     record.owner_id == user.id
   end
 

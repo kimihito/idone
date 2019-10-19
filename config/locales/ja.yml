@@ -116,6 +116,9 @@ ja:
           profile: 'プロフィール'
           security: 'セキュリティ'
     projects:
+      show:
+        layout:
+          edit: 編集する
       edit:
         layout:
           menu:
