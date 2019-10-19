@@ -7,6 +7,8 @@
         .flex-column
           %strong
             = link_to user.name, user_overview_path(user), class: 'd-block link-gray-dark'
+          %p.text-small.text-gray-light.mb-1
+            = user.biography.truncate(30)
           %p.text-small.text-gray-light
             = t('.track_size', size: user.tracks.in_project(project).size)
       // FIXME: after membership model

@@ -17,6 +17,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  name                   :string           not null
+#  biography              :text             default(""), not null
 #
 # Indexes
 #
@@ -37,6 +38,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, format: { with: /^[a-zA-Z0-9_\.]*$/, multiline: true }, uniqueness: { case_sensitive: true }
   validates :icon, content_type: /\Aimage\/.*\z/
+  validates :biography, length: { maximum: 300 }
 
   audited only: :name, max_audits: 3
 
