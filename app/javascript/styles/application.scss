@@ -26,3 +26,9 @@ img.emoji {
     z-index: 1;
   }
 }
+
+textarea#project_description {
+  height: auto;
+  min-height: initial;
+  resize: none;
+}

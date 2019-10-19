@@ -14,6 +14,11 @@
               = f.text_field :title, class: 'form-control'
           %dl.form-group
             %dt
+              = f.label :description
+            %dd
+              = f.text_area :description, class: 'form-control', rows: '4'
+          %dl.form-group
+            %dt
               = f.label :icon
             %dd
               .d-block.position-relative.mb-2

@@ -17,7 +17,12 @@ class ProjectFormTest < ActiveSupport::TestCase
 
   test "should save project" do
     assert_difference "Project.count" do
-      form = ProjectForm.new(Project.new, { owner_id: @owner.id, title: 'title'})
+      form = ProjectForm.new(Project.new, { owner_id: @owner.id, title: 'title' })
+      form.save
+    end
+
+    assert_difference "Project.count" do
+      form = ProjectForm.new(Project.new, { owner_id: @owner.id, title: 'title', description: '' })
       form.save
     end
   end

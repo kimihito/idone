@@ -7,8 +7,7 @@
         .pl-4.m-0
           %h3.d-block.h3
             = project.title
-          %p.lh-default
-            = "#{'これは説明文です。' * 10}"
+          = simple_format(project.description_with_placeholder, class: 'lh-default')
       .d-flex.flex-column.px-2
         .pt-1
           %i.mr-1.v-align-text-top{ data: { feather: 'refresh-cw'}, 'stroke-width': 1 }

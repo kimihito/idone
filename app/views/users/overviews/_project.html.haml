@@ -3,10 +3,10 @@
     .d-flex.width-full.flex-items-center.position-relative
       .flex-auto
         .float-left.p-1.mr-1
-          = image_tag "https://via.placeholder.com/100", class: 'avatar width-full height-full', height: '25', width: '25'
+          = project.icon_image(class: 'avatar', size: 100)
         = link_to project.title, project_path(project), class: 'text-bold min-width-0 mb-1'
         .text-gray.text-small.mb-2
-          ="これは説明文です。これは説明文です。これは説明文です。これは説明文です。これは説明文です。".truncate(30)
+          = project.description_with_placeholder.truncate(30)
         .d-flex.flex-column.text-small.text-gray
           %span.flex-auto
             = t('.owner_label')

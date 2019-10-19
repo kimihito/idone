@@ -1,2 +1,4 @@
-- @projects.each do |project|
-  = link_to project.title, project
+%ul.d-flex.flex-wrap.list-style-none
+  = render @projects
+  %li.col-12
+    = render 'layouts/pagination', pagy: @pagy

@@ -3,7 +3,7 @@ class ProjectForm < Patterns::Form
   attribute :title, String
   attribute :owner_id, String
   attribute :icon, String
-
+  attribute :description, String
 
   validates :title, :owner_id, presence: true
 

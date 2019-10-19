@@ -2,11 +2,12 @@
 #
 # Table name: projects
 #
-#  id         :uuid             not null, primary key
-#  title      :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  owner_id   :uuid             not null
+#  id          :uuid             not null, primary key
+#  title       :string           not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  owner_id    :uuid             not null
+#  description :text             default(""), not null
 #
 # Indexes
 #
@@ -31,6 +32,7 @@ class Project < ApplicationRecord
   has_one_attached :icon
   validates :title, presence: true
   validates :icon, content_type: /\Aimage\/.*\z/
+  validates :description, length: { maximum: 300 }, allow_blank: true
 
   scope :recent, -> { order('created_at DESC') }
 end

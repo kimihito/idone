@@ -1,11 +1,11 @@
 class ProjectsController < ApplicationController
   include Pagy::Backend
-  permits :title, :owner_id, :icon, model_name: 'Project'
+  permits :title, :owner_id, :icon, :description, model_name: 'Project'
   before_action :authenticate_user!, except: %i[index]
 
   def index
     @pagy, @projects = pagy(Project.recent)
-    authorize(@projects)
+    skip_authorization
   end
 
   def new

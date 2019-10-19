@@ -7,10 +7,15 @@
     = form_with model: @project, local: true do |f|
       = render "devise/shared/error_messages", resource: f.object
       .Box-body
-        %dl
+        %dl.form-group
           %dt
             %label= f.label :title
           %dd
-            = f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control input-block"
+            = f.text_field :title, autofocus: true, autocomplete: "title", class: "form-control input-block width-full"
+        %dl.form-group
+          %dt
+            %label= f.label :description
+          %dd
+            = f.text_area :description, class: 'form-control', cols: '4'
       .Box-footer.text-right
         = f.submit t('.submit'), class: 'btn btn-primary'
