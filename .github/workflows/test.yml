@@ -35,29 +35,55 @@ jobs:
 
       - name: Iinstall dependency packages
         run: apt-get update -qq && apt-get install -y build-essential libpq-dev unzip libldap2-dev libidn11-dev fonts-migmix libjemalloc-dev imagemagick
-      
+
+      - name: Install Google Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+          sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          apt-get update -qq && apt-get install -y google-chrome-stable
+
+      - name: Install Chromedriver
+        run: |
+          CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
+          mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION
+          curl -sS -o /tmp/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip
+          unzip -qq /tmp/chromedriver_linux64.zip -d /opt/chromedriver-$CHROMEDRIVER_VERSION
+          rm /tmp/chromedriver_linux64.zip
+          chmod +x /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver
+          ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver
+
       - name: install Node.js
         run: |
           curl -sL https://deb.nodesource.com/setup_10.x | bash -
           apt-get install -y nodejs
           npm install -g yarn
 
-      - name: bundle install
-        run: bundle install --jobs 4 --retry 3
+      - run: bundle install --jobs 4 --retry 3
 
-      - name: yarn install
-        run: yarn
-      
+      - run: yarn
+
       - name: Setup database
         run: |
           cp config/database.actions.yml config/database.yml
           bin/rails db:create
           bin/rails db:schema:load
 
-      - name: run Webpack 
-        run: bin/webpack
+      - run: bin/webpack
 
-      - name: Run rails test
-        run: bin/rails test
+      - run: bin/rails test
+
+      - run: bin/rails test:system
+
+      - run: mkdir -p /tmp/test-results /tmp/screenshots
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: screenshots
+          path: /tmp/screenshots
+
+      - uses: actions/upload-artifact@master
+        with:
+          name: test-results
+          path: /tmp/test-results
 
 
