@@ -9,7 +9,8 @@
             %summary.text-gray-dark.d-inline-block
               %span.h2.v-align-middle
                 📝
-              = t('.new_track')
+              %span.d-none.d-md-inline-block
+                = t('.new_track')
             %details-dialog.anim-fade-in.fast.wide
               .Box.d-flex.flex-column
                 %h5.Box-header
@@ -25,26 +26,38 @@
         = link_to projects_path, class: 'text-gray-dark no-underline' do
           %span.h2.v-align-middle
             🗂
-          プロジェクト
+          %span.d-none.d-md-inline-block
+            = Project.model_name.human
       .flex-item-equal
         = link_to users_path, class: 'text-gray-dark no-underline' do
           %span.h2.v-align-middle
             👥
-          ユーザ
+          %span.d-none.d-md-inline-block
+            ユーザ
       .d-flex.flex-justify-end.flex-items-center
         - if user_signed_in?
-          %details.details-reset.details-overlay.position-relative
+          %details.dropdown.details-reset.details-overlay.position-relative
             %summary
-              %i{data:{feather: 'more-vertical'}, height: 24, width: 24}
-            .position-absolute.right-0{style: 'z-index: 999;' }
-              %nav.menu.d-flex.flex-column{style: 'min-width: 100px;'}
-                = link_to 'hi', root_path, class: 'menu-item'
-                = link_to t('.sign_out'), destroy_user_session_path, class: 'menu-item', method: :delete
-                = link_to t('.sign_out'), destroy_user_session_path, class: 'menu-item', method: :delete
-                = link_to t('.sign_out'), destroy_user_session_path, class: 'menu-item', method: :delete
-
-              %ul
-          = link_to t('.sign_out'), destroy_user_session_path, class: 'btn mr-1', role: 'button', method: :delete
+              = current_user.icon_image(class: 'avatar avatar-small', size: 32)
+              %span.d-none.d-md-inline-block
+                = current_user.name
+              %i{ data: {feather: 'chevron-down'}, style: 'vertical-align: middle' }
+            %ul.dropdown-menu.dropdown-menu-sw.position-absolute.right-0
+              %li
+                = link_to new_project_path, class: 'dropdown-item' do
+                  %i{ data: { feather: 'plus-square' }, style: 'vertical-align: middle' }
+                  %span.text-small
+                    = t('.create_new_project')
+              %li
+                = link_to edit_user_registration_path, class: 'dropdown-item' do
+                  %i{ data: { feather: 'settings' }, style: 'vertical-align: middle' }
+                  %span.text-small
+                    = t('.setting')
+              %li
+                = link_to destroy_user_session_path, class: 'dropdown-item', method: :delete do
+                  %i{ data: { feather: 'log-out' }, style: 'vertical-align: middle' }
+                  %span.text-small
+                    = t('.sign_out')
         - else
           = link_to t('.sign_in'), new_user_session_path, class: 'btn mr-1', role: 'button'
           = link_to t('.sign_up'), new_user_registration_path, class: 'btn btn-primary'

@@ -23,6 +23,7 @@ ja:
       sign_in: ログイン
       sign_out: ログアウト
       create_new_project: 'プロジェクトを作成'
+      setting: 設定
       new_track: '記録する'
       close_dialog: 閉じる
   projects:
