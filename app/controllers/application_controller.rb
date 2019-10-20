@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  def current_user
+    ActiveDecorator::Decorator.instance.decorate(super) if super.present?
+    super
+  end
+
   private
 
   def user_not_authorized(exception)
