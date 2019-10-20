@@ -1,0 +1,6 @@
+test:
+  adapter: postgresql
+  host: postgres
+  database: actions_test
+  username: postgres
+  password: password

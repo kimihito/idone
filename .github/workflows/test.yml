@@ -1,0 +1,63 @@
+name: test
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+        options: --health-cmd "redis-cli -h localhost ping" --health-interval 10s --health-timeout 5s --health-retries 15
+
+    container:
+      image: ruby:2.6.5
+      env:
+        RAILS_ENV: test
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: password
+        REDIS_URL: redis://redis:6379
+        DEFAULT_URL_HOST: locahost:3000
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Iinstall dependency packages
+        run: apt-get update -qq && apt-get install -y build-essential libpq-dev unzip libldap2-dev libidn11-dev fonts-migmix libjemalloc-dev imagemagick
+      
+      - name: install Node.js
+        run: |
+          curl -sL https://deb.nodesource.com/setup_10.x | bash -
+          apt-get install -y nodejs
+          npm install -g yarn
+
+      - name: bundle install
+        run: bundle install --jobs 4 --retry 3
+
+      - name: yarn install
+        run: yarn
+      
+      - name: Setup database
+        run: |
+          cp config/database.actions.yml config/database.yml
+          bin/rails db:create
+          bin/rails db:schema:load
+
+      - name: run Webpack 
+        run: bin/webpack
+
+      - name: Run rails test
+        run: bin/rails test
+
+
