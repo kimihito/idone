@@ -33,7 +33,7 @@
           %span.h2.v-align-middle
             👥
           %span.d-none.d-md-inline-block
-            ユーザ
+            = User.model_name.human
       .d-flex.flex-justify-end.flex-items-center
         - if user_signed_in?
           %details.dropdown.details-reset.details-overlay.position-relative
