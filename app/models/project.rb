@@ -27,7 +27,8 @@ class Project < ApplicationRecord
 
   belongs_to :owner, class_name: 'User', touch: true
 
-  has_many :tracks
+  has_many :project_tags
+  has_many :tracks, through: :project_tags
 
   has_one_attached :icon
   validates :title, presence: true

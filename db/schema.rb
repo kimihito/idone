@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_053226) do
   create_table "project_tags", force: :cascade do |t|
     t.uuid "project_id"
     t.bigint "track_id", null: false
+    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_tags_on_project_id"
@@ -124,11 +125,9 @@ ActiveRecord::Schema.define(version: 2019_10_22_053226) do
     t.text "raw_body", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid "project_id", null: false
     t.uuid "owner_id", null: false
     t.index ["created_at"], name: "index_tracks_on_created_at"
     t.index ["owner_id"], name: "index_tracks_on_owner_id"
-    t.index ["project_id"], name: "index_tracks_on_project_id"
     t.index ["updated_at"], name: "index_tracks_on_updated_at"
   end
 
@@ -157,6 +156,5 @@ ActiveRecord::Schema.define(version: 2019_10_22_053226) do
   add_foreign_key "project_tags", "projects"
   add_foreign_key "project_tags", "tracks"
   add_foreign_key "projects", "users", column: "owner_id", on_delete: :cascade
-  add_foreign_key "tracks", "projects", on_delete: :cascade
   add_foreign_key "tracks", "users", column: "owner_id", on_delete: :cascade
 end
