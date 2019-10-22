@@ -21,7 +21,7 @@ class Track < ApplicationRecord
   include PublicActivity::Common
 
   belongs_to :owner, class_name: 'User', inverse_of: :tracks, touch: true
-  belongs_to :project_tag
+  has_one :project_tag
   has_one :project, through: :project_tag
 
   scope :recent, -> { order('created_at DESC') }

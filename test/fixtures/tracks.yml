@@ -6,16 +6,11 @@ _fixture:
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-<% (1..100).to_a.each_slice(2).with_index do |(a,b), i| %>
-project_1_track_<%= a %>:
-  owner: idoneman
-  project: project_1
-  raw_body: "#プロジェクト1 Raw body <%= a %>"
-  created_at: <%= Time.current.days_ago(i) %>
 
-project_2_track_<%= b %>:
-  owner: idoneman2
-  project: project_2
-  raw_body: "#プロジェクト2 Raw body <%= b %>"
-  created_at: <%= Time.current.days_ago(i) %>
-<% end %>
+track_for_project_1:
+  owner: idoneman
+  raw_body: '#project_1_tag track 1'
+
+track_no_project:
+  owner: idoneman
+  raw_body: '#no_project track'
