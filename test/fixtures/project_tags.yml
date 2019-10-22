@@ -3,9 +3,15 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+
+_fixture:
+  model_class: ProjectTag
+
+project_1_tag:
+  name: project_1_tag
+  project: project_1
+  track: track_for_project_1
+
+no_project_tag:
+  name: no_project
+  track: track_no_project
