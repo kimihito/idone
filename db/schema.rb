@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_073305) do
+ActiveRecord::Schema.define(version: 2019_10_22_053226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -99,6 +99,15 @@ ActiveRecord::Schema.define(version: 2019_10_19_073305) do
     t.index ["user_type", "user_id"], name: "index_login_activities_on_user_type_and_user_id"
   end
 
+  create_table "project_tags", force: :cascade do |t|
+    t.uuid "project_id"
+    t.bigint "track_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_tags_on_project_id"
+    t.index ["track_id"], name: "index_project_tags_on_track_id"
+  end
+
   create_table "projects", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
@@ -145,6 +154,8 @@ ActiveRecord::Schema.define(version: 2019_10_19_073305) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "project_tags", "projects"
+  add_foreign_key "project_tags", "tracks"
   add_foreign_key "projects", "users", column: "owner_id", on_delete: :cascade
   add_foreign_key "tracks", "projects", on_delete: :cascade
   add_foreign_key "tracks", "users", column: "owner_id", on_delete: :cascade
