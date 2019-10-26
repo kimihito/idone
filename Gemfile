@@ -21,6 +21,8 @@ gem 'actionview-component'
 
 gem 'active_decorator'
 
+gem 'active_interaction'
+
 gem 'devise'
 
 gem 'devise-i18n'
