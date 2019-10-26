@@ -29,6 +29,8 @@ gem 'authtrail'
 
 gem 'audited'
 
+gem 'high_voltage'
+
 gem 'pagy'
 
 gem 'pg'
