@@ -17,7 +17,7 @@
 
 class ProjectTag < ApplicationRecord
   belongs_to :project, optional: true
-  belongs_to :track
+  belongs_to :track, optional: true
 
   validates :name, presence: true
 end
