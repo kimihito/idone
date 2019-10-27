@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_22_053226) do
+ActiveRecord::Schema.define(version: 2019_10_27_082151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -101,12 +101,11 @@ ActiveRecord::Schema.define(version: 2019_10_22_053226) do
 
   create_table "project_tags", force: :cascade do |t|
     t.uuid "project_id"
-    t.bigint "track_id"
-    t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "tag_id", null: false
     t.index ["project_id"], name: "index_project_tags_on_project_id"
-    t.index ["track_id"], name: "index_project_tags_on_track_id"
+    t.index ["tag_id"], name: "index_project_tags_on_tag_id"
   end
 
   create_table "projects", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -121,13 +120,22 @@ ActiveRecord::Schema.define(version: 2019_10_22_053226) do
     t.index ["updated_at"], name: "index_projects_on_updated_at"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.text "raw_body", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.uuid "owner_id", null: false
+    t.uuid "project_id"
     t.index ["created_at"], name: "index_tracks_on_created_at"
     t.index ["owner_id"], name: "index_tracks_on_owner_id"
+    t.index ["project_id"], name: "index_tracks_on_project_id"
     t.index ["updated_at"], name: "index_tracks_on_updated_at"
   end
 
@@ -154,7 +162,10 @@ ActiveRecord::Schema.define(version: 2019_10_22_053226) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "project_tags", "projects"
-  add_foreign_key "project_tags", "tracks"
+  add_foreign_key "project_tags", "tags"
   add_foreign_key "projects", "users", column: "owner_id", on_delete: :cascade
+  add_foreign_key "track_tags", "tags"
+  add_foreign_key "track_tags", "tracks"
+  add_foreign_key "tracks", "projects"
   add_foreign_key "tracks", "users", column: "owner_id", on_delete: :cascade
 end
