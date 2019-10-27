@@ -1,0 +1,2 @@
+class TrackTag < ApplicationRecord
+end
