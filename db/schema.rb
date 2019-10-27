@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_082151) do
+ActiveRecord::Schema.define(version: 2019_10_27_083643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -125,6 +125,15 @@ ActiveRecord::Schema.define(version: 2019_10_27_082151) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_tags_on_name"
+  end
+
+  create_table "track_tags", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "track_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_track_tags_on_tag_id"
+    t.index ["track_id"], name: "index_track_tags_on_track_id"
   end
 
   create_table "tracks", force: :cascade do |t|
