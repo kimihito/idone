@@ -18,6 +18,7 @@
 #
 
 class Project < ApplicationRecord
+  DESCRIPTION_MAXIMUM = 300.freeze
   include SearchCop
 
   search_scope :search do

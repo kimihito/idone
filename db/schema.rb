@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2019_10_22_053226) do
 
   create_table "project_tags", force: :cascade do |t|
     t.uuid "project_id"
-    t.bigint "track_id", null: false
+    t.bigint "track_id"
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
