@@ -17,5 +17,10 @@
             %label= f.label :description
           %dd
             = f.text_area :description, class: 'form-control', cols: '4'
+        %dl.form-group
+          %dt
+            = f.label :icon
+          %dd
+            = f.file_field :icon, direct_upload: true, accept: 'image/*'
       .Box-footer.text-right
         = f.submit t('.submit'), class: 'btn btn-primary'
