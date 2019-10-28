@@ -1,5 +1,6 @@
 class Projects::Create < ActiveInteraction::Base
-  string :title, :description, :icon, default: nil
+  string :title, :icon, default: nil
+  string :description, default: ''
   array :tag_names, default: [] do
     string
   end

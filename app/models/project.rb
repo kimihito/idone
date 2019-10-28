@@ -28,7 +28,7 @@ class Project < ApplicationRecord
 
   belongs_to :owner, class_name: 'User', touch: true
 
-  has_many :tracks
+  has_many :tracks, dependent: :destroy
   has_many :project_tags, dependent: :destroy
   has_many :tags, through: :project_tags
 
