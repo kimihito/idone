@@ -17,6 +17,16 @@ ja:
         title: タイトル
       track_form:
         raw_body: 記録
+      project_tags/create:
+        name: タグ名
+  active_interaction:
+    attributes:
+      projects/create:
+        title: タイトル
+      projects/tags/create:
+        name: タグ名
+      tracks/create:
+        raw_body: 記録
   layouts:
     header:
       sign_up: 新規登録

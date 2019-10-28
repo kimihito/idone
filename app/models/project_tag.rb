@@ -16,8 +16,6 @@
 #
 
 class ProjectTag < ApplicationRecord
-  belongs_to :project, optional: true
-  belongs_to :track, optional: true
-
-  validates :name, presence: true
+  belongs_to :project
+  belongs_to :tag
 end

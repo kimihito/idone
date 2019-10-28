@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   include Pagy::Backend
-  permits :title, :owner_id, :icon, :description, model_name: 'Project'
+  permits :title, :icon, :description, model_name: 'Project'
   before_action :authenticate_user!, except: %i[index]
 
   def index
@@ -9,14 +9,13 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @project = authorize current_user.projects.build
-    authorize(@project)
+    @project = authorize Projects::Create.new(owner: current_user)
   end
 
   def create(project)
-    @project = authorize current_user.projects.build(project)
-    if @project.save
-      redirect_to @project, notice: t('.success')
+    @project = authorize Projects::Create.run(project.merge(owner: current_user))
+    if @project.valid?
+      redirect_to @project.result, notice: t('.success')
     else
       flash.now[:alert] = t('.failed')
       render :new
@@ -37,8 +36,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy(id)
-    @project = Project.find(id)
-    authorize(@project)
+    @project = authorize Project.find(id)
     @project.destroy!
     redirect_to projects_path, notice: t('.success')
   end

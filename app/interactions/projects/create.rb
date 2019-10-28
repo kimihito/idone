@@ -10,10 +10,9 @@ class Projects::Create < ActiveInteraction::Base
   validates :description, presence: true, length: { maximum: Project::DESCRIPTION_MAXIMUM }, allow_blank: true
 
   def execute
-    # FIXME: error i18n
     project = Project.new(inputs.except(:tag_names))
     tag_names.each do |tag_name|
-      compose(ProjectTags::Create, name: tag_name, project: project)
+      compose(Projects::Tags::Create, name: tag_name, project: project)
     end
     errors.merge!(project.errors) unless project.save
     project
