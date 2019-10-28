@@ -7,7 +7,7 @@ class Tracks::CreateTest < ActiveSupport::TestCase
 
   test "should save with project" do
     project = Project.create(title: 'title', owner: @owner)
-    assert_difference "Track.count" do
+    assert_difference ["Track.count", "ProjectTag.count"] do
       Tracks::Create.run(owner: @owner, raw_body: '#hello world', project: project)
     end
   end
