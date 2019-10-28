@@ -8,10 +8,5 @@ _fixture:
   model_class: ProjectTag
 
 project_1_tag:
-  name: project_1_tag
   project: project_1
-  track: track_for_project_1
-
-no_project_tag:
-  name: no_project
-  track: track_no_project
+  tag: tag_with_project

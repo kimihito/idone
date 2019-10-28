@@ -12,7 +12,12 @@ class Tracks::Create < ActiveInteraction::Base
 
   def execute
     @track = Track.new(inputs)
-    compose(ProjectTags::Create, track: @track, name: tag_name)
+    if project?
+      compose(Projects::Tags::Create, name: tag_name, project: project)
+      @track.project = project
+    else
+      compose(Tracks::Tags::Create, name: tag_name, track: @track)
+    end
 
     if @track.save
       touch_project

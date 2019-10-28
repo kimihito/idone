@@ -13,13 +13,13 @@ class Tracks::CreateTest < ActiveSupport::TestCase
   end
 
   test "should save without project" do
-    assert_difference ["Track.count", "ProjectTag.count"] do
+    assert_difference ["Track.count", "TrackTag.count"] do
       Tracks::Create.run(owner: @owner, raw_body: '#hello world')
     end
   end
 
   test "should not save without hashtag" do
-    assert_no_difference ["Track.count", "ProjectTag.count"] do
+    assert_no_difference ["Track.count", "TrackTag.count"] do
       Tracks::Create.run(owner: @owner, raw_body: 'hello world')
     end
   end
