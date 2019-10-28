@@ -210,7 +210,7 @@ GEM
     listen (3.2.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    logstop (0.2.4)
+    logstop (0.2.5)
     lol_dba (2.1.8)
       actionpack (>= 3.0, < 6.0)
       activerecord (>= 3.0, < 6.0)
