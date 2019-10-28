@@ -3,10 +3,9 @@
     .Box-header
       %h2.Box-title
         = t('.create_new_project')
-
-    = form_with model: @project, local: true do |f|
-      = render "devise/shared/error_messages", resource: f.object
+    = form_with model: @project, data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' } do |f|
       .Box-body
+        .m-1{ data: { target: 'form.errors' } }
         %dl.form-group
           %dt
             %label= f.label :title

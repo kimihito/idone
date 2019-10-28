@@ -17,8 +17,7 @@ class ProjectsController < ApplicationController
     if @project.valid?
       redirect_to @project.result, notice: t('.success')
     else
-      flash.now[:alert] = t('.failed')
-      render :new
+      render partial: 'layouts/shared/error_messages', locals: { resource: @project }, status: :unprocessable_entity, turbolinks: false
     end
   end
 
