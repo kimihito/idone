@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   include Pagy::Backend
-  permits :title, :icon, :description, model_name: 'Project'
+  permits :title, :icon, :description, :tag_names, model_name: 'Project'
   before_action :authenticate_user!, except: %i[index]
 
   def index
@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   end
 
   def create(project)
-    @project = authorize Projects::Create.run(project.merge(owner: current_user))
+    @project = authorize Projects::Create.run(project.merge(owner: current_user, tag_names: project[:tag_names]&.split(',')))
     if @project.valid?
       redirect_to @project.result, notice: t('.success')
     else

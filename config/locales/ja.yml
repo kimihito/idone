@@ -9,6 +9,7 @@ ja:
         title: タイトル
         icon: アイコン
         description: 説明
+        tag_names: タグ名
     models:
       project: プロジェクト
   activemodel:

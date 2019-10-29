@@ -24,6 +24,11 @@
               .d-block.position-relative.mb-2
                 = f.object.icon_image(class: 'avatar mr-1', size: 100)
               = f.file_field :icon, direct_upload: true, accept: 'image/*'
+          %dl.form-group
+            %dt
+              = f.label :tag_names
+            %dd
+              = f.text_field :tag_names, class: 'form-control'
           %p
             = f.submit class: 'btn btn-primary'
             = link_to t('.back'), project_path(@project), class: 'btn-link ml-1'

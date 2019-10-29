@@ -21,5 +21,10 @@
             = f.label :icon
           %dd
             = f.file_field :icon, direct_upload: true, accept: 'image/*'
+        %dl.form-group
+          %dt
+            = f.label :tag_names
+          %dd
+            = f.text_field :tag_names, class: "form-control input-block width-full"
       .Box-footer.text-right
         = f.submit t('.submit'), class: 'btn btn-primary'

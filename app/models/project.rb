@@ -38,4 +38,8 @@ class Project < ApplicationRecord
   validates :description, length: { maximum: 300 }, allow_blank: true
 
   scope :recent, -> { order('created_at DESC') }
+
+  def tag_names
+    tags.map(&:name).join(',')
+  end
 end
