@@ -1,27 +1,28 @@
 class Projects::Update < ActiveInteraction::Base
-  string :title, :icon, default: nil
-  string :description, default: ''
+  string :title, :icon, :description, default: nil
   array :tag_names, default: [] do
     string
   end
 
-  object :owner, class: User
   object :project
 
-  validates :title, :owner, presence: true
-  validates :description, presence: true, length: { maximum: Project::DESCRIPTION_MAXIMUM }, allow_blank: true
+  validates :description, presence: true, length: { maximum: Project::DESCRIPTION_MAXIMUM }, allow_blank: true, if: :description?
+  validates :title, presence: true, if: :title?
+  validates :icon, presence: true, if: :icon?
 
   def to_model
     project
   end
 
   def execute
-    project.assign_attributes(inputs.except(:project, :tag_names))
-    tag_names.each do |tag_name|
+    project.title = title if title?
+    project.description = description if description?
+    project.icon = icon if icon?
+    tags = tag_names.map do |tag_name|
       compose(Projects::Tags::Create, name: tag_name, project: project)
     end
-    error.merge!(project.errors) unless project.save
-    project.reload # need it?
+    project.tags = tags
+    errors.merge!(project.errors) unless project.save
     project
   end
 end
