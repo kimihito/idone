@@ -1,5 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-no_project_tag:
-  tag: tag_with_track
-  track: track_no_project
