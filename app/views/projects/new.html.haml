@@ -25,6 +25,6 @@
           %dt
             = f.label :tag_names
           %dd
-            = f.text_field :tag_names, class: "form-control input-block width-full"
+            = f.text_field :tag_names, class: "form-control input-block width-full", data: { controller: 'tag' }
       .Box-footer.text-right
         = f.submit t('.submit'), class: 'btn btn-primary'

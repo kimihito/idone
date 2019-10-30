@@ -28,7 +28,7 @@
             %dt
               = f.label :tag_names
             %dd
-              = f.text_field :tag_names, class: 'form-control'
+              = f.text_field :tag_names, class: 'form-control', data: { controller: 'tag' }
           %p
             = f.submit class: 'btn btn-primary'
             = link_to t('.back'), project_path(@project), class: 'btn-link ml-1'
