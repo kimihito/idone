@@ -28,8 +28,8 @@ class Project < ApplicationRecord
 
   belongs_to :owner, class_name: 'User', touch: true
 
-  has_many :tracks, through: :tags
   has_many :tags, dependent: :nullify
+  has_many :tracks, through: :tags
 
   has_one_attached :icon
   validates :title, presence: true

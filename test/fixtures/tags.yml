@@ -3,5 +3,7 @@
 
 tag_with_project:
   name: $LABEL
+  project: project_1
+
 tag_with_track:
   name: $LABEL

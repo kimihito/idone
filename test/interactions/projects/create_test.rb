@@ -30,7 +30,7 @@ class Projects::CreateTest < ActiveSupport::TestCase
   end
 
   test "should save project and project_tags" do
-    assert_difference ["Project.count", "ProjectTag.count"] do
+    assert_difference ["Project.count", "Tag.count"] do
       Projects::Create.run(owner: @owner, title: 'title', tag_names: ['tag_one'], description: '')
     end
   end
@@ -38,7 +38,7 @@ class Projects::CreateTest < ActiveSupport::TestCase
   test "should save same project_tags with other project" do
     Projects::Create.run(owner: @owner, title: 'title', tag_names: ['tag_one'], description: '')
 
-    assert_difference "ProjectTag.count" do
+    assert_difference "Tag.count" do
       Projects::Create.run(owner: @owner, title: 'title2', tag_names: ['tag_one'], description: '')
     end
   end

@@ -12,9 +12,10 @@ class Projects::Create < ActiveInteraction::Base
 
   def execute
     project = Project.new(inputs.except(:tag_names))
-    tag_names.each do |tag_name|
-      compose(Projects::Tags::Create, name: tag_name, project: project)
+    tags = tag_names.map do |tag_name|
+      compose(Tags::Create, name: tag_name, project: project)
     end
+    project.tags = tags
     errors.merge!(project.errors) unless project.save
     project
   end

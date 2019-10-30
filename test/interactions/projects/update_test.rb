@@ -12,16 +12,16 @@ class Projects::UpdateTest < ActiveSupport::TestCase
     assert outcome.result.title == 'updated title'
   end
 
-  test "should reduce project tag" do
-    assert_difference "ProjectTag.count", -1 do
-      Projects::Update.run(@project.attributes.merge(project: @project, tag_names: []))
-    end
+  test "should detach track with removed project tag" do
+    tag = @project.tags.first
+    track = Track.create(raw_body: "hi ##{tag.name} !!!", tag: tag, owner: @owner)
+    outcome = Projects::Update.run(@project.attributes.merge(project: @project, tag_names: []))
+    assert_not outcome.result.tracks.include?(track)
   end
 
   test "should replace project tag" do
     old_tag = @project.tag_names
     outcome = Projects::Update.run(@project.attributes.merge(project: @project, tag_names: ['new_tag']))
-    assert ['new_tag'] == [*outcome.result.tag_names]
-    assert [*old_tag] != [*outcome.result.tag_names]
+    assert_equal ['new_tag'], [*outcome.result.tag_names]
   end
 end

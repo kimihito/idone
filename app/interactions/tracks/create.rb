@@ -12,13 +12,8 @@ class Tracks::Create < ActiveInteraction::Base
 
   def execute
     @track = Track.new(inputs)
-    if project?
-      compose(Projects::Tags::Create, name: tag_name, project: project)
-      @track.project = project
-    else
-      compose(Tracks::Tags::Create, name: tag_name, track: @track)
-    end
-
+    tag = compose(Tags::Create, name: tag_name, project: project, track: @track)
+    @track.tag = tag
     if @track.save
       touch_project
       @track.create_activity(:create, owner: @track.owner)
