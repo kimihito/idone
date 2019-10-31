@@ -1,9 +1,12 @@
 %li.col-12.d-flex.width-full.p-4.border-bottom.bg-white
-  = project.icon_image(class: 'avatar flex-shrink-0 mr-3', size: 100) 
+  = project.icon_image(class: 'avatar flex-shrink-0 mr-3', size: 100)
   .flex-auto.min-width-0
     .d-flex
-      %h3.text-normal.flex-auto.pb-1
-        = link_to project.title, project
+      .flex-auto.pb-1
+        %h3.text-normal.flex-auto.pb-1
+          = link_to project.title, project
+        = render partial: 'projects/tags/tag', collection: project.tags, as: :tag
+
     = simple_format(project.description_with_placeholder)
     .d-flex.flex-column.text-small.text-gray
       %span.flex-auto
