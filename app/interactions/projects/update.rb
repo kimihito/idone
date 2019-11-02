@@ -14,6 +14,10 @@ class Projects::Update < ActiveInteraction::Base
     project
   end
 
+  def persisted?
+    true
+  end
+
   def execute
     project.title = title if title?
     project.description = description if description?

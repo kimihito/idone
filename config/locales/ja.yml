@@ -24,6 +24,8 @@ ja:
     attributes:
       projects/create:
         title: タイトル
+      projects/update:
+        title: タイトル
       projects/tags/create:
         name: タグ名
       tracks/create:

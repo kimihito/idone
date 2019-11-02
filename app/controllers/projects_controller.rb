@@ -22,15 +22,16 @@ class ProjectsController < ApplicationController
   end
 
   def edit(id)
-    @project = authorize Project.find(id)
+    project = authorize Project.find(id)
+    @outcome = Projects::Update.new(project.attributes.merge(project: project, tag_names: project.tag_names))
   end
 
   def update(id, project)
-    @project = authorize Project.find(id)
-    if @project.update(project)
-      redirect_to @project, notice: t('.success')
+    @outcome = Projects::Update.run(project.merge(project: authorize(Project.find(id)), tag_names: project[:tag_names]&.split(',')))
+    if @outcome.valid?
+      redirect_to @outcome.result, notice: t('.success')
     else
-      render partial: 'layouts/shared/error_messages', locals: { resource: @project }, status: :unprocessable_entity, turbolinks: false
+      render partial: 'layouts/shared/error_messages', locals: { resource: @outcome }, status: :unprocessable_entity, turbolinks: false
     end
   end
 
