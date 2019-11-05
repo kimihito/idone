@@ -17,6 +17,7 @@
     "@rails/webpacker": "^4.0.7",
     "@webcomponents/custom-elements": "^1.2.4",
     "@yaireo/tagify": "^2.31.2",
+    "choices.js": "^8.0.0",
     "dayjs": "^1.8.15",
     "details-dialog-element": "^3.0.3",
     "feather-icons": "^4.24.0",
