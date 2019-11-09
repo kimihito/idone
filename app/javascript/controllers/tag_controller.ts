@@ -2,11 +2,29 @@ import * as Stimulus from 'stimulus'
 import Choices from 'choices.js'
 import feather from 'feather-icons'
 
+import i18next from 'i18next'
+
+i18next.init({
+  fallbackLng: 'ja',
+  resources: {
+    ja: {
+      translation: {
+        'errors': {
+          'taken': 'すでに登録されているタグです'
+        }
+      }
+    }
+  }
+})
+
 export default class extends Stimulus.Controller {
   public connect() {
     new Choices(<HTMLInputElement>this.element, {
       removeItemButton: true,
       duplicateItemsAllowed: false,
+      uniqueItemText: () => {
+        return i18next.t('errors.taken')
+      },
       classNames: {
         containerInner: 'form-control'
       },
