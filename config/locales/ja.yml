@@ -21,6 +21,12 @@ ja:
       project_tags/create:
         name: タグ名
   active_interaction:
+    errors:
+      models:
+        tracks/create:
+          attributes:
+            project:
+              mismatch: 'に所属していません'
     attributes:
       projects/create:
         title: タイトル
@@ -30,6 +36,7 @@ ja:
         name: タグ名
       tracks/create:
         raw_body: 記録
+        project: プロジェクト
   layouts:
     header:
       sign_up: 新規登録
