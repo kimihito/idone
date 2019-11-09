@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
-    "typesync": "npx typesync"
+    "typesync": "npx typesync && yarn install --force"
   },
   "engines": {
     "yarn": "1.x"
