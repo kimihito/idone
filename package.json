@@ -2,7 +2,8 @@
   "name": "idone",
   "private": true,
   "scripts": {
-    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force"
+    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
+    "typesync": "npx typesync"
   },
   "engines": {
     "yarn": "1.x"
