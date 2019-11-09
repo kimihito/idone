@@ -33,3 +33,10 @@ textarea#project_description, textarea#user_biography {
   min-height: initial;
   resize: none;
 }
+
+.choices__remove-tag {
+  vertical-align: sub;
+  &:hover {
+    cursor: pointer;
+  }
+}
