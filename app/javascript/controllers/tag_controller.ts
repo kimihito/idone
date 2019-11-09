@@ -9,6 +9,7 @@ i18next.init({
   resources: {
     ja: {
       translation: {
+        'add': "エンターキーで {{value}} を追加する",
         'errors': {
           'taken': 'すでに登録されているタグです'
         }
@@ -22,6 +23,9 @@ export default class extends Stimulus.Controller {
     new Choices(<HTMLInputElement>this.element, {
       removeItemButton: true,
       duplicateItemsAllowed: false,
+      addItemText: (value) => {
+        return i18next.t('add', { value: value })
+      },
       uniqueItemText: () => {
         return i18next.t('errors.taken')
       },
