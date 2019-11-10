@@ -1,6 +1,6 @@
 import * as Stimulus from 'stimulus'
 import Choices from 'choices.js'
-import feather from 'feather-icons'
+import * as feather from 'feather-icons'
 
 import i18next from 'i18next'
 
