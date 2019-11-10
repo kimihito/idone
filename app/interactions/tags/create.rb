@@ -1,12 +1,11 @@
 class Tags::Create < ActiveInteraction::Base
-  object :project, :track, default: nil
+  object :owner, class: User, default: nil
   string :name, default: nil
 
   validates :name, presence: true
 
   def execute
-    query = { project: project, track: track }.compact
-    tag = Tag.find_or_initialize_by(query.merge(name: name))
+    tag = Tag.used_by(owner: owner).find_or_initialize_by(name: name)
     errors.merge!(tag.errors) unless tag.save
     tag
   end

@@ -10,8 +10,11 @@ ja:
         icon: アイコン
         description: 説明
         tag_names: タグ名
+      tag:
+        name: タグ名
     models:
       project: プロジェクト
+      tag: タグ
   activemodel:
     attributes:
       project_form:
@@ -37,6 +40,11 @@ ja:
       tracks/create:
         raw_body: 記録
         project: プロジェクト
+      tracks/bulk_create:
+        raw_body: 記録
+        name: あああああ
+      tags/create:
+        name: タグ名
   layouts:
     header:
       sign_up: 新規登録
@@ -78,6 +86,8 @@ ja:
       edit:
         edit_member: '%{title}のメンバーを編集'
   tracks:
+    create:
+      success: '記録を追加しました'
     form:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'

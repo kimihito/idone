@@ -33,7 +33,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :lockable
   has_many :projects, foreign_key: 'owner_id'
   has_many :tracks, foreign_key: 'owner_id'
-  has_many :project_tags, through: :tracks
 
   has_one_attached :icon
 

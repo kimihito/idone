@@ -43,7 +43,7 @@ guard :minitest, cmd: "bundle exec rails test" do
 
 end
 
-guard 'annotate', show_indexes: true do
+guard 'annotate', cmd: 'bundle exec annotate', show_indexes: true do
   watch( 'db/schema.rb' )
 
   # Uncomment the following line if you also want to run annotate anytime

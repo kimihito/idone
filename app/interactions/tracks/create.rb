@@ -10,15 +10,13 @@ class Tracks::Create < ActiveInteraction::Base
 
   def execute
     @track = Track.new(inputs)
-    tag = compose(Tags::Create, name: tag_name, project: project, track: @track)
-    @track.tag = tag
+    @track.tag = compose(Tags::Create, name: tag_name, owner: owner)
     if @track.save
       touch_project
       @track.create_activity(:create, owner: @track.owner)
     else
       errors.merge!(@track.errors)
     end
-
     @track
   end
 
