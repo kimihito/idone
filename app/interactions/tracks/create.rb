@@ -1,5 +1,3 @@
-require 'test_helper'
-
 class Tracks::Create < ActiveInteraction::Base
   include Twitter::TwitterText::Extractor
 
