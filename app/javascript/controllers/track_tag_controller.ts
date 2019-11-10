@@ -4,7 +4,7 @@ import Tribute, { TributeCollection, TributeItem } from 'tributejs'
 
 import { Deserializer as JSONAPIDeserializer, Deserializer, DeserializerConstructor } from 'jsonapi-serializer'
 
-const URL = "/my/projects.json"
+const URL = "/my/tags.json"
 
 export default class extends Stimulus.Controller {
   tribute: Tribute<{}>
@@ -14,14 +14,17 @@ export default class extends Stimulus.Controller {
     await this.tagApi(URL)
       .then(json => {
         return new JSONAPIDeserializer({keyForAttribute:"camelCase"}).deserialize(json, (err, tags) => {
+          if(err) {
+            throw err
+          }
           this.tags = tags
         })
       })
     this.tribute = new Tribute({
       trigger: '#',
       values: this.tags,
-      fillAttr: 'title',
-      lookup: 'title'
+      fillAttr: 'name',
+      lookup: 'name'
     })
 
     this.tribute.attach(this.element)

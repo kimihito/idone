@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     namespace :my do
+      resources :tags, only: :index, default: { format: :json }
       resources :projects, only: :index, default: { format: :json }
     end
 

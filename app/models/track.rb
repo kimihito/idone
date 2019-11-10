@@ -7,11 +7,13 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  owner_id   :uuid             not null
+#  tag_id     :integer          not null
 #
 # Indexes
 #
 #  index_tracks_on_created_at  (created_at)
 #  index_tracks_on_owner_id    (owner_id)
+#  index_tracks_on_tag_id      (tag_id)
 #  index_tracks_on_updated_at  (updated_at)
 #
 
