@@ -23,19 +23,17 @@ class TracksController < ApplicationController
 
   def edit(id)
     track = authorize Track.find(id)
-    @form = TrackForm.new(track)
+    @outcome = Tracks::Update.new(track.attributes.merge(track: track))
 
     render layout: false
   end
 
   def update(id, track)
-    @track = authorize Track.find(id)
-
-    @form = TrackForm.new(@track, track.merge({action_name: action_name})).as(current_user)
-
-    if @form.save
+    @outcome = Tracks::Update.run(track.merge(track: authorize(Track.find(id))))
+    if @outcome.valid?
+      redirect_to root_path, notice: t('.success')
     else
-      render partial: 'layouts/shared/error_messages', locals: { resource: @form }, status: :unprocessable_entity, turbolinks: false
+      render partial: 'layouts/shared/error_messages', locals: { resource: @outcome }, status: :unprocessable_entity, turbolinks: false
     end
   end
 
