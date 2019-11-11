@@ -25,5 +25,5 @@ class Track < ApplicationRecord
   has_one :project, through: :tag
 
   scope :recent, -> { order('created_at DESC') }
-  scope :in_project, -> (project) { where(project: project) }
+  scope :in_project, -> (project) { joins(:project).where(projects: { id: project.id }) }
 end
