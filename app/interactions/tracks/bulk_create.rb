@@ -6,12 +6,10 @@ class Tracks::BulkCreate < ActiveInteraction::Base
 
   def execute
     Track.transaction do
-      @tracks = raw_body.lines(chomp: true).map do |line|
+      raw_body.lines(chomp: true).each do |line|
         compose(Tracks::Create, owner: owner, raw_body: line)
       end
     end
-
-    @tracks
   end
 
   def to_model

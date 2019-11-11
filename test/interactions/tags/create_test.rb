@@ -17,4 +17,10 @@ class Tags::CreateTest < ActiveSupport::TestCase
     assert outcome.result == project_tag
     assert_not outcome.result == track_tag
   end
+
+  test 'should not save with empty name' do
+    assert_no_difference 'Tag.count' do
+      Tags::Create.run(name: '', owner: @owner)
+    end
+  end
 end
