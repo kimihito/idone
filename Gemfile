@@ -77,8 +77,6 @@ gem 'rollout'
 
 gem 'hamlit-rails'
 
-gem "high_voltage"
-
 gem 'webpacker'
 
 gem 'bootsnap', require: false
