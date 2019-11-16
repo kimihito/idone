@@ -7,6 +7,8 @@ gem 'rails'
 
 gem 'rails-i18n'
 
+gem 'active_record_extended'
+
 gem 'active_storage_validations'
 
 gem 'attr_encrypted'
@@ -20,6 +22,8 @@ gem 'action_args'
 gem 'actionview-component'
 
 gem 'active_decorator'
+
+gem 'active_interaction'
 
 gem 'devise'
 
@@ -48,8 +52,6 @@ gem 'twitter-text'
 gem 'turbolinks'
 
 gem 'turbolinks_render'
-
-gem 'rails-patterns'
 
 gem 'rack-attack'
 

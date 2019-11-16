@@ -1,5 +1,6 @@
 @import "~@primer/css/index.scss";
 @import "tributejs/dist/tribute.css";
+@import "choices.js/public/assets/styles/choices.min.css";
 @import "details-dialog-element/index.css";
 
 img.emoji {
@@ -31,4 +32,11 @@ textarea#project_description, textarea#user_biography {
   height: auto;
   min-height: initial;
   resize: none;
+}
+
+.choices__remove-tag {
+  vertical-align: sub;
+  &:hover {
+    cursor: pointer;
+  }
 }

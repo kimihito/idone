@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+tag_with_project:
+  name: $LABEL
+  project: project_1
+
+tag_with_track:
+  name: $LABEL

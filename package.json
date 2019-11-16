@@ -2,7 +2,8 @@
   "name": "idone",
   "private": true,
   "scripts": {
-    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force"
+    "dedupe": "npx yarn-deduplicate --strategy=fewer && yarn install --force",
+    "typesync": "npx typesync && yarn install --force"
   },
   "engines": {
     "yarn": "1.x"
@@ -16,10 +17,14 @@
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
     "@webcomponents/custom-elements": "^1.2.4",
+    "@yaireo/tagify": "^2.31.2",
+    "choices.js": "^8.0.0",
     "dayjs": "^1.8.15",
     "details-dialog-element": "^3.0.3",
     "feather-icons": "^4.24.0",
+    "i18next": "^19.0.0",
     "intersection-observer": "^0.7.0",
+    "jsonapi-serializer": "^3.6.5",
     "lodash": "^4.17.15",
     "qs": "^6.7.0",
     "quicklink": "^1.0.0",
@@ -34,6 +39,14 @@
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
+    "@types/feather-icons": "^4.7.0",
+    "@types/jsonapi-serializer": "^3.6.2",
+    "@types/lodash": "^4.14.146",
+    "@types/qs": "^6.9.0",
+    "@types/turbolinks": "^5.2.0",
+    "@types/twemoji": "^12.1.0",
+    "@types/twitter-text": "^2.0.0",
+    "@types/webpack-dev-server": "^3.4.0",
     "webpack-dev-server": "^3.8.0"
   }
 }

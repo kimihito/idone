@@ -9,14 +9,47 @@ ja:
         title: タイトル
         icon: アイコン
         description: 説明
+        tag_names: タグ名
+      tag:
+        name: タグ名
     models:
       project: プロジェクト
+      tag: タグ
   activemodel:
     attributes:
       project_form:
         title: タイトル
       track_form:
         raw_body: 記録
+      project_tags/create:
+        name: タグ名
+  active_interaction:
+    errors:
+      models:
+        tracks/create:
+          attributes:
+            project:
+              mismatch: 'に所属していません'
+        tags/create:
+          attributes:
+            name:
+              already_used: が他のプロジェクトで使われています
+    attributes:
+      projects/create:
+        title: タイトル
+      projects/update:
+        title: タイトル
+      projects/tags/create:
+        name: タグ名
+      tracks/create:
+        raw_body: 記録
+        project: プロジェクト
+        name: タグ名
+      tracks/bulk_create:
+        raw_body: 記録
+        name: あああああ
+      tags/create:
+        name: タグ名
   layouts:
     header:
       sign_up: 新規登録
@@ -58,6 +91,8 @@ ja:
       edit:
         edit_member: '%{title}のメンバーを編集'
   tracks:
+    create:
+      success: '記録を追加しました'
     form:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'
@@ -90,6 +125,9 @@ ja:
     tracks:
       track:
         ago: '%{time_ago_in_words}前'
+      form:
+        edit: 記録を編集
+        close_dialog: 閉じる
     show:
       overview: '概要'
       project: 'プロジェクト'

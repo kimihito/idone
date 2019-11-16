@@ -1,10 +1,10 @@
-= render(Projects::Edit::Layout, project: @project) do
+= render(Projects::Edit::Layout, project: @outcome.project) do
   .Subhead.my-0
     .Subhead-heading
-      = t('.edit_project', title: @project.title)
+      = t('.edit_project', title: @outcome.project.title)
   .clearfix.d-flex.gutter.flex-shrink-0
     .col-12
-      = form_with model: @project, data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' } do |f|
+      = form_with model: @outcome, data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' } do |f|
         %div{ data: { target: 'form.errors' } }
         %div
           %dl.form-group
@@ -24,9 +24,14 @@
               .d-block.position-relative.mb-2
                 = f.object.icon_image(class: 'avatar mr-1', size: 100)
               = f.file_field :icon, direct_upload: true, accept: 'image/*'
+          %dl.form-group
+            %dt
+              = f.label :tag_names
+            %dd
+              = f.text_field :tag_names, class: 'form-control', data: { controller: 'tag' }
           %p
             = f.submit class: 'btn btn-primary'
-            = link_to t('.back'), project_path(@project), class: 'btn-link ml-1'
+            = link_to t('.back'), @outcome, class: 'btn-link ml-1'
   %hr
   .clearfix.d-flex.gutter.flex-shrink-0
     .col-12
@@ -38,7 +43,7 @@
           %li.Box-row.d-flex.flex-items-center
             .flex-auto
               %strong
-                = t('.cancel_project', title: @project.title)
+                = t('.cancel_project', title: @outcome.project.title)
               %p.text-small.text-gray-light
                 = t('.delete_all_created_tracks')
-            = button_to t('.cancel'), project_path(@project), data: { confirm: t('.are_you_sure') }, method: :delete, class: 'btn btn-danger'
+            = button_to t('.cancel'), @outcome, data: { confirm: t('.are_you_sure') }, method: :delete, class: 'btn btn-danger'

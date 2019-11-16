@@ -27,13 +27,13 @@ require('intersection-observer')
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 
+Turbolinks.start()
+
 const application = Application.start()
 const context = require.context("controllers", true, /.(js|.ts)$/)
 application.load(definitionsFromContext(context))
 
 import "controllers"
-
-Turbolinks.start()
 document.addEventListener('turbolinks:load', () => {
   new Lazyload()
   feather.replace({'width': 18, 'height': 18})

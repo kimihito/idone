@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'users/registrations', passwords: 'users/passwords' }
 
-
   root 'root#index'
 
   authenticated :user do
     namespace :my do
+      resources :tags, only: :index, default: { format: :json }
       resources :projects, only: :index, default: { format: :json }
     end
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :tracks
 
-  resources :projects, only: [:index, :new, :create, :edit, :update, :destroy] do
+  resources :projects, only: %w[index new create edit update destroy] do
     with_options module: 'projects' do
       resources :tracks, only: [:index]
       resource :members, only: [:show, :edit, :update]

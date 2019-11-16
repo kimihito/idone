@@ -18,6 +18,7 @@
 #
 
 class Project < ApplicationRecord
+  DESCRIPTION_MAXIMUM = 300.freeze
   include SearchCop
 
   search_scope :search do
@@ -27,7 +28,8 @@ class Project < ApplicationRecord
 
   belongs_to :owner, class_name: 'User', touch: true
 
-  has_many :tracks
+  has_many :tags, dependent: :nullify
+  has_many :tracks, through: :tags
 
   has_one_attached :icon
   validates :title, presence: true
@@ -35,4 +37,8 @@ class Project < ApplicationRecord
   validates :description, length: { maximum: 300 }, allow_blank: true
 
   scope :recent, -> { order('created_at DESC') }
+
+  def tag_names
+    tags.map(&:name).join(',')
+  end
 end
