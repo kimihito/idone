@@ -53,8 +53,6 @@ gem 'turbolinks'
 
 gem 'turbolinks_render'
 
-gem 'rails-patterns'
-
 gem 'rack-attack'
 
 gem 'rambulance'
