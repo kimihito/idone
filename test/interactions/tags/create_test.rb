@@ -23,4 +23,14 @@ class Tags::CreateTest < ActiveSupport::TestCase
       Tags::Create.run(name: '', owner: @owner)
     end
   end
+
+  test 'should not save using other project' do
+    tag_name = 'same_tag'
+    other_project = Project.create(owner: @owner, title: 'other project title')
+    project_tag = Tag.create(name: tag_name, project: other_project)
+
+    assert_no_difference 'Tag.count' do
+     Tags::Create.run(name: tag_name, owner: @owner, project: @project)
+    end
+  end
 end

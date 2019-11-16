@@ -3,14 +3,14 @@ class Tracks::Update < ActiveInteraction::Base
 
   string :raw_body, default: nil
   object :owner, class: User, default: nil
-  object :project, default: nil
+  object :project, :track, default: nil
 
   validates :raw_body, :owner, :track, presence: true
   validate :membership?, if: :project?
 
   def execute
     track.raw_body = raw_body if raw_body?
-    track.tag = compose(Tags::Create, name: tag_name, owner: owner)
+    track.tag = compose(Tags::Create, name: tag_name, owner: owner, project: project)
     if track.save
       touch_project
       track.create_activity(:update, owner: track.owner)

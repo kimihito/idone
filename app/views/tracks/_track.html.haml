@@ -9,4 +9,4 @@
       %summary.btn-link.text-gray-dark.d-inline-block
         %i.v-align-text-top{data: { feather: 'edit' }, 'stroke-width': 1 }
       %details-dialog.anim-fade-in.fast.wide
-        = render 'users/tracks/form', track: track
+        = render 'users/tracks/form', track: Tracks::Update.new(track.attributes.merge(track: track))

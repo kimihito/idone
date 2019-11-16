@@ -35,10 +35,10 @@ class Projects::CreateTest < ActiveSupport::TestCase
     end
   end
 
-  test "should save same project_tags with other project" do
+  test "should not save using tag with other project" do
     Projects::Create.run(owner: @owner, title: 'title', tag_names: ['tag_one'], description: '')
 
-    assert_difference "Tag.count" do
+    assert_no_difference "Project.count" do
       Projects::Create.run(owner: @owner, title: 'title2', tag_names: ['tag_one'], description: '')
     end
   end

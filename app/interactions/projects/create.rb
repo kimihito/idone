@@ -13,7 +13,7 @@ class Projects::Create < ActiveInteraction::Base
   def execute
     project = Project.new(inputs.except(:tag_names))
     tags = tag_names.map do |tag_name|
-      compose(Tags::Create, name: tag_name, owner: project.owner)
+      compose(Tags::Create, name: tag_name, owner: project.owner, project: project)
     end
     project.tags = tags
     errors.merge!(project.errors) unless project.save

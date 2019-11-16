@@ -23,7 +23,7 @@ class Projects::Update < ActiveInteraction::Base
     project.description = description if description?
     project.icon = icon if icon?
     tags = tag_names.map do |tag_name|
-      compose(Tags::Create, name: tag_name, owner: project.owner)
+      compose(Tags::Create, name: tag_name, owner: project.owner, project: project)
     end
     project.tags = tags
     errors.merge!(project.errors) unless project.save

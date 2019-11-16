@@ -30,6 +30,10 @@ ja:
           attributes:
             project:
               mismatch: 'に所属していません'
+        tags/create:
+          attributes:
+            name:
+              already_used: が他のプロジェクトで使われています
     attributes:
       projects/create:
         title: タイトル
@@ -121,6 +125,9 @@ ja:
     tracks:
       track:
         ago: '%{time_ago_in_words}前'
+      form:
+        edit: 記録を編集
+        close_dialog: 閉じる
     show:
       overview: '概要'
       project: 'プロジェクト'
