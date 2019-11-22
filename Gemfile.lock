@@ -263,7 +263,7 @@ GEM
     parser (2.6.5.0)
       ast (~> 2.4.0)
     pg (1.1.4)
-    pghero (2.3.0)
+    pghero (2.4.1)
       activerecord (>= 5)
     polyglot (0.3.5)
     pretender (0.3.4)
