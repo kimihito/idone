@@ -64,6 +64,9 @@
     },
     "JEMALLOC_ENABLED": {
       "value": "true"
+    },
+    "SENTRY_DSN": {
+      "required": true
     }
   },
   "formation": {
