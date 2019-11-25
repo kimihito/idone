@@ -47,7 +47,6 @@ ja:
         name: タグ名
       tracks/bulk_create:
         raw_body: 記録
-        name: あああああ
       tags/create:
         name: タグ名
   layouts:
