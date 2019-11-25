@@ -69,6 +69,8 @@ gem 'fast_jsonapi'
 
 gem 'sinatra', require: false
 
+gem 'sentry-raven'
+
 gem 'puma'
 gem 'puma_worker_killer'
 gem 'puma-heroku'
