@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'users/:name', to: redirect("/users/%{name}/overview")
 
   get 'privacy' => "static_pages#privacy", as: :privacy, format: false
+  get 'terms' => "static_pages#terms", as: :terms, format: false
 
   mount PgHero::Engine, at: "pghero"
 
