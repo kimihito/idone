@@ -648,9 +648,9 @@
     semver "^5.5.0"
 
 "@babel/runtime@^7.3.1", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
-  version "7.7.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.2.tgz#111a78002a5c25fc8e3361bedc9529c696b85a6a"
-  integrity sha512-JONRbXbTXc9WQE2mAZd1p0Z3DZ/6vaQIkgYMSTP3KjRCyd7rCZCcfhCyX+YjwcKxcZ82UrxbRD358bpExNgrjw==
+  version "7.7.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.4.tgz#b23a856751e4bf099262f867767889c0e3fe175b"
+  integrity sha512-r24eVUUr0QqNZa+qrImUk8fn5SPhHq+IfYvIoIMg0do3GdK9sMdiLKP3GYVVaxpPKORgm8KRKaNTEhAjgIpLMw==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -1442,9 +1442,9 @@ babel-plugin-dynamic-import-node@^2.3.0:
     object.assign "^4.1.0"
 
 babel-plugin-macros@^2.6.1:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.7.0.tgz#f409a674cbbe548b60cbdf495ec059a2de429ab7"
-  integrity sha512-eV/9IWjmwT/TDCrNzA9sgO/j+x1dWAdLds7KLTY/emkLimzYbiXugfa0EO9IMkLeBBYvS0OdY+6pkF5VGf0iog==
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.7.1.tgz#ee294383c1a38f9d6535be3d89734824cb3ed415"
+  integrity sha512-HNM284amlKSQ6FddI4jLXD+XTqF0cTYOe5uemOIZxHJHnamC+OhFQ57rMF9sgnYhkJQptVl9U1SKVZsV9/GLQQ==
   dependencies:
     "@babel/runtime" "^7.7.2"
     cosmiconfig "^6.0.0"
