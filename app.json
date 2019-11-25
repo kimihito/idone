@@ -91,6 +91,9 @@
     },
     {
       "plan": "papertrail:choklad"
+    },
+    {
+      "plan": "sentry:f1"
     }
   ],
   "buildpacks": [
