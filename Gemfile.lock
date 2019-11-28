@@ -359,7 +359,7 @@ GEM
       nokogiri
     rollout (2.4.5)
       redis (~> 4.0)
-    rubocop (0.76.0)
+    rubocop (0.77.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
