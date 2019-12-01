@@ -15,6 +15,7 @@ import 'whatwg-fetch'
 import '@webcomponents/custom-elements'
 import 'details-dialog-element'
 import '@github/include-fragment-element'
+import * as Sentry from '@sentry/browser'
 import { Application } from "stimulus"
 import { definitionsFromContext } from "stimulus/webpack-helpers"
 
@@ -22,6 +23,10 @@ import '../styles/application.scss'
 
 import "core-js/stable"
 import "regenerator-runtime/runtime"
+
+if (process.env.NODE_ENV === 'production') {
+  Sentry.init({dsn: process.env.SENTRY_DSN})
+}
 
 require('intersection-observer')
 require("@rails/ujs").start()
