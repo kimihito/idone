@@ -59,7 +59,7 @@ services:
       - webpacker
   sidekiq:
     <<: *app
-    command: 'bundle exec sidekiq -q default -q mailers'
+    command: 'bundle exec sidekiq -C config/sidekiq.yml'
     environment:
       - DEFAULT_URL_HOST=localhost:3000
       - REDIS_URL=redis://redis:6379
