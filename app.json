@@ -91,6 +91,10 @@
     },
     {
       "plan": "papertrail:choklad"
+    },
+    {
+      "plan": "rollbar:free",
+      "as": "ROLLBAR"
     }
   ],
   "buildpacks": [

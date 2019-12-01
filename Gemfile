@@ -73,6 +73,8 @@ gem 'puma'
 gem 'puma_worker_killer'
 gem 'puma-heroku'
 
+gem 'rollbar'
+
 gem 'rollout'
 
 gem 'hamlit-rails'
