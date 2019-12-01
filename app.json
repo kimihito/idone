@@ -29,39 +29,6 @@
       "required": true
     },
 
-    "LANG": {
-      "required": true
-    },
-    "PAPERTRAIL_API_TOKEN": {
-      "required": true
-    },
-    "RACK_ENV": {
-      "required": true
-    },
-    "RAILS_ENV": {
-      "required": true
-    },
-    "RAILS_LOG_TO_STDOUT": {
-      "required": true
-    },
-    "RAILS_SERVE_STATIC_FILES": {
-      "required": true
-    },
-    "REDIS_URL": {
-      "required": true
-    },
-    "SECRET_KEY_BASE": {
-      "required": true
-    },
-    "SENDGRID_PASSWORD": {
-      "required": true
-    },
-    "SENDGRID_USERNAME": {
-      "required": true
-    },
-    "HEROKU_APP_NAME": {
-      "required": true
-    },
     "JEMALLOC_ENABLED": {
       "value": "true"
     }
