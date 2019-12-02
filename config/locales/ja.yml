@@ -99,6 +99,9 @@ ja:
     destroy:
       success: '記録を削除しました'
     form:
+      delete: '削除する'
+      destroy:
+        confirmation: '本当に削除してもよろしいですか'
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'
     track:
