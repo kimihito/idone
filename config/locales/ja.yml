@@ -96,6 +96,8 @@ ja:
   tracks:
     create:
       success: '記録を追加しました'
+    destroy:
+      success: '記録を削除しました'
     form:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'

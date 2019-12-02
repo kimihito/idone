@@ -38,11 +38,7 @@ class TracksController < ApplicationController
   end
 
   def destroy(id)
-    track = authorize Track.find(id)
-
-    if track.destroy
-    else
-      render partial: 'layouts/shared/error_messages', locals: { resource: track }, status: :unprocessable_entity, turbolinks: false
-    end
+    Tracks::Destroy.run!(track: authorize(Track.find(id)))
+    redirect_to root_path, notice: t('.success')
   end
 end
