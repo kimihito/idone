@@ -6,5 +6,5 @@
         = f.text_area :raw_body, class: 'form-control', placeholder: t('.placeholder.use_hashtag'), autocomplete: 'on', style: 'height: 100px; min-height: 100px;', data: { controller: 'track-tag' }
   .mb-3{ class: "#{track.persisted? ? 'text-right' : nil }"}
     - if track.persisted?
-      = link_to t('.delete'), track, method: :delete, data: { confirm: t('.confirmation') }, class: 'btn btn-danger'
+      = link_to t('.delete'), track, method: :delete, data: { confirm: t('.destroy.confirmation') }, class: 'btn btn-danger'
     = f.submit class: "btn btn-primary #{track.persisted? ? nil : 'btn-block' }"
