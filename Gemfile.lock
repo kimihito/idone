@@ -136,6 +136,8 @@ GEM
       activesupport (>= 3.0.0)
     equalizer (0.0.11)
     erubi (1.9.0)
+    et-orbi (1.2.2)
+      tzinfo
     eventmachine (1.2.7)
     faraday (0.17.1)
       multipart-post (>= 1.2, < 3)
@@ -143,6 +145,9 @@ GEM
       activesupport (>= 4.2)
     ffi (1.11.3)
     formatador (0.2.5)
+    fugit (1.3.3)
+      et-orbi (~> 1.1, >= 1.1.8)
+      raabro (~> 1.1)
     geocoder (1.5.2)
     get_process_mem (0.2.5)
       ffi (~> 1.0)
@@ -294,6 +299,7 @@ GEM
       puma (>= 2.7, < 5)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
+    raabro (1.1.6)
     rack (2.0.7)
     rack-attack (6.2.1)
       rack (>= 1.0, < 3)
@@ -372,6 +378,8 @@ GEM
     ruby-progressbar (1.10.1)
     ruby-statistics (2.1.1)
     rubyzip (2.0.0)
+    rufus-scheduler (3.6.0)
+      fugit (~> 1.1, >= 1.1.6)
     search_cop (1.1.0)
       treetop
     selenium-webdriver (3.142.6)
@@ -383,6 +391,11 @@ GEM
       rack (>= 2.0.0)
       rack-protection (>= 2.0.0)
       redis (>= 4.1.0)
+    sidekiq-scheduler (3.0.0)
+      redis (>= 3, < 5)
+      rufus-scheduler (~> 3.2)
+      sidekiq (>= 3)
+      tilt (>= 1.4.0)
     signet (0.12.0)
       addressable (~> 2.3)
       faraday (~> 0.9)
@@ -528,6 +541,7 @@ DEPENDENCIES
   search_cop
   selenium-webdriver
   sidekiq
+  sidekiq-scheduler
   sinatra
   solargraph
   spring

@@ -63,6 +63,8 @@ gem 'logstop'
 
 gem 'sidekiq'
 
+gem 'sidekiq-scheduler'
+
 gem 'search_cop'
 
 gem 'fast_jsonapi'
