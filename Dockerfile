@@ -39,8 +39,11 @@ RUN echo 'idone ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER idone
 
 WORKDIR /idone
+COPY entrypoint.sh /usr/bin
+RUN sudo chmod +x /usr/bin/entrypoint.sh
 RUN sudo chown -R idone:idone .
 ADD package.json /idone/package.json
+ADD yarn.lock /idone/yarn.lock
 RUN yarn install
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
@@ -50,3 +53,6 @@ ADD . /idone
 RUN sudo apt-get autoremove -y \
     && sudo apt-get clean -y \
     && sudo rm -rf /var/lib/apt/lists/*
+
+
+ENTRYPOINT [ "entrypoint.sh" ]
