@@ -1,7 +1,7 @@
 FROM ruby:2.6.5
 ENV LANG C.UTF-8
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev unzip libldap2-dev libidn11-dev fonts-migmix libjemalloc-dev imagemagick sudo 
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev unzip libldap2-dev libidn11-dev fonts-migmix libjemalloc-dev imagemagick sudo
 
 ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
 
@@ -39,12 +39,12 @@ RUN echo 'idone ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER idone
 
 WORKDIR /idone
-# ADD package.json /idone/package.json
-# ADD yarn.lock /idone/yarn.lock
-# RUN yarn install
-# ADD Gemfile Gemfile
-# ADD Gemfile.lock Gemfile.lock
-# RUN bundle install --jobs 4
+RUN sudo chown -R idone:idone .
+ADD package.json /idone/package.json
+RUN yarn install
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
+RUN bundle install --jobs 4
 ADD . /idone
 
 RUN sudo apt-get autoremove -y \
