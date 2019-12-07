@@ -1,11 +1,5 @@
-version: '2'
+version: '3'
 services:
-  datastore:
-    image: busybox
-    volumes:
-      - bundle_install:/usr/local/bundle
-      - node_modules:/idone/node_modules
-      - postgres:/var/lib/postgresql/data
   mailhog:
     image: mailhog/mailhog:v1.0.0
     ports:
@@ -21,8 +15,8 @@ services:
       - POSTGRES_PASSWORD=password
     ports:
       - "5432:5432"
-    volumes_from:
-      - datastore
+    volumes:
+      - postgres:/var/lib/postgresql/data
 
   rails: &app
     build: .
@@ -43,13 +37,10 @@ services:
       - REDIS_URL=redis://redis:6379
       - SMTP_ADDRESS=mailhog
       - SMTP_PORT=1025
-    volumes_from:
-      - datastore
     volumes:
-      - .:/idone:cached
-      - ./tmp/screenshots:/idone/tmp/screenshots
-      - /idone/log
-      - ./node_modules:/idone/node_modules
+      - .:/idone
+      - bundle_install:/usr/local/bundle
+      - node_modules:/idone/node_modules
     ports:
       - "3000:3000"
     depends_on:
@@ -96,10 +87,5 @@ services:
       - "7658:7658"
 volumes:
   bundle_install:
-    driver: local
   node_modules:
-    driver: local
   postgres:
-    driver: local
-  redis:
-    driver: local
