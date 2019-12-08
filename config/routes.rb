@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     namespace :root do
       resources :tracks, only: [:create]
     end
+
+    resource :user_option, only: %w[edit update]
   end
 
   resources :tracks

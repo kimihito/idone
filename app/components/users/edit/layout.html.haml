@@ -4,6 +4,8 @@
       = t('components.users.edit.layout.menu.header')
     = link_to_unless (current_path == edit_user_registration_path), t('components.users.edit.layout.profile'), edit_user_registration_path, class: 'menu-item' do
       = link_to t('components.users.edit.layout.profile'), edit_user_registration_path, class: 'menu-item selected', aria: { current: 'page' }
+    = link_to_unless (current_path == edit_user_option_path), t('components.users.edit.layout.user_option'), edit_user_option_path, class: 'menu-item' do
+      = link_to t('components.users.edit.layout.user_option'), edit_user_option_path, class: 'menu-item selected', aria: { current: 'page' }
     = link_to_unless (current_path == edit_users_security_path), t('components.users.edit.layout.security'), edit_users_security_path, class: 'menu-item' do
       = link_to t('components.users.edit.layout.security'), edit_users_security_path, class: 'menu-item selected', aria: { current: 'page' }
 .col-9.float-left
