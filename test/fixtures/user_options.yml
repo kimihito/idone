@@ -8,6 +8,11 @@ private_email:
   email_privacy: <%= UserOption.email_privacies[:private] %>
   user: idoneman
 
+private_email2:
+  email_privacy: <%= UserOption.email_privacies[:private] %>
+  user: no_track_and_project_user
+
 public_email:
   email_privacy: <%= UserOption.email_privacies[:public] %>
   user: idoneman2
+
