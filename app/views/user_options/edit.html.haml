@@ -1,0 +1,16 @@
+= render(Users::Edit::Layout, current_path: request.path) do
+  .Subhead.mt-0.mb-2
+    .Subhead-heading
+      = t('.email_privacy')
+  .clearfix.d-flex.gutter.flex-shrink-0
+    .col-8
+      = form_with model: @income, data: { type: 'html', controller: 'form', action: 'ajax:error->form#onSaveFail' }do |f|
+        %div{ data: { target: 'form.errors' } }
+        %div
+          %dl.form-group
+            %dt
+              = f.label :email_privacy
+            %dd
+              = f.select :email_privacy, UserOption.email_privacies_i18n.keys.map { |k| [UserOption.email_privacies_i18n[k], k] }, {}, class: 'form-select'
+          %p
+            = f.submit class: 'btn btn-primary'

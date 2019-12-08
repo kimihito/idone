@@ -3,6 +3,11 @@ ja:
     submit:
       track:
         create: '保存する'
+  enums:
+    user_option:
+      email_privacy:
+        private: 非公開
+        public: 公開
   activerecord:
     attributes:
       project:
@@ -12,6 +17,8 @@ ja:
         tag_names: タグ名
       tag:
         name: タグ名
+      user_option:
+        email_privacy: メールアドレスの公開範囲
     models:
       project: プロジェクト
       tag: タグ
@@ -50,6 +57,8 @@ ja:
         name: あああああ
       tags/create:
         name: タグ名
+      user_options/update:
+        email_privacy: 'メールアドレスの公開範囲'
   layouts:
     footer:
       terms: 利用規約
@@ -113,6 +122,12 @@ ja:
     index:
       placeholder:
         use_hashtag: '#を入力するとプロジェクトが入力できます'
+  user_options:
+    edit:
+      email_privacy: メールの公開範囲
+    update:
+      success: 'アカウント設定を更新しました'
+      failure: 'アカウント設定の更新に失敗しました'
   users:
     user:
       track_size: '作成した記録数 : %{size}'
@@ -169,6 +184,7 @@ ja:
             header: 個人設定
           profile: 'プロフィール'
           security: 'セキュリティ'
+          user_option: 'アカウント設定'
     projects:
       show:
         layout:

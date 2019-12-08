@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_082151) do
+ActiveRecord::Schema.define(version: 2019_12_07_083206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -132,6 +132,14 @@ ActiveRecord::Schema.define(version: 2019_10_27_082151) do
     t.index ["updated_at"], name: "index_tracks_on_updated_at"
   end
 
+  create_table "user_options", force: :cascade do |t|
+    t.integer "email_privacy", default: 0, null: false
+    t.uuid "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_options_on_user_id"
+  end
+
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -158,4 +166,5 @@ ActiveRecord::Schema.define(version: 2019_10_27_082151) do
   add_foreign_key "tags", "projects"
   add_foreign_key "tracks", "tags"
   add_foreign_key "tracks", "users", column: "owner_id", on_delete: :cascade
+  add_foreign_key "user_options", "users"
 end

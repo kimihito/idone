@@ -34,6 +34,9 @@ class User < ApplicationRecord
   has_many :projects, foreign_key: 'owner_id'
   has_many :tracks, foreign_key: 'owner_id'
 
+  has_one :user_option, dependent: :destroy, inverse_of: :user
+  delegate :private_email_privacy?, :public_email_privacy?, to: :user_option
+
   has_one_attached :icon
 
   validates :name, presence: true, format: { with: /^[a-zA-Z0-9_\.]*$/, multiline: true }, uniqueness: { case_sensitive: true }
