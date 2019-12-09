@@ -225,10 +225,6 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logstop (0.2.5)
-    lol_dba (2.1.8)
-      actionpack (>= 3.0, < 6.0)
-      activerecord (>= 3.0, < 6.0)
-      railties (>= 3.0, < 6.0)
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -512,7 +508,6 @@ DEPENDENCIES
   hamlit-rails
   listen
   logstop
-  lol_dba
   marginalia
   memoist
   mini_magick
