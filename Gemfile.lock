@@ -125,8 +125,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.8.2)
-      devise (>= 4.6)
+    devise-i18n (1.9.0)
+      devise (>= 4.7.1)
     digest-crc (0.4.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
