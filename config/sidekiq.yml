@@ -2,3 +2,6 @@
   - default
   - mailers
   - rollbar
+:schedule:
+  CleanupUnusedTagJob:
+    cron: '0 0 2 * * * Asia/Tokyo' # AM 2:00
