@@ -30,5 +30,5 @@ class Tag < ApplicationRecord
     joins(:project).where(projects: { owner: owner })
   end
 
-  scope :unused, -> { where(project: nil, track:nil) }
+  scope :unused, -> { includes(:track).where(project: nil, tracks: { id: nil }) }
 end
