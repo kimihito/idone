@@ -50,5 +50,6 @@ Rails.application.routes.draw do
   mount PgHero::Engine, at: "pghero"
 
   require 'sidekiq/web'
+  require 'sidekiq-scheduler/web'
   mount Sidekiq::Web => '/sidekiq'
 end
