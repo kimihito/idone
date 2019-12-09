@@ -1,6 +1,6 @@
 %nav.UnderlineNav
   .UnderlineNav-body
-    = link_to_unless (current_path == user_overview_path(@user)), t('components.users.show.navigation.overview'), user_overview_path(@user), class: 'UnderlineNav-item' do
+    = link_to_unless_current t('components.users.show.navigation.overview'), user_overview_path(@user), class: 'UnderlineNav-item' do
       %span.UnderlineNav-item.selected
         = t('components.users.show.navigation.overview')
 

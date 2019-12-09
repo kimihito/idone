@@ -1,11 +1,10 @@
 class Users::Edit::Layout < ActionView::Component::Base
-  validates :content, :current_path, presence: true
+  validates :content, presence: true
 
-  def initialize(current_path:)
-    @current_path = current_path
+  def initialize(*)
   end
 
   private
 
-  attr_reader :content, :current_path
+  attr_reader :content
 end
