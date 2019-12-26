@@ -445,7 +445,7 @@ GEM
     twitter-text (3.0.0)
       idn-ruby
       unf (~> 0.1.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.6)
       thread_safe (~> 0.1)
     uber (0.1.0)
     unf (0.1.4)
