@@ -179,7 +179,7 @@ GEM
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
       signet (~> 0.12)
-    groupdate (4.2.0)
+    groupdate (4.3.0)
       activesupport (>= 5)
     guard (2.16.1)
       formatador (>= 0.2.4)
