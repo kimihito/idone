@@ -139,7 +139,7 @@ GEM
     et-orbi (1.2.2)
       tzinfo
     eventmachine (1.2.7)
-    faraday (0.17.1)
+    faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
