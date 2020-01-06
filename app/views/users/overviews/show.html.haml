@@ -1,4 +1,4 @@
-= render(Users::Show::Layout, editable: policy(@user).update?, user: @user, current_path: request.path) do
+= render(Users::Show::Layout, user: @user, editable: policy(@user).update?) do
   .f4.mb-2.text-normal
     = t('.recent_updated_projects')
   - if @projects.present?
