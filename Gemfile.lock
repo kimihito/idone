@@ -368,7 +368,7 @@ GEM
     retriable (3.1.2)
     reverse_markdown (1.4.0)
       nokogiri
-    rollbar (2.23.1)
+    rollbar (2.23.2)
     rollout (2.4.5)
       redis (~> 4.0)
     rubocop (0.78.0)
