@@ -272,7 +272,7 @@ GEM
     os (1.0.1)
     pagy (3.7.3)
     parallel (1.19.1)
-    parser (2.7.0.2)
+    parser (2.7.0.3)
       ast (~> 2.4.0)
     pg (1.2.2)
     pghero (2.4.1)
