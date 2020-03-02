@@ -374,7 +374,7 @@ GEM
     rollbar (2.24.0)
     rollout (2.4.5)
       redis (~> 4.0)
-    rubocop (0.80.0)
+    rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
