@@ -272,7 +272,7 @@ GEM
     os (1.0.1)
     pagy (3.7.3)
     parallel (1.19.1)
-    parser (2.7.0.4)
+    parser (2.7.0.5)
       ast (~> 2.4.0)
     pg (1.2.3)
     pghero (2.4.1)
@@ -416,7 +416,7 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
-    solargraph (0.38.5)
+    solargraph (0.38.6)
       backport (~> 1.1)
       benchmark
       bundler (>= 1.17.2)
