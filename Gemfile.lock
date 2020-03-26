@@ -188,7 +188,7 @@ GEM
       signet (~> 0.12)
     groupdate (5.0.0)
       activesupport (>= 5)
-    guard (2.16.1)
+    guard (2.16.2)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
       lumberjack (>= 1.0.12, < 2.0)
