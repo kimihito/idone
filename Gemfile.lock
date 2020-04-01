@@ -446,7 +446,7 @@ GEM
     turbolinks_render (0.9.17)
       rails (>= 5.2.0)
       turbolinks-source (~> 5.1)
-    twitter-text (3.0.0)
+    twitter-text (3.1.0)
       idn-ruby
       unf (~> 0.1.0)
     tzinfo (1.2.6)
