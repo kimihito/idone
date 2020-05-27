@@ -75,7 +75,7 @@ GEM
     backport (1.1.2)
     bcrypt (3.1.13)
     benchmark (0.1.0)
-    benchmark-ips (2.7.2)
+    benchmark-ips (2.8.2)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
