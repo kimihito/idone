@@ -62,7 +62,7 @@ GEM
     ar_outer_joins (0.2.0)
       activerecord (>= 3.2)
     arel (9.0.0)
-    ast (2.4.0)
+    ast (2.4.1)
     attr_encrypted (3.1.0)
       encryptor (~> 3.0.0)
     audited (4.9.0)
