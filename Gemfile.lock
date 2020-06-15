@@ -363,7 +363,7 @@ GEM
       nokogiri
     rexml (3.2.4)
     rollbar (2.25.1)
-    rollout (2.4.5)
+    rollout (2.4.6)
       redis (~> 4.0)
     rubocop (0.85.1)
       parallel (~> 1.10)
