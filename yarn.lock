@@ -706,9 +706,9 @@
     seedrandom "^2.4.3"
 
 "@github/include-fragment-element@^5.0.6":
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.1.3.tgz#70f1106e2777ac5e8018087e29e9e77b4224775a"
-  integrity sha512-9nN7FLTz1aSxz2LsASayJUPyCYFWe/dVq/PXNSerlWvJwqWd3be/BCV3OagjFCcf9r71qdFqPBKgUO+cAIvz5Q==
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@github/include-fragment-element/-/include-fragment-element-5.2.0.tgz#46397245ee779e010d6abe027cc44e9cffeefb40"
+  integrity sha512-a+tXHC4cZmRO15GsmslHvLQzq2xBEj7uOaP7Tqd9nVyQDipipfHjZ8rbazqymHrJr9M2oa7OrmyGEnvX2uf4Jg==
 
 "@primer/css@^12.6.0":
   version "12.7.0"
