@@ -118,7 +118,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.9.1)
+    devise-i18n (1.9.2)
       devise (>= 4.7.1)
     digest-crc (0.5.1)
     e2mmap (0.1.0)
