@@ -67,7 +67,7 @@ GEM
       encryptor (~> 3.0.0)
     audited (4.9.0)
       activerecord (>= 4.2, < 6.1)
-    authtrail (0.2.0)
+    authtrail (0.2.2)
       activerecord (>= 5)
       geocoder
       railties (>= 5)
