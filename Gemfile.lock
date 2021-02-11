@@ -365,7 +365,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.2.1)
+    redis (4.2.5)
     reek (6.0.2)
       kwalify (~> 0.7.0)
       parser (>= 2.5.0.0, < 2.8, != 2.5.1.1)
@@ -384,7 +384,7 @@ GEM
       nokogiri
     rexml (3.2.4)
     rollbar (2.26.0)
-    rollout (2.4.6)
+    rollout (2.5.0)
       redis (~> 4.0)
     rubocop (0.93.1)
       parallel (~> 1.10)
