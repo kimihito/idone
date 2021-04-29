@@ -252,7 +252,9 @@ GEM
     memoist (0.16.2)
     memory_profiler (1.0.0)
     method_source (1.0.0)
-    mimemagic (0.3.5)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_histogram (0.3.1)
     mini_magick (4.10.1)
     mini_mime (1.0.2)
@@ -376,7 +378,7 @@ GEM
     retriable (3.1.2)
     reverse_markdown (2.0.0)
       nokogiri
-    rexml (3.2.4)
+    rexml (3.2.5)
     rollbar (2.26.0)
     rollout (2.5.0)
       redis (~> 4.0)
