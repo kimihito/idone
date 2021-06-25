@@ -1,0 +1,61 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 10
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: googleauth
+    versions:
+    - 0.15.0
+  - dependency-name: declarative
+    versions:
+    - 0.0.20
+  - dependency-name: logstop
+    versions:
+    - 0.2.6
+  - dependency-name: digest-crc
+    versions:
+    - 0.6.3
+  - dependency-name: webpacker
+    versions:
+    - 5.2.1
+  - dependency-name: turbolinks_render
+    versions:
+    - 0.9.20
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "21:00"
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 10
+  versioning-strategy: lockfile-only
+  ignore:
+  - dependency-name: regjsparser
+    versions:
+    - 0.6.6
+  - dependency-name: postcss-svgo
+    versions:
+    - 4.0.3
+  - dependency-name: electron-to-chromium
+    versions:
+    - 1.3.664
+    - 1.3.707
+  - dependency-name: caniuse-lite
+    versions:
+    - 1.0.30001192
+    - 1.0.30001199
+  - dependency-name: websocket-driver
+    versions:
+    - 0.7.4
+  - dependency-name: string.prototype.trimend
+    versions:
+    - 1.0.4
+  - dependency-name: mime-types
+    versions:
+    - 2.1.29
